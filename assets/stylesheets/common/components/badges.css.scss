@@ -1,0 +1,30 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+
+// --------------------------------------------------
+// Badges
+// --------------------------------------------------
+
+// Base
+// --------------------------------------------------
+
+
+// Category badge
+// --------------------------------------------------
+
+
+.badge-category,
+.badge-category-parent {
+  i.fa {
+    font-size: 18px;
+    vertical-align: -2px;
+  }
+}
+
+.badge-category-parent {
+  display: none;
+}
+
+.badge-category {
+  // @include border-radius-all($border-radius-default-SP);
+}
