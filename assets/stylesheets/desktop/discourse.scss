@@ -1,0 +1,26 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+@import "common/foundation/helpers";
+
+// DISCOURSE GLOBAL OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+
+
+
+blockquote {
+  border-left: 3px solid $red-SP;
+}
+
+
+.avatar {
+  @include border-radius-all(0);
+}
+
+.avatar-wrapper {
+  border: none;
+
+  @include border-radius-all(0);
+
+  img {
+    @include border-radius-all(0);
+  }
+}

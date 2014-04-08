@@ -1,0 +1,169 @@
+{{! SP CUSTOMIZATION - ENTIRE FILE }}
+
+{{!
+<header class="main-header" role="banner">
+  <nav class="top-bar" role="navigation">
+     <ul class="title-area">
+      <li class="name">
+        <div class="logo">
+          <a class="logomark" href="http://www.sitepoint.com" tabindex="1">
+            <img src="http://www.sitepoint.com/wp-content/themes/sitepoint/assets/svg/sitepoint.svg" alt="SitePoint">
+          </a>
+        </div>
+      </li>
+      <li class="toggle-topbar menu-icon">
+        <a href="#"><span>Menu</span></a>
+      </li>
+    </ul>
+
+    <section class="top-bar-section">
+      <ul class="right">
+        <li class="">
+          <a href="/store/" tabindex="2">Store</a>
+        </li>
+        <li class="">
+          <a href="/forums/" tabindex="2">Forums</a>
+        </li>
+      </ul>
+    </section>
+  </nav>
+</header>}}
+
+
+<div class='container'>
+  <div class='contents clearfix'>
+
+    {{!-- {{home-logo minimized=showExtraInfo}} --}}
+    <a class="logomark" href="//www.sitepoint.com" tabindex="">
+      <img src="http://www.sitepoint.com/wp-content/themes/sitepoint/assets/svg/sitepoint.svg" alt="SitePoint">
+    </a>
+
+    <a class="header-link header-link--forums" href="/" tabindex="">Forums</a>
+
+    <div class='panel clearfix'>
+      {{#unless showExtraInfo}}
+        <div class='current-username'>
+          {{#if currentUser}}
+            <span class='username'><a {{bind-attr href="currentUser.path"}}>{{currentUser.displayName}}</a></span>
+          {{else}}
+            <button {{action showLogin}} class='btn btn-primary btn-small'>{{i18n log_in}}</button>
+          {{/if}}
+        </div>
+      {{/unless}}
+      <ul class='icons clearfix'>
+        <li class='notifications'>
+          {{#if currentUser}}
+            <a class='icon' href="#" {{action showNotifications target="view"}} data-notifications="notifications-dropdown" id='user-notifications' title='{{i18n notifications.title}}'><i class='fa fa-comment'></i></a>
+            {{#if currentUser.unread_notifications}}
+              <a href='#' class='badge-notification unread-notifications'>{{currentUser.unread_notifications}}</a>
+            {{/if}}
+            {{#if currentUser.unread_private_messages}}
+              <a href='#' class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
+            {{/if}}
+          {{else}}
+            <a class='icon' href="#" {{action showLogin}} title='{{i18n notifications.title}}'><i class='fa fa-comment'></i></a>
+          {{/if}}
+        </li>
+        <li>
+          {{#if Discourse.loginRequired}}
+            <a id='search-button' class='icon expand' href='#' {{action showLogin}}>
+              <i class='fa fa-search'></i>
+            </a>
+          {{else}}
+            <a id='search-button'
+               class='icon expand'
+               href='#'
+               data-dropdown="search-dropdown"
+               title='{{i18n search.title}}'>
+               <i class='fa fa-search'></i>
+            </a>
+          {{/if}}
+        </li>
+        <li class='categories dropdown'>
+          {{#if Discourse.loginRequired}}
+            <a class='icon'
+               href="#"
+               {{action showLogin}}>
+               <i class='fa fa-bars'></i>
+            </a>
+          {{else}}
+            <a class='icon'
+               data-dropdown="site-map-dropdown"
+               data-render="renderSiteMap"
+               href="#"
+               title='{{i18n site_map}}'
+               id="site-map">
+               <i class='fa fa-bars'></i>
+            </a>
+          {{/if}}
+          {{#if currentUser.site_flagged_posts_count}}
+            <a href='/admin/flags/active' title='{{i18n notifications.total_flagged}}' class='badge-notification flagged-posts'>{{currentUser.site_flagged_posts_count}}</a>
+          {{/if}}
+        </li>
+        <li class='current-user dropdown'>
+          {{#if currentUser}}
+            <a class='icon'
+               data-dropdown="user-dropdown"
+               data-render="renderUserDropdown"
+               href="#"
+               title='{{i18n user.avatar.title}}'
+               id="current-user">
+                 {{boundAvatar currentUser imageSize="medium" }}
+            </a>
+          {{else}}
+            <div class="icon not-logged-in-avatar" {{action showLogin}}><i class='fa fa-user' title='{{i18n not_logged_in_user}}'></i></div>
+          {{/if}}
+        </li>
+      </ul>
+
+      {{render search}}
+
+      {{render notifications notifications}}
+
+      {{#if view.renderSiteMap}}
+        {{render siteMap}}
+      {{/if}}
+
+      {{ render userDropdown }}
+
+    </div>
+
+    {{#unless showExtraInfo}}
+      <div class="header-links-wrapper clearfix">
+        <a class="header-link header-link--articles" href="http://www.sitepoint.com" tabindex="">Sitepoint.com</a>
+        <a class="header-link header-link--learnable" href="//learnable.com" tabindex="">Learnable</a>
+        <a class="header-link header-link--store" href="//www.sitepoint.com/store" tabindex="">Store</a>
+      </div>
+    {{/unless}}
+
+    {{#if showExtraInfo}}
+      <div class="extra-info-wrapper">
+        <div class="extra-info">
+          {{#if showStarButton}}
+            <a {{bind-attr class=":star topic.starred:starred"}} {{action toggleStar}} href='#' {{bind-attr title="topic.starTooltip"}}></a>
+          {{/if}}
+          <h1>
+            {{#if topic.isPrivateMessage}}
+              <span class="private-message-glyph"><i class='fa fa-envelope'></i></span>
+            {{/if}}
+          {{#if topic.category.parentCategory}}
+            {{boundCategoryLink topic.category.parentCategory}}
+          {{/if}}
+          {{boundCategoryLink topic.category}}
+          {{#if topic.details.loaded}}
+            {{topicStatus topic=topic}}
+            <a class='topic-link' href='{{unbound topic.url}}' {{action jumpToTopPost}}>{{{topic.fancy_title}}}</a>
+          {{else}}
+            {{#if topic.errorLoading}}
+              {{topic.errorTitle}}
+            {{else}}
+              {{i18n topic.loading}}
+            {{/if}}
+          {{/if}}
+          </h1>
+        </div>
+      </div>
+    {{/if}}
+
+  </div>
+</div>

@@ -1,0 +1,102 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+@import "common/foundation/helpers";
+
+// NAVS OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+
+
+
+// --------------------------------------------------
+// Navigation menus
+// --------------------------------------------------
+
+// Base
+// --------------------------------------------------
+
+
+// Pill nav
+// --------------------------------------------------
+
+.nav-pills {
+  > li {
+    margin-right: 0;
+
+    > a {
+      border-top: 1px solid $gray-lighter-SP;
+      border-bottom: 1px solid $gray-lighter-SP;
+      font-weight: $font-weight-medium-bold-SP;
+    }
+    &:first-of-type {
+      > a {
+        border-left: 1px solid $gray-lighter-SP;
+        border-top-left-radius: $border-radius-default-SP;
+        border-bottom-left-radius: $border-radius-default-SP;
+      }
+    }
+    &:last-of-type {
+      > a {
+        border-right: 1px solid $gray-lighter-SP;
+        border-top-right-radius: $border-radius-default-SP;
+        border-bottom-right-radius: $border-radius-default-SP;
+      }
+    }
+
+    &.active > a,
+    > a.active {
+      border-color: $red-SP;
+    }
+  }
+}
+
+// Stacked nav
+// --------------------------------------------------
+
+.nav-stacked {
+  border: none;
+
+  > li {
+    border: none;
+
+    > a {
+      border: 1px solid $gray-lighter-SP;
+      border-bottom: none;
+
+    }
+
+    &:last-of-type {
+      > a {
+        border-bottom: 1px solid $gray-lighter-SP;
+      }
+    }
+
+    &.active {
+      > a {
+        border: 1px solid $red-SP;
+      }
+
+      + script + script + li {
+        > a {
+          border-top: none;
+        }
+      }
+    }
+  }
+
+  .active > a,
+  .active .fa-caret-right {
+    color: $tertiary_text_color;
+    background-color: $nav-stacked-background-color-active;
+  }
+
+  .count {
+    font-size: inherit;
+  }
+
+  .fa-caret-right {
+    float: right;
+    margin: 0;
+    color: $nav-stacked-chevron-color;
+    font-size: 24px;
+    line-height: 20px;
+  }
+}

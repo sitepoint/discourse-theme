@@ -25,16 +25,22 @@
           {{/sortable-heading}}
         {{/unless}}
         {{#sortable-heading sortBy="posters" sortOrder=sortOrder}}
+          {{!-- SP CUSTOMIZATION BEGIN --}}
           <i class="fa fa-user" title="{{i18n users}}"></i>
+          {{!-- SP CUSTOMIZATION END --}}
         {{/sortable-heading}}
         {{#sortable-heading sortBy="posts" number=true sortOrder=sortOrder}}
           {{i18n posts}}
         {{/sortable-heading}}
         {{#sortable-heading sortBy="likes" number=true sortOrder=sortOrder}}
+          {{!-- SP CUSTOMIZATION BEGIN --}}
           <i class="fa fa-heart" title="{{i18n likes}}"></i>
+          {{!-- SP CUSTOMIZATION END --}}
         {{/sortable-heading}}
         {{#sortable-heading sortBy="views" number=true sortOrder=sortOrder}}
+          {{!-- SP CUSTOMIZATION BEGIN --}}
           <i class="fa fa-eye " title="{{i18n views}}"></i>
+          {{!-- SP CUSTOMIZATION END --}}
         {{/sortable-heading}}
         {{#sortable-heading sortBy="activity" number=true colspan="2" sortOrder=sortOrder}}
           {{i18n activity}}

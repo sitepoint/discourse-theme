@@ -1,0 +1,28 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+
+// BUTTONS OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+
+
+// --------------------------------------------------
+// Buttons
+// --------------------------------------------------
+
+// Base
+// --------------------------------------------------
+
+.btn {
+  // @include border-radius-all($border-radius-default-SP);
+}
+
+// Primary button
+// --------------------------------------------------
+
+.btn-primary {
+  background-color: $btn-primary-background-color;
+  color: #fff;
+
+  &:hover {
+    background-color: $btn-primary-background-color-dark;
+  }
+}

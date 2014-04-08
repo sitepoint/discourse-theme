@@ -1,0 +1,25 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+
+// COMPOSE MESSAGE PANE OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+
+
+
+// styles that apply to the reply pane that slides up to compose replies
+
+
+#reply-control {
+  .toggler {
+    &:before {
+      content: "\f0d7";
+    }
+  }
+
+  &.draft {
+    .toggler {
+      &:before {
+        content: "\f0d8";
+      }
+    }
+  }
+}

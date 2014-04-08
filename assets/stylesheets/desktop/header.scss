@@ -1,0 +1,66 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+
+// HEADER OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+
+
+
+// --------------------------------------------------
+// Discourse header
+// --------------------------------------------------
+
+.d-header {
+  background-color: $gray-sitepoint-header-bg-SP;
+
+  .current-username {
+    a {
+      color: #fff;
+      margin-top: 12px;
+    }
+  }
+
+  .icons {
+    .icon {
+      color: $gray-light-SP;
+
+      &:hover {
+        background-color: transparent;
+        color: #fff;
+      }
+      &:active {
+        color: #fff;
+      }
+    }
+  }
+
+
+
+
+  // Sitepoint custom styles:
+  .logomark {
+    float: left; // so that left-floating .extra-info-wrapper can sit on logo's and link's right side
+    margin-top: 11px;
+    margin-right: 10px;
+  }
+
+  .header-links-wrapper {
+    float: right;
+    margin-right: 50px;
+  }
+
+  .header-link {
+    color: $gray-sitepoint-header-SP;
+    display: inline-block;
+    font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
+    margin-right: 20px;
+    margin-top: 11px;
+
+    &.header-link--forums {
+      float: left;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}

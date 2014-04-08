@@ -1,0 +1,65 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+
+// TOPIC OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+
+
+
+.post-info a {
+  color: $black;
+}
+
+.topic-meta-data-inside {
+  font-size: inherit;
+  margin-top: 0;
+}
+
+
+#topic-title {
+  h1 {
+    padding-top: 5px;
+
+    a {
+      &:visited {
+        color: $link-color;
+      }
+    }
+
+    a.badge-category {
+      margin-top: 0;
+    }
+  }
+}
+
+
+a.reply-new {
+  display: block;
+  position: static;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#topic-progress {
+  left: 425px;
+
+  .nums {
+    color: $black;
+  }
+
+  button {
+    color: #000;
+    left: 11px;
+
+    &:nth-of-type(2) {
+      right: 11px;
+    }
+  }
+
+  h4 {
+    font-weight: normal;
+  }
+
+  .bg {
+    background-color: $green-SP;
+  }
+}

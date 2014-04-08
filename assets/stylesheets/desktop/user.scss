@@ -1,0 +1,121 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+
+// USER PROFILE PAGE OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+
+
+
+.user-main {
+  .about {
+    // background: linear-gradient(to right, #fff, #fff 537px, $gray-lighter-SP 537px, $gray-lighter-SP 538px, #fff 538px, #fff); // doesn't work, the thinnest line it can render is 2px
+    background-color: #fff;
+    border: 1px solid $gray-lighter-SP;
+    color: $black;
+
+    .details {
+      padding: 0;
+      text-align: left;
+      position: relative;
+
+      &:after {
+        background-color: $gray-lighter-SP;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 65%;
+        position: absolute;
+        top: 0;
+        width: 1px;
+      }
+
+      a[href] {
+        color: $link-color;
+      }
+
+      img.avatar {
+        border: none;
+        display: inline-block;
+        margin-right: 16px;
+        vertical-align: top;
+      }
+
+      .user-props-container-SP {
+        display: inline-block;
+        // max-width: 355px;
+        max-width: 260px;
+      }
+
+      .primary {
+        @include box-sizing(border-box);
+        color: inherit;
+        margin-top: 0;
+        padding: 20px;
+        text-shadow: none;
+        // width: 500px;  // FIXME: fix collapsing when small screen
+        width: 65%;
+
+        .bio {
+          color: inherit;
+          text-shadow: none;
+
+          a[href] {
+            color: $link-color;
+            text-decoration: none;
+            text-shadow: none;
+          }
+        }
+      }
+
+      .secondary {
+        @include box-sizing(border-box);
+        background-color: #fff;
+        max-width: none;
+        padding: 20px;
+        text-align: left;
+        // width: 268px;
+        width: 35%;
+
+        dl {
+          margin: 0;
+        }
+
+        dd {
+          color: inherit;
+        }
+
+        dt {
+          color: inherit;
+          float: left;
+
+          &:after {
+            content: ':\0000a0';
+          }
+        }
+      }
+    }
+
+    .controls {
+      border-top: 1px solid $gray-lighter-SP;
+      background-color: $gray-bg-SP;
+    }
+  }
+
+  .user-stream {
+    .excerpt {
+      margin: 17px 0 5px;
+    }
+
+    .item {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      &:nth-child(even) {
+        background-color: $gray-bg-SP;
+      }
+    }
+
+    .avatar-link {
+      margin-right: 20px;
+    }
+  }
+}
