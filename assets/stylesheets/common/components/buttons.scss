@@ -12,7 +12,7 @@
 // --------------------------------------------------
 
 .btn {
-  // @include border-radius-all($border-radius-default-SP);
+  @include border-radius-all($border-radius-default-SP);
 }
 
 // Primary button
