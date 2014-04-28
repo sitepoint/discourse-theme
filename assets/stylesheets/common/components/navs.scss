@@ -83,7 +83,7 @@
   }
 
   .active > a,
-  .active .fa-caret-right {
+  .active .fa-chevron-right {
     color: $tertiary_text_color;
     background-color: $nav-stacked-background-color-active;
   }
@@ -92,11 +92,15 @@
     font-size: inherit;
   }
 
-  .fa-caret-right {
+  .fa-chevron-right {
     float: right;
     margin: 0;
     color: $nav-stacked-chevron-color;
     font-size: 24px;
     line-height: 20px;
+
+    &:before {
+      content: '\f0da'; // change chevron to caret
+    }
   }
 }

@@ -30,31 +30,31 @@ after_initialize do
 
 end
 
-# register_asset "javascripts/admin/templates/site_settings.js.handlebars" # doesn't work, but probably not needed (Admin section)
-register_asset "javascripts/discourse/components/categorydrop_component.js" # ok
-register_asset "javascripts/discourse/components/sortable_heading_component.js" # ok
-register_asset "javascripts/discourse/templates/discovery/topics.js.handlebars" # ok
-register_asset "javascripts/discourse/templates/group.js.handlebars" # not tested
-register_asset "javascripts/discourse/templates/header.js.handlebars" # ok
-register_asset "javascripts/discourse/templates/post.js.handlebars" # ok
-register_asset "javascripts/discourse/templates/list/topic_list_item.js.handlebars" # ok
-register_asset "javascripts/discourse/templates/navigation/categories.js.handlebars" # ok
-register_asset "javascripts/discourse/templates/navigation/category.js.handlebars" # ok
-register_asset "javascripts/discourse/templates/navigation/default.js.handlebars" # not tested (where is it?)
-register_asset "javascripts/discourse/templates/topic.js.handlebars" # ok
-register_asset "javascripts/discourse/templates/user/user.js.handlebars" # ok
-register_asset "javascripts/discourse/views/post_menu_view.js" # ok
-register_asset "javascripts/discourse/views/post_view.js" # ok
-register_asset "javascripts/discourse/views/activity_filter_view.js" # ok
+# Templates
+register_asset "javascripts/discourse/templates/discovery/topics.js.handlebars" # SP customization: category page - topic heading row titles (icons instead of text)
+
+register_asset "javascripts/discourse/templates/header.js.handlebars" # SP customization: custom header
+register_asset "javascripts/discourse/templates/post.js.handlebars" # SP customization: extra containers
+
+register_asset "javascripts/discourse/templates/navigation/default.js.handlebars" # SP customization: /latest page: add btn-primary class to the "+ Create Topic" button to easily achieve our coloring
+register_asset "javascripts/discourse/templates/navigation/categories.js.handlebars" # SP customization: ALL CATEGORIES page: add btn-primary class to the "+ Create Category" button to easily achieve our coloring
+register_asset "javascripts/discourse/templates/navigation/category.js.handlebars" # SP customization: STANDARD CATEGORY page: add btn-primary class to the "+ Create Topic" button to easily achieve our coloring
+
+register_asset "javascripts/discourse/templates/user/user.js.handlebars" # SP customization: user page: extra containers on user to allow name next to avatar
 
 
+# Views
+register_asset "javascripts/discourse/views/post_menu_view.js" # SP customization: post page: add 'btn' class to the Show Replies and Reply buttons
+
+
+# Stylesheets
 register_asset("stylesheets/common/foundation/variables.scss", :variables)
 register_asset "stylesheets/common/components/badges.css.scss"
 register_asset "stylesheets/common/components/buttons.scss"
 register_asset "stylesheets/common/components/navs.scss"
 register_asset "stylesheets/desktop/compose.scss"
 register_asset "stylesheets/desktop/discourse.scss"
-register_asset "stylesheets/desktop/header.scss" # e.g. this is being loaded too early, causing header color to be overridden by default header.scss
+register_asset "stylesheets/desktop/header.scss"
 register_asset "stylesheets/desktop/topic-list.scss"
 register_asset "stylesheets/desktop/topic-post.scss"
 register_asset "stylesheets/desktop/topic.scss"

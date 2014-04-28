@@ -53,6 +53,16 @@ a.reply-new {
     &:nth-of-type(2) {
       right: 11px;
     }
+
+    i {
+      &.fa-arrow-circle-up:before {
+        content: '\f0d8'; // change arrow-circle to caret
+      }
+
+      &.fa-arrow-circle-down:before {
+        content: '\f0d7'; // change arrow-circle to caret
+      }
+    }
   }
 
   h4 {

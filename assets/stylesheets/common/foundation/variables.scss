@@ -24,10 +24,10 @@ $green-SP: #25c65e;
 
 
 // Primary button
-$btn-primary-border-color: $red-SP !default;
-$btn-primary-background-color: $red-SP !default;
-$btn-primary-background-color-dark: darken($red-SP, 10%) !default;
-$btn-primary-background-color-light: lighten($red-SP, 10%) !default;
+$btn-primary-border-color: $red-SP;
+$btn-primary-background-color: $red-SP;
+$btn-primary-background-color-dark: darken($red-SP, 10%);
+$btn-primary-background-color-light: lighten($red-SP, 10%);
 
 // Pill nav
 
