@@ -16,8 +16,19 @@
 .badge-category,
 .badge-category-parent {
   i.fa {
-    font-size: 18px;
-    vertical-align: -2px;
+    &.fa-caret-right {
+      font-size: 18px; // dropdown caret
+      vertical-align: -2px;
+    }
+
+    &.fa-group {
+      font-size: 14px;
+      vertical-align: -1px;
+
+      &:before {
+        content: '\f023'; // restricted categories
+      }
+    }
   }
 }
 
