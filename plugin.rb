@@ -1,6 +1,6 @@
 # Upstream version that this theme is based (change this with each update):
-# 49dbb992adf5d5d8f4b625e1788b85e5c3cfcd6b
-# 26 March 2014 1:22:04 pm AEDT
+# 0fc4c47927bb1de722445bc87e322d3f9fdd0425
+# 29 April 2014 11:26:51 am AEST
 
 after_initialize do
 
@@ -34,13 +34,10 @@ end
 register_asset "javascripts/discourse/templates/discovery/topics.js.handlebars" # SP customization: category page - topic heading row titles (icons instead of text)
 
 register_asset "javascripts/discourse/templates/header.js.handlebars" # SP customization: custom header
-register_asset "javascripts/discourse/templates/post.js.handlebars" # SP customization: extra containers
 
 register_asset "javascripts/discourse/templates/navigation/default.js.handlebars" # SP customization: /latest page: add btn-primary class to the "+ Create Topic" button to easily achieve our coloring
 register_asset "javascripts/discourse/templates/navigation/categories.js.handlebars" # SP customization: ALL CATEGORIES page: add btn-primary class to the "+ Create Category" button to easily achieve our coloring
 register_asset "javascripts/discourse/templates/navigation/category.js.handlebars" # SP customization: STANDARD CATEGORY page: add btn-primary class to the "+ Create Topic" button to easily achieve our coloring
-
-register_asset "javascripts/discourse/templates/user/user.js.handlebars" # SP customization: user page: extra containers on user to allow name next to avatar
 
 
 # Views

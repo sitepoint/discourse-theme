@@ -9,6 +9,7 @@
   .about {
     // background: linear-gradient(to right, #fff, #fff 537px, $gray-lighter-SP 537px, $gray-lighter-SP 538px, #fff 538px, #fff); // doesn't work, the thinnest line it can render is 2px
     background-color: #fff;
+    background-image: none !important; // disallow display of custom user profile backgrounds since the feature is incompatible with our layout https://github.com/discourse/discourse/pull/2299
     border: 1px solid $gray-lighter-SP;
     color: $black;
 
@@ -39,12 +40,6 @@
         vertical-align: top;
       }
 
-      .user-props-container-SP {
-        display: inline-block;
-        // max-width: 355px;
-        max-width: 260px;
-      }
-
       .primary {
         @include box-sizing(border-box);
         color: inherit;
@@ -53,6 +48,12 @@
         text-shadow: none;
         // width: 500px;  // FIXME: fix collapsing when small screen
         width: 65%;
+
+        .primary-textual {
+          display: inline-block;
+          // max-width: 355px;
+          max-width: 260px;
+        }
 
         .bio {
           color: inherit;
