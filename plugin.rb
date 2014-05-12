@@ -1,6 +1,6 @@
-# Upstream version that this theme is based (change this with each update):
-# 0fc4c47927bb1de722445bc87e322d3f9fdd0425
-# 29 April 2014 11:26:51 am AEST
+# Upstream version that this theme is based on (change this with each update):
+# 2e7b69f849a0b1b942dd21f0de1e867790662789
+# 2 May 2014 4:09:15 am AEST
 
 after_initialize do
 

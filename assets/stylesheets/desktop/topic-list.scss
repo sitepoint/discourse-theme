@@ -104,6 +104,17 @@
 }
 
 
+#topic-list.categories {
+  .category{
+    .badge-category.bigger {
+      min-width: 100px;
+      text-align: center;
+    }
+  }
+}
+
+
+
 // Misc. stuff
 // --------------------------------------------------
 .list-controls {
