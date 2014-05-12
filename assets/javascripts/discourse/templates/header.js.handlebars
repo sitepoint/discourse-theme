@@ -34,11 +34,13 @@
   <div class='contents clearfix'>
 
     {{!-- {{home-logo minimized=showExtraInfo}} --}}
-    <a class="logomark" href="//www.sitepoint.com" tabindex="">
+    {{!-- <a class="logomark" href="/" tabindex="">
       <img src="http://www.sitepoint.com/wp-content/themes/sitepoint/assets/svg/sitepoint.svg" alt="SitePoint">
+    </a> --}}
+    <a class="header-link header-link--forums" href="/" tabindex="">
+      {{!-- <img src="http://www.sitepoint.com/wp-content/themes/sitepoint/assets/svg/sitepoint.svg" alt="SitePoint"> --}}
+      sitepoint forums
     </a>
-
-    <a class="header-link header-link--forums" href="/" tabindex="">Forums</a>
 
     <div class='panel clearfix'>
       {{#unless showExtraInfo}}
@@ -130,7 +132,7 @@
 
     {{#unless showExtraInfo}}
       <div class="header-links-wrapper clearfix">
-        <a class="header-link" href="http://www.sitepoint.com" tabindex="">Sitepoint.com</a>
+        <a class="header-link" href="http://www.sitepoint.com" tabindex="">sitepoint.com</a>
         <a class="header-link" target="_blank" href="https://learnable.com/topics/all/book?utm_source=sitepoint&utm_medium=link&utm_content=top-nav" tabindex="">Books</a>
         <a class="header-link" target="_blank" href="https://learnable.com/topics/all/course?utm_source=sitepoint&utm_medium=link&utm_content=top-nav" tabindex="">Courses</a>
       </div>
