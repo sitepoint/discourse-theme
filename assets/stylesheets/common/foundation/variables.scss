@@ -49,6 +49,6 @@ $primary_border_color: $gray-lighter-SP;
 
 $link_color:  $blue-SP;
 
-$link-color-visited: darken($blue-SP, 10%);
-$link-color-hover: darken($blue-SP, 10%);
-$link-color-active: darken($blue-SP, 10%);
+$link-color-visited: $blue-SP;
+$link-color-hover: lighten($blue-SP, 10%);
+$link-color-active: lighten($blue-SP, 10%);
