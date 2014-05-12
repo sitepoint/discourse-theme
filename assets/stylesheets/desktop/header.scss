@@ -34,8 +34,6 @@
   }
 
 
-
-
   // Sitepoint custom styles:
   .logomark {
     float: left; // so that left-floating .extra-info-wrapper can sit on logo's and link's right side
@@ -61,6 +59,20 @@
 
     &:hover {
       color: #fff;
+    }
+  }
+}
+
+
+// Dropdowns
+// --------------------------------------------------
+
+.d-dropdown {
+  .category {
+    .badge-category {
+      i {
+        line-height: 0;
+      }
     }
   }
 }
