@@ -30,6 +30,11 @@ after_initialize do
 
 end
 
+
+# Models
+register_asset "javascripts/discourse/models/category_list.js" # SP customization: category page - don't display featured_users avatars
+
+
 # Templates
 register_asset "javascripts/discourse/templates/discovery/topics.js.handlebars" # SP customization: category page - topic heading row titles (icons instead of text)
 
