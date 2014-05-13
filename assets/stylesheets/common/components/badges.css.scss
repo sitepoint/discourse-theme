@@ -39,3 +39,15 @@
 .badge-category {
   @include border-radius-all($border-radius-default-SP);
 }
+
+
+// Notification badge
+// --------------------------------------------------
+
+.badge-notification {
+  // New posts
+
+  &.new-posts, &.unread-posts {
+    background-color: $red-SP;
+  }
+}

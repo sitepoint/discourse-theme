@@ -12,6 +12,13 @@
 .d-header {
   background-color: $gray-sitepoint-header-bg-SP;
 
+  .container {
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: none;
+    width: auto;
+  }
+
   .current-username {
     a {
       color: #fff;
@@ -34,8 +41,6 @@
   }
 
 
-
-
   // Sitepoint custom styles:
   .logomark {
     float: left; // so that left-floating .extra-info-wrapper can sit on logo's and link's right side
@@ -55,12 +60,22 @@
     margin-right: 20px;
     margin-top: 11px;
 
-    &.header-link--forums {
-      float: left;
-    }
-
     &:hover {
       color: #fff;
+    }
+  }
+}
+
+
+// Dropdowns
+// --------------------------------------------------
+
+.d-dropdown {
+  .category {
+    .badge-category {
+      i {
+        line-height: 0;
+      }
     }
   }
 }

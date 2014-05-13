@@ -7,6 +7,21 @@
 
 
 .post-cloak {
+  .reply-to-tab {
+    right: 120px;
+
+    @include medium-width {
+      right: 120px;
+    }
+    @include small-width {
+      right: 123px;
+    }
+  }
+
+ .topic-meta-data-inside {
+    font-size: inherit;
+  }
+
   section.post-menu-area,
   .post-actions {
     .discourse-no-touch & {
@@ -63,12 +78,28 @@ nav.post-controls {
 
 
 .embedded-posts {
+  &.top {
+    margin-left: 77px;
+    max-width: 912px;
+
+    @include medium-width {
+      margin-left: 70px;
+      max-width: 804px;
+    }
+
+    @include small-width {
+      margin-left: 66px;
+      max-width: 760px;
+    }
+  }
+
   .quote .title, blockquote, .onebox, .onebox-result {
     border-left: 3px solid $red-SP;
   }
 
   .topic-meta-data h5 {
-    margin-left: 0;
+    left: 85px;
+    // margin-left: 0;
   }
 
   .topic-meta-data {
@@ -221,6 +252,14 @@ span.post-count {
 }
 
 .topic-meta-data {
+  .names {
+    left: 77px;
+
+    @include small-width {
+      left: 65px;
+    }
+  }
+
   .contents {
     text-align: left;
 
@@ -285,35 +324,35 @@ span.post-count {
 //columns
 
 .span14 {
-  width: 80%;
+  width: 93%;
   padding-left: 1%;
 } //main content
 
-.span2 {
-  width: 19%;
+// .span2 {
+//   width: 9%;
 
-  .names {
-    display: inline-block;
-    margin-left: 6px;
-    vertical-align: top;
-    width: calc(100% - 56px); // calc() is Android 4.4+
-  }
-}
-.embedded-posts {
-  .span2 {
-    width: 9%;
-  }
-}
+//   .names {
+//     display: inline-block;
+//     margin-left: 6px;
+//     vertical-align: top;
+//     width: calc(100% - 56px); // calc() is Android 4.4+
+//   }
+// }
+// .embedded-posts {
+//   .span2 {
+//     width: 9%;
+//   }
+// }
 
-.span11 {
-  width: 83%;
-  padding-left: 2%;
-  padding-right: 1%;
-}
-.span5 {
-  width: 19%;
-  padding-left: 1%;
-}
+// .span11 {
+//   width: 83%;
+//   padding-left: 2%;
+//   padding-right: 1%;
+// }
+// .span5 {
+//   width: 19%;
+//   padding-left: 1%;
+// }
 
 
 @media screen and (max-width: 966px) {
@@ -321,15 +360,14 @@ span.post-count {
     display: none;
   }
   .span14 {
-    width: 80%;
-    max-width: 720px;
+    width: 93%;
+    max-width: 880px;
   } //main content
 }
 
-.embedded-posts {
-  &.top.span14 {
-    // padding-left: 0;
-  }
+
+#selected-posts {
+  margin-left: 180px;
 }
 
 
