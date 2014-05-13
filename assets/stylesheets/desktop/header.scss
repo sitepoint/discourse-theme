@@ -12,6 +12,13 @@
 .d-header {
   background-color: $gray-sitepoint-header-bg-SP;
 
+  .container {
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: none;
+    width: auto;
+  }
+
   .current-username {
     a {
       color: #fff;
