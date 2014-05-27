@@ -24,6 +24,7 @@
     > a {
       border-top: 1px solid $gray-lighter-SP;
       border-bottom: 1px solid $gray-lighter-SP;
+      color: $gray-text-SP;
       font-weight: $font-weight-medium-bold-SP;
     }
     &:first-of-type {
@@ -60,7 +61,7 @@
     > a {
       border: 1px solid $gray-lighter-SP;
       border-bottom: none;
-
+      color: $gray-text-SP;
     }
 
     &:last-of-type {
@@ -84,7 +85,7 @@
 
   .active > a,
   .active .fa-chevron-right {
-    color: $gray-text-SP; // 0527: would orig $secondary work?
+    color: #fff;
     background-color: $red-SP; // 0527: would orig $quearternary work?
   }
 
