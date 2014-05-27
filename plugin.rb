@@ -51,6 +51,7 @@ register_asset "javascripts/discourse/views/post_menu_view.js" # SP customizatio
 
 # Stylesheets
 register_asset("stylesheets/common/foundation/variables.scss", :variables)
+register_asset "stylesheets/common/base/topic-post.scss"
 register_asset "stylesheets/common/components/badges.css.scss"
 register_asset "stylesheets/common/components/buttons.scss"
 register_asset "stylesheets/common/components/navs.scss"

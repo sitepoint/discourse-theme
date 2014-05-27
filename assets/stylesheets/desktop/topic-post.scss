@@ -18,10 +18,6 @@
     }
   }
 
- .topic-meta-data-inside {
-    font-size: inherit;
-  }
-
   section.post-menu-area,
   .post-actions {
     .discourse-no-touch & {
@@ -95,15 +91,6 @@ nav.post-controls {
 
   .quote .title, blockquote, .onebox, .onebox-result {
     border-left: 3px solid $red-SP;
-  }
-
-  .topic-meta-data h5 {
-    left: 85px;
-    // margin-left: 0;
-  }
-
-  .topic-meta-data {
-    padding-top: 24px;
   }
 }
 
@@ -251,40 +238,9 @@ span.post-count {
   }
 }
 
-.topic-meta-data {
-  .names {
-    left: 77px;
-
-    @include small-width {
-      left: 65px;
-    }
-  }
-
-  .contents {
-    text-align: left;
-
-    a {
-      color: $link-color;
-    }
-
-    a.user-group {
-      color: $primary;
-    }
-  }
-}
-
 
 .contents .cooked {
   margin-right: 120px; // to avoid the edit count icon
-}
-
-
-.topic-meta-data {
-  h3 {
-    font-size: 100%;
-    font-weight: normal;
-    margin-top: 0;
-  }
 }
 
 
@@ -320,12 +276,16 @@ span.post-count {
 }
 
 
+.topic-body {
+  padding-top: 13px;
+}
+
 
 //columns
 
 .span14 {
-  width: 93%;
-  padding-left: 1%;
+  padding-right: 0;
+  width: 94%;
 } //main content
 
 // .span2 {
@@ -379,11 +339,23 @@ span.post-count {
 
 
 .read_restricted .gutter:before {
-  color: lighten($red-SP, 40%);
+  color: lighten($red-SP, 30%);
   content: "\f023";
   position: absolute;
   top: auto;
   bottom: 30px;
   left: auto;
   right: -90px;
+}
+
+
+.topic-meta-data {
+
+  .post-info  {
+    font-size: inherit;
+
+    a {
+      color: $primary;
+    }
+  }
 }

@@ -39,11 +39,11 @@
   border: none;
 
   a.title {
-    color: $link-color;
+    color: $tertiary;
   }
 
   a.title:visited:not(.badge-notification) {
-    color: $link-color-visited;
+    color: $tertiary;
   }
 
   > tbody > tr {
