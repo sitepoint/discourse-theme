@@ -1,6 +1,6 @@
 # Upstream version that this theme is based on (change this with each update):
-# 2e7b69f849a0b1b942dd21f0de1e867790662789
-# 2 May 2014 4:09:15 am AEST
+# 334cbea0d710cafa003fecd3501dddf4be92c671 (tag v0.9.9.5)
+# 24 May 2014 9:21:08 am AEST
 
 after_initialize do
 
