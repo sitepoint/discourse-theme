@@ -5,11 +5,6 @@
 
 
 
-.post-info a {
-  color: $primary;
-}
-
-
 #topic-title {
   h1 {
     padding-top: 5px;
@@ -21,7 +16,7 @@
     }
 
     a.badge-category {
-      margin-top: 0;
+      margin-top: -3px;
     }
   }
 }
