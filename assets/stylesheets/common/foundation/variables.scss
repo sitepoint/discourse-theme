@@ -2,6 +2,11 @@
 
 // // OUR VARS ONLY:
 
+// 0527: '$secondary' - always $gray-text-SP?
+// 0527: '$tertiary' - always $red-SP?
+// 0527: '$quarternary' - always $red-SP? , resp. $red?
+
+
 // SP-specific uncategorized vars
 $border-radius-default-SP: 3px;
 $font-weight-medium-bold-SP: 500;
@@ -19,15 +24,17 @@ $gray-bg-SP: #f5f5f5; // used for gray backgrounds
 $blue-SP: #0582b6; // hex from Pete (used for links etc.)
 
 $red-SP: #ec5645;
+$red-darker-SP: darken($red-SP, 10%);
+$red-lighter-SP: lighten($red-SP, 10%);
 
 $green-SP: #25c65e;
 
 
 // Primary button
-$btn-primary-border-color: $red-SP;
-$btn-primary-background-color: $red-SP;
-$btn-primary-background-color-dark: darken($red-SP, 10%);
-$btn-primary-background-color-light: lighten($red-SP, 10%);
+// $btn-primary-border-color: $red-SP; // 0527: seems to not be used
+// $btn-primary-background-color: $red-SP; // 0527: newspeak "$tertiary"
+// $btn-primary-background-color-dark: darken($red-SP, 10%);
+// $btn-primary-background-color-light: lighten($red-SP, 10%);
 
 // Pill nav
 
@@ -37,9 +44,8 @@ $nav-pills-background-color-active: $red-SP;
 
 // Stacked nav
 
-$nav-stacked-color: $gray-text-SP;
-
-$nav-stacked-background-color-active: $red-SP;
+// $nav-stacked-color: $gray-text-SP;
+// $nav-stacked-background-color-active: $red-SP;
 
 
 

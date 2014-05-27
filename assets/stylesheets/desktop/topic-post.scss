@@ -38,7 +38,7 @@
 nav.post-controls {
   .show-replies { //'2 Replies' button in expanded mode
     color: $gray-sitepoint-header-SP;
-    background: lighten($secondary_background_color, 76%);
+    // background: lighten($secondary_background_color, 76%); // 0527: maybe not needed anymore
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-top-left-radius: 0;
@@ -50,7 +50,7 @@ nav.post-controls {
     }
 
     &:hover {
-      background: lighten($secondary_background_color, 60%);
+      // background: lighten($secondary_background_color, 60%); // 0527: maybe not needed anymore
 
       span.badge-posts {
         // color: #fff;
@@ -59,11 +59,11 @@ nav.post-controls {
   }
 
   button.create {
-    background-color: $btn-primary-background-color;
+    background-color: $red-SP;
     color: #fff;
 
     &:hover {
-      background-color: $btn-primary-background-color-dark;
+      background-color: $red-darker-SP;
     }
   }
 
@@ -164,7 +164,7 @@ nav.post-controls {
 
     a,
     .number {
-      color: $black;
+      color: $primary;
       font-weight: normal;
     }
   }
@@ -268,7 +268,7 @@ span.post-count {
     }
 
     a.user-group {
-      color: $black;
+      color: $primary;
     }
   }
 }
@@ -289,7 +289,7 @@ span.post-count {
 
 
 .user-title {
-  color: $black;
+  color: $primary;
   font-size: 100%;
   line-height: inherit;
 }
@@ -379,7 +379,7 @@ span.post-count {
 
 
 .read_restricted .gutter:before {
-  color: lighten($red, 40%);
+  color: lighten($red-SP, 40%);
   content: "\f023";
   position: absolute;
   top: auto;

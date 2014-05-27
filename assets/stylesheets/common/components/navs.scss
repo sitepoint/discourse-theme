@@ -84,8 +84,8 @@
 
   .active > a,
   .active .fa-chevron-right {
-    color: $tertiary_text_color;
-    background-color: $nav-stacked-background-color-active;
+    color: $gray-text-SP; // 0527: would orig $secondary work?
+    background-color: $red-SP; // 0527: would orig $quearternary work?
   }
 
   .count {
@@ -93,9 +93,9 @@
   }
 
   .fa-chevron-right {
-    float: right;
-    margin: 0;
-    color: $nav-stacked-chevron-color;
+    // float: right;
+    // margin: 0;
+    // color: $nav-stacked-chevron-color; // 0527: would orig scale-color($primary, $lightness: 60%) work?
     font-size: 24px;
     line-height: 20px;
 

@@ -11,7 +11,7 @@
     background-color: #fff;
     background-image: none !important; // disallow display of custom user profile backgrounds since the feature is incompatible with our layout https://github.com/discourse/discourse/pull/2299
     border: 1px solid $gray-lighter-SP;
-    color: $black;
+    color: $primary;
 
     .details {
       padding: 0;

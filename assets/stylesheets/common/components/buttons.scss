@@ -19,10 +19,10 @@
 // --------------------------------------------------
 
 .btn-primary {
-  background-color: $btn-primary-background-color;
+  background-color: $red-SP;
   color: #fff;
 
   &:hover {
-    background-color: $btn-primary-background-color-dark;
+    background-color: $red-darker-SP;
   }
 }
