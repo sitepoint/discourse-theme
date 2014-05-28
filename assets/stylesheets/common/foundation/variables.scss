@@ -8,7 +8,6 @@ $font-weight-medium-bold-SP: 500;
 
 
 // Primary color variables
-
 $gray-lighter-SP: #d9d9d9; // used also for borders
 $gray-light-SP: #929292;
 $gray-sitepoint-header-bg-SP: #3A3A3A;
@@ -17,38 +16,43 @@ $gray-text-SP: #6d6d6d;
 $gray-bg-SP: #f5f5f5; // used for gray backgrounds
 
 $blue-SP: #0582b6; // hex from Pete (used for links etc.)
+$blue-lighter-SP: lighten($blue-SP, 10%);
 
 $red-SP: #ec5645;
+$red-darker-SP: darken($red-SP, 10%);
+$red-lighter-SP: lighten($red-SP, 10%);
 
 $green-SP: #25c65e;
 
+$primary: #333;
+$tertiary: $blue-SP;
+// 0527: '$secondary' - always $gray-text-SP?
+// 0527: '$tertiary' - always $red-SP? (No, in foundation/base.scss blue links are defined as $tertiary)
+// 0527: '$quarternary' - always $red-SP? , resp. $red?
+
+
 
 // Primary button
-$btn-primary-border-color: $red-SP;
-$btn-primary-background-color: $red-SP;
-$btn-primary-background-color-dark: darken($red-SP, 10%);
-$btn-primary-background-color-light: lighten($red-SP, 10%);
+// $btn-primary-border-color: $red-SP; // 0527: seems to not be used
+// $btn-primary-background-color: $red-SP; // 0527: newspeak "$tertiary"
+// $btn-primary-background-color-dark: darken($red-SP, 10%);
+// $btn-primary-background-color-light: lighten($red-SP, 10%);
 
 // Pill nav
-
-$nav-pills-color: $gray-text-SP;
-
-$nav-pills-background-color-active: $red-SP;
+// $nav-pills-color: $gray-text-SP;
+// $nav-pills-background-color-active: $red-SP;
 
 // Stacked nav
-
-$nav-stacked-color: $gray-text-SP;
-
-$nav-stacked-background-color-active: $red-SP;
-
+// $nav-stacked-color: $gray-text-SP;
+// $nav-stacked-background-color-active: $red-SP;
 
 
 // Broad general variables
 
-$primary_border_color: $gray-lighter-SP;
+// $primary_border_color: $gray-lighter-SP;
 
-$link_color:  $blue-SP;
+// $link_color:  $blue-SP;
 
-$link-color-visited: $blue-SP;
-$link-color-hover: lighten($blue-SP, 10%);
-$link-color-active: lighten($blue-SP, 10%);
+// $link-color-visited: $blue-SP;
+// $link-color-hover: lighten($blue-SP, 10%);
+// $link-color-active: lighten($blue-SP, 10%);

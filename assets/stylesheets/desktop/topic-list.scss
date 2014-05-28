@@ -24,6 +24,8 @@
     }
 
     &.category-dropdown-button {
+      min-width: 0;
+
       i:before {
         content: '\f0d7'; // caret down instead of right
       }
@@ -39,11 +41,11 @@
   border: none;
 
   a.title {
-    color: $link-color;
+    color: $tertiary;
   }
 
   a.title:visited:not(.badge-notification) {
-    color: $link-color-visited;
+    color: $tertiary;
   }
 
   > tbody > tr {
@@ -88,7 +90,7 @@
 
   .avatar {
     &.latest {
-      @include box-shadow(inset 0 0 0 1px $blue-SP);
+      @include box-shadow(0 0 0 1px $blue-SP); // don't use inset - makes some avatars not receive the border (e.g. ralphm's photo from gravatar)
     }
   }
 
@@ -96,7 +98,7 @@
     .badge-category {
       &[href] {
         display: block;
-        padding: 6px 6px;
+        padding: 7px 6px;
         text-align: center;
       }
     }

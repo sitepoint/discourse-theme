@@ -11,7 +11,7 @@
     background-color: #fff;
     background-image: none !important; // disallow display of custom user profile backgrounds since the feature is incompatible with our layout https://github.com/discourse/discourse/pull/2299
     border: 1px solid $gray-lighter-SP;
-    color: $black;
+    color: $primary;
 
     .details {
       padding: 0;
@@ -30,7 +30,7 @@
       }
 
       a[href] {
-        color: $link-color;
+        color: $tertiary;
       }
 
       img.avatar {
@@ -60,7 +60,7 @@
           text-shadow: none;
 
           a[href] {
-            color: $link-color;
+            color: $tertiary;
             text-decoration: none;
             text-shadow: none;
           }
@@ -98,6 +98,16 @@
     .controls {
       border-top: 1px solid $gray-lighter-SP;
       background-color: $gray-bg-SP;
+    }
+
+    &.group {
+      .details {
+        padding: 20px;
+
+        &:after {
+          display: none;
+        }
+      }
     }
   }
 
