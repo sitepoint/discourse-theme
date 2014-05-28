@@ -99,6 +99,16 @@
       border-top: 1px solid $gray-lighter-SP;
       background-color: $gray-bg-SP;
     }
+
+    &.group {
+      .details {
+        padding: 20px;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
   }
 
   .user-stream {
