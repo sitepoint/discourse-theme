@@ -44,6 +44,8 @@ register_asset "javascripts/discourse/templates/navigation/default.js.handlebars
 register_asset "javascripts/discourse/templates/navigation/categories.js.handlebars" # SP customization: ALL CATEGORIES page: add btn-primary class to the "+ Create Category" button to easily achieve our coloring
 register_asset "javascripts/discourse/templates/navigation/category.js.handlebars" # SP customization: STANDARD CATEGORY page: add btn-primary class to the "+ Create Topic" button to easily achieve our coloring
 
+# Templates - admin
+register_asset "javascripts/admin/templates/users_list.js.handlebars" # SP customization: include IP in user list
 
 # Views
 register_asset "javascripts/discourse/views/post_menu_view.js" # SP customization: post page: add 'btn' class to the Show Replies and Reply buttons
