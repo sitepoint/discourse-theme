@@ -249,6 +249,11 @@ span.post-count {
 }
 
 
+.post-hidden {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
 .user-title {
   color: $primary;
   font-size: 100%;
