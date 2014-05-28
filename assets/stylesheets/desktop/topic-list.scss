@@ -90,7 +90,7 @@
 
   .avatar {
     &.latest {
-      @include box-shadow(inset 0 0 0 1px $blue-SP);
+      @include box-shadow(0 0 0 1px $blue-SP); // don't use inset - makes some avatars not receive the border (e.g. ralphm's photo from gravatar)
     }
   }
 
