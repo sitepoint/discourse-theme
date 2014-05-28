@@ -16,6 +16,8 @@
 .badge-category,
 .badge-category-parent {
   i.fa {
+    line-height: 0; // ensure the icon doesn't increase the height of its inline container element (e.g. in the extra-info in topic page heading, or icons in hamburger header menu causing broken layout)
+
     &.fa-caret-right {
       font-size: 18px; // dropdown caret
       vertical-align: -2px;
