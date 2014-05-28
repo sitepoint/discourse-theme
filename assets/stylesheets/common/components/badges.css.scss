@@ -40,6 +40,8 @@
 
 .badge-category {
   @include border-radius-all($border-radius-default-SP);
+  min-width: 80px;
+  text-align: center;
 }
 
 

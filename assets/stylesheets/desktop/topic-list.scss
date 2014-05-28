@@ -24,6 +24,8 @@
     }
 
     &.category-dropdown-button {
+      min-width: 0;
+
       i:before {
         content: '\f0d7'; // caret down instead of right
       }
@@ -96,7 +98,7 @@
     .badge-category {
       &[href] {
         display: block;
-        padding: 6px 6px;
+        padding: 7px 6px;
         text-align: center;
       }
     }
