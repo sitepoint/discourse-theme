@@ -110,7 +110,7 @@
                href="#"
                title='{{i18n user.avatar.title}}'
                id="current-user">
-                 {{boundAvatar currentUser imageSize="medium" }}
+                 {{bound-avatar currentUser "medium"}}
             </a>
           </li>
         {{/if}}
@@ -130,7 +130,7 @@
 
     {{#unless showExtraInfo}}
       <div class="header-links-wrapper clearfix">
-        <a class="header-link" href="http://www.sitepoint.com" tabindex="">sitepoint.com</a>
+        <a class="header-link" href="http://www.sitepoint.com" tabindex="">Articles</a>
         <a class="header-link" target="_blank" href="https://learnable.com/topics/all/book?utm_source=sitepoint&utm_medium=link&utm_content=top-nav" tabindex="">Books</a>
         <a class="header-link" target="_blank" href="https://learnable.com/topics/all/course?utm_source=sitepoint&utm_medium=link&utm_content=top-nav" tabindex="">Courses</a>
       </div>
@@ -147,11 +147,11 @@
               <span class="private-message-glyph">{{icon envelope}}</span>
             {{/if}}
           {{#if topic.category.parentCategory}}
-            {{boundCategoryLink topic.category.parentCategory}}
+            {{bound-category-link topic.category.parentCategory}}
           {{/if}}
-          {{boundCategoryLink topic.category}}
+          {{bound-category-link topic.category}}
           {{#if topic.details.loaded}}
-            {{topicStatus topic=topic}}
+            {{topic-status topic=topic}}
             <a class='topic-link' href='{{unbound topic.url}}' {{action jumpToTopPost}}>{{{topic.fancy_title}}}</a>
           {{else}}
             {{#if topic.errorLoading}}
