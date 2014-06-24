@@ -1,3 +1,30 @@
+// import PostMenuView from 'discourse/views/post-menu';
+
+// Helper class for rendering a button
+var Button = function(action, label, icon, opts) {
+  this.action = action;
+  this.label = label;
+
+  if (typeof icon === "object") {
+    this.opts = icon;
+  } else {
+    this.icon = icon;
+  }
+  this.opts = this.opts || opts || {};
+};
+
+Button.prototype.render = function(buffer) {
+  buffer.push("<button title=\"" + I18n.t(this.label) + "\"");
+  if (this.opts.className) { buffer.push(" class=\"" + this.opts.className + "\""); }
+  if (this.opts.shareUrl) { buffer.push(" data-share-url=\"" + this.opts.shareUrl + "\""); }
+  buffer.push(" data-action=\"" + this.action + "\">");
+  if (this.icon) { buffer.push("<i class=\"fa fa-" + this.icon + "\"></i>"); }
+  if (this.opts.textLabel) { buffer.push(I18n.t(this.opts.textLabel)); }
+  if (this.opts.innerHTML) { buffer.push(this.opts.innerHTML); }
+  buffer.push("</button>");
+};
+
+// PostMenuView.reopen({
 Discourse.PostMenuView.reopen({
   // Replies Button
   renderReplies: function(post, buffer) {
@@ -17,13 +44,16 @@ Discourse.PostMenuView.reopen({
   },
 
   // Reply button
-  renderReply: function(post, buffer) {
+  buttonForReply: function() {
     if (!this.get('controller.model.details.can_create_post')) return;
-    buffer.push("<button title=\"" +
-                 (I18n.t("post.controls.reply")) +
-                 // SP CUSTOMIZATION BEGIN
-                 "\" class='create btn' data-action=\"reply\"><i class='fa fa-reply'></i><span class='btn-text'>" +
-                 // SP CUSTOMIZATION END
-                 (I18n.t("topic.reply.title")) + "</span></button>");
+    // SP CUSTOMIZATION BEGIN
+    var options = {className: 'create btn'};
+    // SP CUSTOMIZATION END
+
+    if(!Discourse.Mobile.mobileView) {
+      options.textLabel = 'topic.reply.title';
+    }
+
+    return new Button('reply', 'post.controls.reply', 'reply', options);
   }
 });

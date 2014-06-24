@@ -66,7 +66,12 @@ register_asset "javascripts/admin/templates/users_list.js.handlebars"
 
 
 ### Views ###
-register_asset "javascripts/discourse/views/post_menu_view.js" # SP customization: post page: add 'btn' class to the Show Replies and Reply buttons
+
+# SP customization: post page (http://discourse.vm/t/feedbacks-on-the-imported-data/192):
+# add 'btn' class to the Show Replies and Reply buttons (to achieve e.g. rounded corners), change Show Replies expand/contract icons from chevron to caret
+register_asset "javascripts/discourse/views/post_menu_view.js"
+# ES6-style not working yet (Discourse.PostMenuView = require('discourse/plugins//discourse/views/post_menu').default; in transpiled file says cannot read prop default of undefined)
+# register_asset "javascripts/discourse/views/post_menu.js.es6"
 
 
 
