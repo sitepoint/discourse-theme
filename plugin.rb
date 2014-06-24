@@ -39,7 +39,9 @@ register_asset "javascripts/discourse/models/category_list.js"
 
 
 ### Templates ###
-register_asset "javascripts/discourse/templates/discovery/topics.js.handlebars" # SP customization: category page - topic heading row titles (icons instead of text)
+
+# SP customization: category page (http://discourse.vm/category/community): topics table heading - use icons instead of text
+register_asset "javascripts/discourse/templates/discovery/topics.js.handlebars"
 
 register_asset "javascripts/discourse/templates/header.js.handlebars" # SP customization: custom header
 
