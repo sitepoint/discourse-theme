@@ -32,26 +32,35 @@ after_initialize do
 end
 
 
-# Models
-register_asset "javascripts/discourse/models/category_list.js" # SP customization: category page - don't display featured_users avatars
+### Models ###
+
+# SP customization: categories list page (http://discourse.vm/): don't display featured_users avatars next to the category name in the table
+register_asset "javascripts/discourse/models/category_list.js"
 
 
-# Templates
+### Templates ###
 register_asset "javascripts/discourse/templates/discovery/topics.js.handlebars" # SP customization: category page - topic heading row titles (icons instead of text)
 
 register_asset "javascripts/discourse/templates/header.js.handlebars" # SP customization: custom header
 
-register_asset "javascripts/discourse/templates/navigation/default.js.handlebars" # SP customization: /latest page: add btn-primary class to the "+ Create Topic" button to easily achieve our coloring
+# SP customization: /latest page (http://discourse.vm/latest): add btn-primary class to the "+ Create Topic" button to easily achieve our coloring
+register_asset "javascripts/discourse/templates/navigation/default.js.handlebars"
+
 register_asset "javascripts/discourse/templates/navigation/categories.js.handlebars" # SP customization: ALL CATEGORIES page: add btn-primary class to the "+ Create Category" button to easily achieve our coloring
 
 # SP customization: STANDARD CATEGORY page (http://discourse.vm/category/community): add btn-primary class to the "+ Create Topic" button to easily achieve our coloring
 register_asset "javascripts/discourse/templates/navigation/category.js.handlebars"
 
-# Templates - admin
+
+
+### Templates - admin ###
 register_asset "javascripts/admin/templates/users_list.js.handlebars" # SP customization: include IP in user list
 
-# Views
+
+
+### Views ###
 register_asset "javascripts/discourse/views/post_menu_view.js" # SP customization: post page: add 'btn' class to the Show Replies and Reply buttons
+
 
 
 # Stylesheets
