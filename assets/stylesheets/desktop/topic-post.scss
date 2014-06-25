@@ -283,17 +283,21 @@ span.post-count {
 .gutter {
   float: right;
   // min-height: 30px; // the gutter holds the 'Reply as new topic' link, and links to posts in other threads
-}
 
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+}
 
 .topic-body {
+  box-sizing: border-box;
+  float: none;
+  padding-left: 55px;
   padding-top: 13px;
-}
+  width: 100%;
 
-
-@media screen and (max-width: 960px) {
-  .gutter {
-    display: none;
+  @media screen and (max-width: 960px) {
+    width: 750px;
   }
 }
 
