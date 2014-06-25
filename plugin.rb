@@ -75,9 +75,13 @@ register_asset "javascripts/discourse/views/post_menu.js"
 
 
 
-# Stylesheets
+### Stylesheets ###
+
 register_asset("stylesheets/common/foundation/variables.scss", :variables)
+
+# in post metadata area, increase font size and change color of poster's username to blue
 register_asset "stylesheets/common/base/topic-post.scss"
+
 register_asset "stylesheets/common/components/badges.css.scss"
 register_asset "stylesheets/common/components/buttons.scss"
 register_asset "stylesheets/common/components/navs.scss"
@@ -85,7 +89,10 @@ register_asset "stylesheets/desktop/compose.scss"
 register_asset "stylesheets/desktop/discourse.scss"
 register_asset "stylesheets/desktop/header.scss"
 register_asset "stylesheets/desktop/topic-list.scss"
+
+# custom styling of a topic page (container sizes, opacities, colors, icon glyphs etc.)
 register_asset "stylesheets/desktop/topic-post.scss"
+
 register_asset "stylesheets/desktop/topic.scss"
 register_asset "stylesheets/desktop/user.scss"
 

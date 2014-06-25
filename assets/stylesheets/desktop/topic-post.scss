@@ -127,7 +127,6 @@ nav.post-controls {
 
 .topic-map {
   background-color: $gray-bg-SP;
-  border: none;
 
   h4 {
     color: $gray-sitepoint-header-SP;
@@ -244,9 +243,10 @@ span.post-count {
 }
 
 
-.contents .cooked {
-  margin-right: 120px; // to avoid the edit count icon
-}
+// TODO: check wrt 0b52e20bf
+// .contents .cooked {
+//   margin-right: 120px; // to avoid the edit count icon
+// }
 
 
 .post-hidden {
@@ -291,48 +291,10 @@ span.post-count {
 }
 
 
-//columns
-
-.span14 {
-  padding-right: 0;
-  width: 94%;
-} //main content
-
-// .span2 {
-//   width: 9%;
-
-//   .names {
-//     display: inline-block;
-//     margin-left: 6px;
-//     vertical-align: top;
-//     width: calc(100% - 56px); // calc() is Android 4.4+
-//   }
-// }
-// .embedded-posts {
-//   .span2 {
-//     width: 9%;
-//   }
-// }
-
-// .span11 {
-//   width: 83%;
-//   padding-left: 2%;
-//   padding-right: 1%;
-// }
-// .span5 {
-//   width: 19%;
-//   padding-left: 1%;
-// }
-
-
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 960px) {
   .gutter {
     display: none;
   }
-  .span14 {
-    width: 93%;
-    max-width: 880px;
-  } //main content
 }
 
 
