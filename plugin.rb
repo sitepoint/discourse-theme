@@ -79,9 +79,6 @@ register_asset "javascripts/discourse/views/post_menu.js"
 
 register_asset("stylesheets/common/foundation/variables.scss", :variables)
 
-# in post metadata area, increase font size and change color of poster's username to blue
-register_asset "stylesheets/common/base/topic-post.scss"
-
 # make badges wide by default, change category dropdown caret style, don't display parent category, unread count notification color etc.
 register_asset "stylesheets/common/components/badges.css.scss"
 
@@ -91,11 +88,21 @@ register_asset "stylesheets/common/components/buttons.scss"
 # pill nav (categories page) and stacked nav (user profile page) with rounded corners, bordered passive state and red bg borderless active state, custom carets etc.
 register_asset "stylesheets/common/components/navs.scss"
 
+# reply pane that slides up to compose message on topic page: custom caret symbols
 register_asset "stylesheets/desktop/compose.scss"
+
+# quoted post left border color on topic page, hard corners and no default border on avatars
 register_asset "stylesheets/desktop/discourse.scss"
+
+# header: device-independent item colors and reset of badges back to inline display in hamburger menu
+register_asset "stylesheets/common/base/header.scss"
+# header: desktop - expand header to full viewport width, styling of custom links and logo
 register_asset "stylesheets/desktop/header.scss"
+
 register_asset "stylesheets/desktop/topic-list.scss"
 
+# in post metadata area, increase font size and change color of poster's username to blue
+register_asset "stylesheets/common/base/topic-post.scss"
 # custom styling of a topic page (container sizes, opacities, colors, icon glyphs etc.)
 register_asset "stylesheets/desktop/topic-post.scss"
 
