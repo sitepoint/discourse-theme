@@ -107,6 +107,17 @@
 
 
 #topic-list.categories {
+  // need to set the colors again because of specificity in vendor file
+  > tbody > tr {
+    &:nth-of-type(odd) {
+      background-color: transparent;
+    }
+
+    &:nth-of-type(even) {
+      background-color: $gray-bg-SP;
+    }
+  }
+
   .category{
     .badge-category.bigger {
       min-width: 100px;

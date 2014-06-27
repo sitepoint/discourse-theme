@@ -99,6 +99,7 @@ register_asset "stylesheets/common/base/header.scss"
 # header: desktop - expand header to full viewport width, styling of custom links and logo
 register_asset "stylesheets/desktop/header.scss"
 
+# navigation style, category badges, row background colors, carets, latest poster avatar highlight style etc.
 register_asset "stylesheets/desktop/topic-list.scss"
 
 # in post metadata area, increase font size and change color of poster's username to blue
