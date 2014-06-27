@@ -35,7 +35,7 @@
 }
 
 .badge-category-parent {
-  display: none;
+  display: none !important; // !important because of .category-links li:not(.heading) a { display: inline-block; } in base/header.scss
 }
 
 .badge-category {

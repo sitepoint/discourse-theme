@@ -125,5 +125,11 @@
     .avatar-link {
       margin-right: 20px;
     }
+
+    .title {
+      .badge-category { // SP-specific rule
+        margin-left: 10px;
+      }
+    }
   }
 }
