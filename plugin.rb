@@ -107,7 +107,9 @@ register_asset "stylesheets/common/base/topic-post.scss"
 # custom styling of a topic page (container sizes, opacities, colors, icon glyphs etc.)
 register_asset "stylesheets/desktop/topic-post.scss"
 
+# topic page title vs badge vert. alignment, progress indicator styling, post gutter ("Reply as new topic" etc. buttons) repositioning,
 register_asset "stylesheets/desktop/topic.scss"
+
 register_asset "stylesheets/desktop/user.scss"
 
 register_asset "stylesheets/sitepoint/typography.scss"

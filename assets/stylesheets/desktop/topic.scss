@@ -29,30 +29,18 @@ a.reply-new {
   margin-bottom: 10px;
 }
 
+
+#topic-progress-expanded {
+  left: 425px;
+  @include box-shadow(0);
+}
+
 #topic-progress {
+  color: $primary;
   left: 425px;
 
-  .nums {
-    color: $primary;
-  }
-
-  button {
-    color: #000;
-    left: 11px;
-
-    &:nth-of-type(2) {
-      right: 11px;
-    }
-
-    i {
-      &.fa-arrow-circle-up:before {
-        content: '\f0d8'; // change arrow-circle to caret
-      }
-
-      &.fa-arrow-circle-down:before {
-        content: '\f0d7'; // change arrow-circle to caret
-      }
-    }
+  i.fa {
+    right: 15px;
   }
 
   h4 {
