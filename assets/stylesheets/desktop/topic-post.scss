@@ -82,6 +82,12 @@ nav.post-controls {
 
 
 .embedded-posts {
+  .topic-body {
+    padding-left: 70px;
+    width: 90%;
+  }
+
+  // top means "in reply to expansion" above a post
   &.top {
     margin-left: 77px;
     max-width: 912px;
@@ -127,7 +133,6 @@ nav.post-controls {
 
 .topic-map {
   background-color: $gray-bg-SP;
-  border: none;
 
   h4 {
     color: $gray-sitepoint-header-SP;
@@ -244,9 +249,10 @@ span.post-count {
 }
 
 
-.contents .cooked {
-  margin-right: 120px; // to avoid the edit count icon
-}
+// TODO: check wrt 0b52e20bf
+// .contents .cooked {
+//   margin-right: 120px; // to avoid the edit count icon
+// }
 
 
 .post-hidden {
@@ -283,56 +289,22 @@ span.post-count {
 .gutter {
   float: right;
   // min-height: 30px; // the gutter holds the 'Reply as new topic' link, and links to posts in other threads
-}
 
-
-.topic-body {
-  padding-top: 13px;
-}
-
-
-//columns
-
-.span14 {
-  padding-right: 0;
-  width: 94%;
-} //main content
-
-// .span2 {
-//   width: 9%;
-
-//   .names {
-//     display: inline-block;
-//     margin-left: 6px;
-//     vertical-align: top;
-//     width: calc(100% - 56px); // calc() is Android 4.4+
-//   }
-// }
-// .embedded-posts {
-//   .span2 {
-//     width: 9%;
-//   }
-// }
-
-// .span11 {
-//   width: 83%;
-//   padding-left: 2%;
-//   padding-right: 1%;
-// }
-// .span5 {
-//   width: 19%;
-//   padding-left: 1%;
-// }
-
-
-@media screen and (max-width: 966px) {
-  .gutter {
+  @media screen and (max-width: 960px) {
     display: none;
   }
-  .span14 {
-    width: 93%;
-    max-width: 880px;
-  } //main content
+}
+
+.topic-body {
+  box-sizing: border-box;
+  float: none;
+  padding-left: 55px;
+  padding-top: 13px;
+  width: 100%;
+
+  @media screen and (max-width: 960px) {
+    width: 750px;
+  }
 }
 
 

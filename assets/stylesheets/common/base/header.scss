@@ -1,0 +1,44 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+
+// HEADER OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+
+
+
+.d-header {
+  background-color: $gray-sitepoint-header-bg-SP;
+
+  .current-username {
+    a {
+      color: #fff;
+      margin-top: 12px;
+    }
+  }
+
+  .icons {
+    .icon {
+      color: $gray-light-SP;
+
+      &:hover {
+        background-color: transparent;
+        color: #fff;
+      }
+      &:active {
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+// Dropdowns
+// --------------------------------------------------
+
+.d-dropdown {
+  .category {
+    .badge-category {
+      min-width: 0;
+      text-align: left;
+    }
+  }
+}

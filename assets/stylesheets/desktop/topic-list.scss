@@ -17,6 +17,8 @@
   }
 
   a.badge-category {
+    min-width: 0;
+
     &.home {
       background-color: $gray-bg-SP !important; // to override inline style
       color: $gray-text-SP !important; // to override inline style
@@ -24,7 +26,6 @@
     }
 
     &.category-dropdown-button {
-      min-width: 0;
 
       i:before {
         content: '\f0d7'; // caret down instead of right
@@ -107,6 +108,17 @@
 
 
 #topic-list.categories {
+  // need to set the colors again because of specificity in vendor file
+  > tbody > tr {
+    &:nth-of-type(odd) {
+      background-color: transparent;
+    }
+
+    &:nth-of-type(even) {
+      background-color: $gray-bg-SP;
+    }
+  }
+
   .category{
     .badge-category.bigger {
       min-width: 100px;

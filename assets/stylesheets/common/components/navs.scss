@@ -53,7 +53,7 @@
 // --------------------------------------------------
 
 .nav-stacked {
-  border: none;
+  border-radius: $border-radius-default-SP;
 
   > li {
     border: none;
