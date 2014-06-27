@@ -82,6 +82,12 @@ nav.post-controls {
 
 
 .embedded-posts {
+  .topic-body {
+    padding-left: 70px;
+    width: 90%;
+  }
+
+  // top means "in reply to expansion" above a post
   &.top {
     margin-left: 77px;
     max-width: 912px;
