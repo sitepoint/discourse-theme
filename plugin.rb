@@ -82,9 +82,15 @@ register_asset("stylesheets/common/foundation/variables.scss", :variables)
 # in post metadata area, increase font size and change color of poster's username to blue
 register_asset "stylesheets/common/base/topic-post.scss"
 
+# make badges wide by default, change category dropdown caret style, don't display parent category, unread count notification color etc.
 register_asset "stylesheets/common/components/badges.css.scss"
+
+# default radius, background color of primary button from blue to red
 register_asset "stylesheets/common/components/buttons.scss"
+
+# pill nav (categories page) and stacked nav (user profile page) with rounded corners, bordered passive state and red bg borderless active state, custom carets etc.
 register_asset "stylesheets/common/components/navs.scss"
+
 register_asset "stylesheets/desktop/compose.scss"
 register_asset "stylesheets/desktop/discourse.scss"
 register_asset "stylesheets/desktop/header.scss"
