@@ -1,7 +1,3 @@
-// $base-font-family: "Times", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-// // OUR VARS ONLY:
-
 // SP-specific uncategorized vars
 $border-radius-default-SP: 3px;
 $font-weight-medium-bold-SP: 500;
@@ -29,30 +25,3 @@ $tertiary: $blue-SP;
 // 0527: '$secondary' - always $gray-text-SP?
 // 0527: '$tertiary' - always $red-SP? (No, in foundation/base.scss blue links are defined as $tertiary)
 // 0527: '$quarternary' - always $red-SP? , resp. $red?
-
-
-
-// Primary button
-// $btn-primary-border-color: $red-SP; // 0527: seems to not be used
-// $btn-primary-background-color: $red-SP; // 0527: newspeak "$tertiary"
-// $btn-primary-background-color-dark: darken($red-SP, 10%);
-// $btn-primary-background-color-light: lighten($red-SP, 10%);
-
-// Pill nav
-// $nav-pills-color: $gray-text-SP;
-// $nav-pills-background-color-active: $red-SP;
-
-// Stacked nav
-// $nav-stacked-color: $gray-text-SP;
-// $nav-stacked-background-color-active: $red-SP;
-
-
-// Broad general variables
-
-// $primary_border_color: $gray-lighter-SP;
-
-// $link_color:  $blue-SP;
-
-// $link-color-visited: $blue-SP;
-// $link-color-hover: lighten($blue-SP, 10%);
-// $link-color-active: lighten($blue-SP, 10%);

@@ -70,14 +70,19 @@ register_asset "javascripts/admin/templates/users_list.js.handlebars"
 # SP customization: post page (http://discourse.vm/t/feedbacks-on-the-imported-data/192):
 # add 'btn' class to the Show Replies and Reply buttons (to achieve e.g. rounded corners), change Show Replies expand/contract icons from chevron to caret
 register_asset "javascripts/discourse/views/post_menu.js"
-# ES6-style not working yet (Discourse.PostMenuView = require('discourse/plugins//discourse/views/post_menu').default; in transpiled file says cannot read prop default of undefined)
 # register_asset "javascripts/discourse/views/post_menu.js.es6"
+# ^^^ ES6-style not working yet (Discourse.PostMenuView = require('discourse/plugins//discourse/views/post_menu').default; in transpiled file says cannot read prop default of undefined)
 
 
 
 ### Stylesheets ###
 
+# SP-specific variables
 register_asset("stylesheets/common/foundation/variables.scss", :variables)
+
+# media-queried rules for fontsizes [helps reduce the line count in module stylesheets, helps keep the number of different sizes in check]
+register_asset "stylesheets/sitepoint/typography.scss"
+
 
 # make badges wide by default, change category dropdown caret style, don't display parent category, unread count notification color etc.
 register_asset "stylesheets/common/components/badges.css.scss"
@@ -85,7 +90,7 @@ register_asset "stylesheets/common/components/badges.css.scss"
 # default radius, background color of primary button from blue to red
 register_asset "stylesheets/common/components/buttons.scss"
 
-# pill nav (categories page) and stacked nav (user profile page) with rounded corners, bordered passive state and red bg borderless active state, custom carets etc.
+# pill nav (categories page) and stacked nav (user/group profile page) with rounded corners, bordered passive state and red bg borderless active state, custom carets etc.
 register_asset "stylesheets/common/components/navs.scss"
 
 # reply pane that slides up to compose message on topic page: custom caret symbols
@@ -110,6 +115,5 @@ register_asset "stylesheets/desktop/topic-post.scss"
 # topic page title vs badge vert. alignment, progress indicator styling, post gutter ("Reply as new topic" etc. buttons) repositioning,
 register_asset "stylesheets/desktop/topic.scss"
 
+# user profile and group profile pages: custom user info panel two-column layout and posts-list layout
 register_asset "stylesheets/desktop/user.scss"
-
-register_asset "stylesheets/sitepoint/typography.scss"

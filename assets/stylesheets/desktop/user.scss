@@ -11,6 +11,7 @@
     background-color: #fff;
     background-image: none !important; // disallow display of custom user profile backgrounds since the feature is incompatible with our layout https://github.com/discourse/discourse/pull/2299
     border: 1px solid $gray-lighter-SP;
+    border-radius: $border-radius-default-SP;
     color: $primary;
 
     .details {
@@ -78,10 +79,6 @@
 
         dl {
           margin: 0;
-        }
-
-        dd {
-          color: inherit;
         }
 
         dt {
