@@ -102,26 +102,28 @@ register_asset "stylesheets/common/components/buttons.scss"
 register_asset "stylesheets/common/components/navs.scss"
 
 # reply pane that slides up to compose message on topic page: custom caret symbols
-register_asset "stylesheets/desktop/compose.scss"
+register_asset "stylesheets/desktop/compose.scss", :desktop
 
 # quoted post left border color on topic page, hard corners and no default border on avatars
-register_asset "stylesheets/desktop/discourse.scss"
+register_asset "stylesheets/desktop/discourse.scss", :desktop
 
 # header: device-independent item colors and reset of badges back to inline display in hamburger menu
 register_asset "stylesheets/common/base/header.scss"
 # header: desktop - expand header to full viewport width, styling of custom links and logo
-register_asset "stylesheets/desktop/header.scss"
+register_asset "stylesheets/desktop/header.scss", :desktop
+# header: mobile - reduced paddings and icon widths, SP site links hidden
+register_asset "stylesheets/mobile/header.scss", :mobile
 
 # navigation style, category badges, row background colors, carets, latest poster avatar highlight style etc.
-register_asset "stylesheets/desktop/topic-list.scss"
+register_asset "stylesheets/desktop/topic-list.scss", :desktop
 
 # in post metadata area, increase font size and change color of poster's username to blue
 register_asset "stylesheets/common/base/topic-post.scss"
 # custom styling of a topic page (container sizes, opacities, colors, icon glyphs etc.)
-register_asset "stylesheets/desktop/topic-post.scss"
+register_asset "stylesheets/desktop/topic-post.scss", :desktop
 
 # topic page title vs badge vert. alignment, progress indicator styling, post gutter ("Reply as new topic" etc. buttons) repositioning,
-register_asset "stylesheets/desktop/topic.scss"
+register_asset "stylesheets/desktop/topic.scss", :desktop
 
 # user profile and group profile pages: custom user info panel two-column layout and posts-list layout
-register_asset "stylesheets/desktop/user.scss"
+register_asset "stylesheets/desktop/user.scss", :desktop
