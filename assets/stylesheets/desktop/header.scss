@@ -1,7 +1,7 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-// HEADER OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+// DESKTOP HEADER OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
 
 
 
@@ -10,25 +10,14 @@
 // --------------------------------------------------
 
 .d-header {
-  .container {
-    margin-left: 10px;
-    margin-right: 10px;
-    max-width: none;
-    width: auto;
-  }
 
-  // Sitepoint custom styles:
-  .logomark {
-    float: left; // so that left-floating .extra-info-wrapper can sit on logo's and link's right side
-    margin-top: 11px;
-    margin-right: 10px;
-  }
-
+  // Sitepoint custom style:
   .header-links-wrapper {
     float: right;
     margin-right: 50px;
   }
 
+  // Sitepoint custom style:
   .header-link {
     color: $gray-sitepoint-header-SP;
     display: inline-block;

@@ -13,5 +13,28 @@
     a {
       color: $tertiary;
     }
+
+    // SP custom rules:
+    &.Administrators {
+      a {
+        color: #dc2e17;
+      }
+    }
+    &.TeamLeaders {
+      a {
+        color: #011a74;
+      }
+    }
+    &.Advisors {
+      a {
+        color: #1b815c;
+      }
+    }
+    &.Mentors {
+      a {
+        color: #ba5401;
+      }
+    }
+
   }
 }
