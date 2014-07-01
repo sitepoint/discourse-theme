@@ -108,7 +108,9 @@ register_asset "stylesheets/mobile/components/navs.scss", :mobile
 # reply pane that slides up to compose message on topic page: custom caret symbols
 register_asset "stylesheets/desktop/compose.scss", :desktop
 
-# quoted post left border color on topic page, hard corners and no default border on avatars
+# topic page - quoted post - left border color (on mobile, the border next to the name has to be overidden again...)
+register_asset "stylesheets/common/base/discourse.scss"
+# desktop: hard corners and no default border on avatars
 register_asset "stylesheets/desktop/discourse.scss", :desktop
 
 # header: shared styles for item colors and reset of badges back to inline display in hamburger menu
@@ -129,6 +131,8 @@ register_asset "stylesheets/mobile/topic-list.scss", :mobile
 register_asset "stylesheets/common/base/topic-post.scss"
 # custom styling of a topic page (container sizes, opacities, colors, icon glyphs etc.)
 register_asset "stylesheets/desktop/topic-post.scss", :desktop
+# mobile - topic page: quoted post top part of left border color
+register_asset "stylesheets/mobile/topic-post.scss", :mobile
 
 # topic page title vs badge vert. alignment, progress indicator styling, post gutter ("Reply as new topic" etc. buttons) repositioning,
 register_asset "stylesheets/desktop/topic.scss", :desktop

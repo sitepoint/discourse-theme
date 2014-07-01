@@ -1,0 +1,11 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+@import "common/foundation/helpers";
+
+// MOBILE TOPIC POST OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+
+
+
+.quote .title {
+  border-left: 3px solid $red-SP;
+}

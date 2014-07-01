@@ -23,11 +23,21 @@
 
 
 /* 16 fixed */
-.topic-body .contents .cooked,
 #topic-progress,
 #topic-progress h4 {
   @include font-size(16);
 }
+
+
+/* 16 to 14 */
+.topic-body .contents .cooked {
+  @include font-size(14);
+
+  @include large-width {
+    @include font-size(16);
+  }
+}
+
 
 /* 15 fixed */
 .header-link {
