@@ -1,0 +1,72 @@
+// MOBILE TOPIC LISTS OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+
+
+// --------------------------------------------------
+// Topic lists
+// --------------------------------------------------
+
+// List controls
+// --------------------------------------------------
+
+.list-controls {
+  .btn:nth-of-type(1) {
+    margin-left: 0;
+  }
+}
+
+
+// Base list
+// --------------------------------------------------
+
+#topic-list {
+  border-top: 1px solid $gray-lighter-SP;
+
+  // SP custom rule
+  thead th { // this can't be just 'th' because then the category headers on the Categories page would be hidden
+    display: none; // Remove the 7-column THEAD that leaks into the Mobile View from the default template override
+                   // and causes the 1-column topic list underneath to be only 15% wide.
+  }
+
+  > tbody > tr {
+    &.category-description {
+      td {
+        color: $gray-text-SP;
+      }
+    }
+  }
+
+
+  .main-link {
+    font-size: 14px;
+  }
+
+
+  .num {
+    margin-top: 5px; // line-alignment with category badge, and top separation from badge if text wraps on a new line due to long last poster's username
+  }
+}
+
+
+// Category list
+// --------------------------------------------------
+
+.category-list-item {
+  // SP custom rule
+  td {
+    border-bottom: none !important; // reset back for Categories page
+  }
+
+  > footer {
+    border-bottom: none;
+  }
+}
+
+
+// Misc. stuff
+// --------------------------------------------------
+
+.list-controls {
+  .badge-category {
+    margin-top: 0;
+  }
+}

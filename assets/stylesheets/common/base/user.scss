@@ -1,0 +1,40 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+
+// SHARED USER PROFILE PAGE OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+
+
+// SP custom rule
+.user-main {
+  .about {
+    // background: linear-gradient(to right, #fff, #fff 537px, $gray-lighter-SP 537px, $gray-lighter-SP 538px, #fff 538px, #fff); // doesn't work, the thinnest line it can render is 2px
+    background-color: #fff;
+    background-image: none !important; // disallow display of custom user profile backgrounds since the feature is incompatible with our layout https://github.com/discourse/discourse/pull/2299
+
+    .details {
+      .secondary {
+        background-color: #fff;
+
+        dt {
+          color: inherit; // for desktop
+
+          &:after {
+            content: ':\0000a0'; // ":""
+          }
+        }
+
+        dd {
+          color: inherit; // overrides color coming from default mobile stylesheet (do it here so that we don't create another override file just for one rule)
+        }
+      }
+    }
+  }
+
+  .user-stream {
+    .item {
+      &:nth-child(even) {
+        background-color: $gray-bg-SP;
+      }
+    }
+  }
+}
