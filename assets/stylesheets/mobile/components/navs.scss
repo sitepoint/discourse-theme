@@ -1,0 +1,20 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+
+// MOBILE NAVS OVERRIDES.
+// AS OF 20140701 THIS FILE HAS NO VENDOR FILE EQUIVALENT
+
+
+// Pill nav
+// --------------------------------------------------
+
+.nav-pills {
+  > li {
+    margin-right: 5px;
+
+     > a {
+      border: 1px solid $gray-lighter-SP;
+      border-radius: $border-radius-default-SP;
+    }
+  }
+}

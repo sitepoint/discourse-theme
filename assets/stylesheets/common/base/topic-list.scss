@@ -1,0 +1,62 @@
+@import "common/foundation/variables";
+@import "common/foundation/mixins";
+
+// SHARED TOPIC LISTS OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+
+
+// --------------------------------------------------
+// Topic lists
+// --------------------------------------------------
+
+// List controls
+// --------------------------------------------------
+
+// SP custom rule
+.list-controls {
+  .category-dropdown-button {
+    border-left: none;
+  }
+
+  a.badge-category {
+    min-width: 0;
+
+    &.category-dropdown-button {
+      i:before {
+        content: '\f0d7'; // caret down instead of right
+      }
+    }
+  }
+}
+
+
+// Base list
+// --------------------------------------------------
+
+// SP custom rule
+#topic-list {
+  a.title {
+    color: $tertiary;
+  }
+
+  a.title:visited:not(.badge-notification) {
+    color: $tertiary;
+  }
+
+  td {
+    border-bottom: 1px solid $gray-lighter-SP;
+  }
+}
+
+
+// SP custom rule
+ol.category-breadcrumb {
+  li {
+    @include border-radius-all($border-radius-default-SP);
+    border: 1px solid $gray-lighter-SP;
+    overflow: hidden; // so that rounded corners are not overflown
+
+    > .badge-category {
+      @include border-radius-all(0);
+    }
+  }
+}

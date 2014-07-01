@@ -51,6 +51,8 @@ register_asset "javascripts/discourse/models/category_list.js"
 
 # SP customization: category page (http://discourse.vm/category/community): topics table heading - use icons instead of text
 register_asset "javascripts/discourse/templates/discovery/topics.js.handlebars"
+# DOES NOTHING (attempt 1:1 copy of the default mobile template to re-override the desktop template above for Mobile View)
+# register_asset "javascripts/discourse/templates/mobile/discovery/topics.js.handlebars"
 
 # SP customization: custom header
 register_asset "javascripts/discourse/templates/header.js.handlebars"
@@ -100,6 +102,8 @@ register_asset "stylesheets/common/components/buttons.scss"
 
 # pill nav (categories page) and stacked nav (user/group profile page) with rounded corners, bordered passive state and red bg borderless active state, custom carets etc.
 register_asset "stylesheets/common/components/navs.scss"
+# mobile: pill nav - visually ungroup so that pills can wrap to next line in a visually attractive way. AS OF 20140701 THIS FILE HAS NO VENDOR FILE EQUIVALENT
+register_asset "stylesheets/mobile/components/navs.scss", :mobile
 
 # reply pane that slides up to compose message on topic page: custom caret symbols
 register_asset "stylesheets/desktop/compose.scss", :desktop
@@ -107,15 +111,19 @@ register_asset "stylesheets/desktop/compose.scss", :desktop
 # quoted post left border color on topic page, hard corners and no default border on avatars
 register_asset "stylesheets/desktop/discourse.scss", :desktop
 
-# header: device-independent item colors and reset of badges back to inline display in hamburger menu
+# header: shared styles for item colors and reset of badges back to inline display in hamburger menu
 register_asset "stylesheets/common/base/header.scss"
 # header: desktop - expand header to full viewport width, styling of custom links and logo
 register_asset "stylesheets/desktop/header.scss", :desktop
 # header: mobile - reduced paddings and icon widths, SP site links hidden
 register_asset "stylesheets/mobile/header.scss", :mobile
 
-# navigation style, category badges, row background colors, carets, latest poster avatar highlight style etc.
+# shared-styles for category page and categories page - pill nav style
+register_asset "stylesheets/common/base/topic-list.scss"
+# desktop: navigation style, category badges, row background colors, carets, latest poster avatar highlight style etc.
 register_asset "stylesheets/desktop/topic-list.scss", :desktop
+# mobile: remove leaked THEAD from override template, tweak margins
+register_asset "stylesheets/mobile/topic-list.scss", :mobile
 
 # in post metadata area, increase font size and change color of poster's username to blue
 register_asset "stylesheets/common/base/topic-post.scss"
