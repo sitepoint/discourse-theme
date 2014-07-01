@@ -1,15 +1,12 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-// USER PROFILE PAGE OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+// DESKTOP USER PROFILE PAGE OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
 
 
 
 .user-main {
   .about {
-    // background: linear-gradient(to right, #fff, #fff 537px, $gray-lighter-SP 537px, $gray-lighter-SP 538px, #fff 538px, #fff); // doesn't work, the thinnest line it can render is 2px
-    background-color: #fff;
-    background-image: none !important; // disallow display of custom user profile backgrounds since the feature is incompatible with our layout https://github.com/discourse/discourse/pull/2299
     border: 1px solid $gray-lighter-SP;
     border-radius: $border-radius-default-SP;
     color: $primary;
@@ -82,12 +79,7 @@
         }
 
         dt {
-          color: inherit;
           float: left;
-
-          &:after {
-            content: ':\0000a0';
-          }
         }
       }
     }
@@ -116,10 +108,6 @@
     .item {
       padding-left: 20px;
       padding-right: 20px;
-
-      &:nth-child(even) {
-        background-color: $gray-bg-SP;
-      }
     }
 
     .avatar-link {

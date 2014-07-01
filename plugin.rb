@@ -137,5 +137,7 @@ register_asset "stylesheets/mobile/topic-post.scss", :mobile
 # topic page title vs badge vert. alignment, progress indicator styling, post gutter ("Reply as new topic" etc. buttons) repositioning,
 register_asset "stylesheets/desktop/topic.scss", :desktop
 
-# user profile and group profile pages: custom user info panel two-column layout and posts-list layout
+# shared: user profile and group profile pages: font and background colors
+register_asset "stylesheets/common/base/user.scss"
+# desktop: user profile and group profile pages: custom user info panel two-column layout and posts-list layout
 register_asset "stylesheets/desktop/user.scss", :desktop
