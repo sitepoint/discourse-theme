@@ -40,6 +40,11 @@ after_initialize do
 end
 
 
+# SP customization: add FAQ link to navs
+register_custom_html(extraNavItem: "<li id='faq-menu-item'><a href='/faq'>FAQ</a></li>")
+
+
+
 ### Models ###
 
 # SP customization: categories list page (http://discourse.vm): don't display featured_users avatars next to the category name in the table
