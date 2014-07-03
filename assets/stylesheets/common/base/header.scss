@@ -36,10 +36,26 @@
   .icons {
     .icon {
       color: $gray-light-SP;
+      border: 1px solid transparent; // prevent "flash of rounded bottom corners" as dropdown is opening
+      transition: background-color 300ms ease-out; // align transition with dropdown menu fadein transition
 
       &:hover {
         background-color: transparent;
+        border: 1px solid transparent; // prevent "flash of rounded bottom corners" as dropdown is opening
         color: #fff;
+      }
+      &:active {
+        color: #fff;
+      }
+    }
+
+    .active .icon { // when e.g. hamburger dropdown menu is opened
+      border: 1px solid #fff; // prevent "flash of rounded bottom corners" as dropdown is opening
+
+      &:hover {
+        border: 1px solid #fff; // prevent "flash of rounded bottom corners" as dropdown is opening
+        color: $gray-light-SP;
+        background-color: #fff;
       }
       &:active {
         color: #fff;
@@ -53,9 +69,23 @@
 // --------------------------------------------------
 
 .d-dropdown {
+  border-top-color: #fff;
+
+  // SP custom rule
+  .user-dropdown-links {
+    .badge-notification {
+      margin-right: 5px; // ensure horizontal separation between unread messages count and the word Messages
+    }
+  }
+
+
   .category {
+    margin-left: 0;
+    margin-right: 0;
+    width: 50%;
+
     .badge-category {
-      min-width: 0;
+      min-width: 0; // keep min-width despite 2 col layout to achieve 1) easier visual identification of cats and b) more room for notifications
       text-align: left;
     }
   }

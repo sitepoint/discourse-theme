@@ -162,10 +162,9 @@ nav.post-controls {
       padding: 15px 15px;
     }
 
-    a,
-    .number {
-      color: $primary;
-      font-weight: normal;
+    // SP custom rule
+    i {
+      color: $gray-sitepoint-header-SP; // since we have icons rather then texts in headings (similar to topic list table)
     }
   }
 
@@ -321,13 +320,15 @@ span.post-count {
 
 
 .read_restricted .gutter:before {
-  color: lighten($red-SP, 30%);
+  color: lighten($red-SP, 25%);
   content: "\f023";
+  // content: $fa-var-lock; // lock icon \f023
+  content: $fa-var-eye-slash; // eye-slash icon \f070
   position: absolute;
   top: auto;
-  bottom: 30px;
+  bottom: 0px;
   left: auto;
-  right: -90px;
+  right: -110px;
 }
 
 

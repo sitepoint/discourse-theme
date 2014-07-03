@@ -28,7 +28,8 @@
       vertical-align: -1px;
 
       &:before {
-        content: '\f023'; // restricted categories
+        // content: $fa-var-lock; // restricted categories (lock icon \f023)
+        content: $fa-var-eye-slash; // restricted categories (eye-slash icon \f070)
       }
     }
   }
