@@ -162,10 +162,9 @@ nav.post-controls {
       padding: 15px 15px;
     }
 
-    a,
-    .number {
-      color: $primary;
-      font-weight: normal;
+    // SP custom rule
+    i {
+      color: $gray-sitepoint-header-SP; // since we have icons rather then texts in headings (similar to topic list table)
     }
   }
 

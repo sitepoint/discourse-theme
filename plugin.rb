@@ -66,7 +66,8 @@ register_asset "javascripts/discourse/templates/navigation/categories.js.handleb
 # SP customization: STANDARD CATEGORY page (http://discourse.vm/category/community): add btn-primary class to the "+ Create Topic" button to easily achieve our coloring
 register_asset "javascripts/discourse/templates/navigation/category.js.handlebars"
 
-
+# SP customization: topic page (http://discourse.vm/t/feedbacks-on-the-imported-data/192): reorder topic-map so that headings are at the top like they used to be before 20140530
+register_asset "javascripts/discourse/templates/components/topic-map.js.handlebars"
 
 ### Templates - admin ###
 
@@ -77,7 +78,7 @@ register_asset "javascripts/admin/templates/users_list.js.handlebars"
 
 ### Views ###
 
-# SP customization: post page (http://discourse.vm/t/feedbacks-on-the-imported-data/192):
+# SP customization: topic page (http://discourse.vm/t/feedbacks-on-the-imported-data/192):
 # add 'btn' class to the Show Replies and Reply buttons (to achieve e.g. rounded corners), change Show Replies expand/contract icons from chevron to caret
 register_asset "javascripts/discourse/views/post_menu.js"
 # register_asset "javascripts/discourse/views/post_menu.js.es6"
