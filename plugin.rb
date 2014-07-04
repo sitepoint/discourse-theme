@@ -54,6 +54,9 @@ register_asset "javascripts/discourse/models/category_list.js"
 
 ### Templates ###
 
+# SP customisation: topic list row. put in tags
+register_asset "javascripts/discourse/templates/list/topic_list_item.js.handlebars"
+
 # SP customization: category page (http://discourse.vm/category/community): topics table heading - use icons instead of text
 register_asset "javascripts/discourse/templates/discovery/topics.js.handlebars"
 # DOES NOTHING (attempt 1:1 copy of the default mobile template to re-override the desktop template above for Mobile View)
