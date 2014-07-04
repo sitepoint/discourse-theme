@@ -74,6 +74,9 @@ register_asset "javascripts/discourse/templates/navigation/categories.js.handleb
 # SP customization: STANDARD CATEGORY page (http://discourse.vm/category/community): add btn-primary class to the "+ Create Topic" button to easily achieve our coloring
 register_asset "javascripts/discourse/templates/navigation/category.js.handlebars"
 
+# SP customization: topic page (http://discourse.vm/t/feedbacks-on-the-imported-data/192): add post number to topic-meta-data
+register_asset "javascripts/discourse/templates/post.js.handlebars"
+
 # SP customization: topic page (http://discourse.vm/t/feedbacks-on-the-imported-data/192): reorder topic-map so that headings are at the top like they used to be before 20140530
 register_asset "javascripts/discourse/templates/components/topic-map.js.handlebars"
 
@@ -136,7 +139,7 @@ register_asset "stylesheets/desktop/topic-list.scss", :desktop
 # mobile: remove leaked THEAD from override template, tweak margins
 register_asset "stylesheets/mobile/topic-list.scss", :mobile
 
-# in post metadata area, increase font size and change color of poster's username to blue
+# in post metadata area, increase font size and change color of poster's username to blue, ensure consistent vertical spacing betweet topic header and contents
 register_asset "stylesheets/common/base/topic-post.scss"
 # custom styling of a topic page (container sizes, opacities, colors, icon glyphs etc.)
 register_asset "stylesheets/desktop/topic-post.scss", :desktop

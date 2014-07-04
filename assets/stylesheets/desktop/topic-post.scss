@@ -248,12 +248,6 @@ span.post-count {
 }
 
 
-// TODO: check wrt 0b52e20bf
-// .contents .cooked {
-//   margin-right: 120px; // to avoid the edit count icon
-// }
-
-
 .post-hidden {
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -304,6 +298,11 @@ span.post-count {
   @media screen and (max-width: 960px) {
     width: 750px;
   }
+}
+
+.topic-avatar {
+  position: relative;
+  z-index: 1; // due to our custom topic-body flexible layout with left padding and negative margin, we need to pull the topic-avatar layer back over the topic-body so that avatar is clickable
 }
 
 

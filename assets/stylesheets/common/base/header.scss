@@ -37,7 +37,7 @@
     .icon {
       color: $gray-light-SP;
       border: 1px solid transparent; // prevent "flash of rounded bottom corners" as dropdown is opening
-      transition: background-color 300ms ease-out; // align transition with dropdown menu fadein transition
+      transition: background-color 167ms ease-out; // align transition with dropdown menu fadein transition
 
       &:hover {
         background-color: transparent;
@@ -54,11 +54,11 @@
 
       &:hover {
         border: 1px solid #fff; // prevent "flash of rounded bottom corners" as dropdown is opening
-        color: $gray-light-SP;
+        color: $gray-sitepoint-header-bg-SP;
         background-color: #fff;
       }
       &:active {
-        color: #fff;
+        color: #000;
       }
     }
   }
