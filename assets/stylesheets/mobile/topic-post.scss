@@ -9,3 +9,8 @@
 .quote .title {
   border-left: 3px solid $red-SP;
 }
+
+
+.user-title {
+  margin-right: 10px; // reduce margin to prevent the user group field in meta data pushing the post date on a new line
+}
