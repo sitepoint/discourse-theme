@@ -212,10 +212,6 @@ span.post-count {
 .extra-info-wrapper {
   max-width: 760px;
   margin-top: 4px;
-
-  .topic-link {
-    color: $gray-lighter-SP;;
-  }
 }
 
 @include medium-width {
@@ -327,7 +323,9 @@ span.post-count {
   top: auto;
   bottom: 0px;
   left: auto;
-  right: -110px;
+  right: 310px; // pull icon into the post container area so that no horizontal scrollbar appears until <~1130px (admins requested that
+                // from ~1100px down there be lions (mainly due to messy #topic-progress)) and annoyed users should switch to the Mobile View
+  z-index: 1; // and ensure the icon is not partially obstructed by topic-map on first post
 }
 
 
