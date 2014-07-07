@@ -119,6 +119,8 @@ register_asset "stylesheets/mobile/components/navs.scss", :mobile
 
 # reply pane that slides up to compose message on topic page: custom caret symbols
 register_asset "stylesheets/desktop/compose.scss", :desktop
+# mobile: hot fix compose panel overflow on phones running Chrome until we pull in a Discourse version with https://github.com/discourse/discourse/pull/2515 already integrated
+register_asset "stylesheets/mobile/compose.scss", :mobile
 
 # topic page - quoted post - left border color (on mobile, the border next to the name has to be overidden again...)
 register_asset "stylesheets/common/base/discourse.scss"

@@ -25,3 +25,6 @@ $tertiary: $blue-SP;
 // 0527: '$secondary' - always $gray-text-SP?
 // 0527: '$tertiary' - always $red-SP? (No, in foundation/base.scss blue links are defined as $tertiary)
 // 0527: '$quarternary' - always $red-SP? , resp. $red?
+$header_background: $gray-sitepoint-header-bg-SP;
+$header_primary: $gray-lighter-SP;
+
