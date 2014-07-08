@@ -14,7 +14,7 @@
       right: 120px;
     }
     @include small-width {
-      right: 123px;
+      right: 320px;
     }
   }
 
@@ -315,17 +315,17 @@ span.post-count {
 
 
 .read_restricted .gutter:before {
-  color: lighten($red-SP, 25%);
+  color: $gray-lighter-SP;
   content: "\f023";
   // content: $fa-var-lock; // lock icon \f023
   content: $fa-var-eye-slash; // eye-slash icon \f070
+  font-size: 45px;
   position: absolute;
   top: auto;
   bottom: 0px;
   left: auto;
-  right: 310px; // pull icon into the post container area so that no horizontal scrollbar appears until <~1130px (admins requested that
+  right: 0px; // pull icon into the post container area so that no horizontal scrollbar appears until <~1130px (admins requested that
                 // from ~1100px down there be lions (mainly due to messy #topic-progress)) and annoyed users should switch to the Mobile View
-  z-index: 1; // and ensure the icon is not partially obstructed by topic-map on first post
 }
 
 
