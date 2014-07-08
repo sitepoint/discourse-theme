@@ -36,21 +36,32 @@ after_initialize do
       user_ids.map { |id| avatar_lookup[id] }.compact.uniq.take(2)
     end
   end
-
+  # SP customisation: add SiteCustomization to add in crawler links
+  SiteCustomization.create({
+    name: "SitePoint Crawler links",
+    header: '<div class="top-crawler-links">
+  <a href="http://www.sitepoint.com">Articles</a>
+  <a href="https://learnable.com/topics/all/book">Books</a>
+  <a href="https://learnable.com/topics/all/course">Courses</a>
+  </div>',
+    mobile_header: '<div class="top-crawler-links">
+  <a href="http://www.sitepoint.com">Articles</a>
+  <a href="https://learnable.com/topics/all/book">Books</a>
+  <a href="https://learnable.com/topics/all/course">Courses</a>
+  </div>',
+    enabled: true,
+    user_id: User.first.id
+  })
 end
 
 
 # SP customization: add FAQ link to navs
 register_custom_html(extraNavItem: "<li id='faq-menu-item'><a href='/faq'>FAQ</a></li>")
 
-
-
 ### Models ###
 
 # SP customization: categories list page (http://discourse.vm): don't display featured_users avatars next to the category name in the table
 register_asset "javascripts/discourse/models/category_list.js"
-
-
 
 ### Templates ###
 
@@ -85,8 +96,6 @@ register_asset "javascripts/discourse/templates/components/topic-map.js.handleba
 # SP customization: Admin/Users page (http://discourse.vm/admin/users/list/active) include IP in user list
 register_asset "javascripts/admin/templates/users_list.js.handlebars"
 
-
-
 ### Views ###
 
 # SP customization: topic page (http://discourse.vm/t/feedbacks-on-the-imported-data/192):
@@ -95,8 +104,6 @@ register_asset "javascripts/discourse/views/post_menu.js"
 # register_asset "javascripts/discourse/views/post_menu.js.es6"
 # ^^^ ES6-style not working yet (Discourse.PostMenuView = require('discourse/plugins//discourse/views/post_menu').default; in transpiled file says cannot read prop default of undefined)
 
-
-
 ### Stylesheets ###
 
 # SP-specific variables
@@ -104,7 +111,6 @@ register_asset("stylesheets/common/foundation/variables.scss", :variables)
 
 # media-queried rules for fontsizes [helps reduce the line count in module stylesheets, helps keep the number of different sizes in check]
 register_asset "stylesheets/sitepoint/typography.scss"
-
 
 # make badges wide by default, change category dropdown caret style, don't display parent category, unread count notification color etc.
 register_asset "stylesheets/common/components/badges.css.scss"
