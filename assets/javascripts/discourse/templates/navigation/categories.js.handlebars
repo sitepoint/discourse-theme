@@ -13,3 +13,11 @@
   {{! SP CUSTOMIZATION END }}
 {{/if}}
 
+{{#if currentUser}}
+  {{! PM PLUGIN CUSTOMIZATION BEGIN }}
+  <button class='btn btn-default' {{action composePrivateMessage}}>
+    <i class='fa fa-envelope'></i>
+    {{i18n user.private_message}}
+  </button>
+  {{! PM PLUGIN CUSTOMIZATION END }}
+{{/if}}

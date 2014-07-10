@@ -11,7 +11,9 @@
   {{! SP CUSTOMIZATION BEGIN }}
   <button id="create-topic" class='btn btn-default btn-primary' {{action createTopic}}><i class='fa fa-plus'></i>{{i18n topic.create}}</button>
   {{! SP CUSTOMIZATION END }}
+{{/if}}
 
+{{#if currentUser}}
   {{! PM PLUGIN CUSTOMIZATION BEGIN }}
   <button class='btn btn-default' {{action composePrivateMessage}}>
     <i class='fa fa-envelope'></i>
