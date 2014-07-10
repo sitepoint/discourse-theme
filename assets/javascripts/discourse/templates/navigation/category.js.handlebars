@@ -15,6 +15,13 @@
   {{! SP CUSTOMIZATION BEGIN }}
   <button id="create-topic" class='btn btn-default btn-primary' {{action createTopic}}><i class='fa fa-plus'></i>{{i18n topic.create}}</button>
   {{! SP CUSTOMIZATION END }}
+
+  {{! PM PLUGIN CUSTOMIZATION BEGIN }}
+  <button class='btn btn-default' {{action composePrivateMessage}}>
+    <i class='fa fa-envelope'></i>
+    {{i18n user.private_message}}
+  </button>
+  {{! PM PLUGIN CUSTOMIZATION END }}
 {{/if}}
 
 {{#if canEditCategory}}

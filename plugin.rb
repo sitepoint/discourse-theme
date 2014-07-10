@@ -91,6 +91,9 @@ register_asset "javascripts/discourse/templates/post.js.handlebars"
 # SP customization: topic page (http://discourse.vm/t/feedbacks-on-the-imported-data/192): reorder topic-map so that headings are at the top like they used to be before 20140530
 register_asset "javascripts/discourse/templates/components/topic-map.js.handlebars"
 
+# SP customization: pull in pm button plugin as the plugin overwrites a template we previously have overwritten as well
+register_asset("javascripts/pm_button.js", :client_side)
+
 ### Templates - admin ###
 
 # SP customization: Admin/Users page (http://discourse.vm/admin/users/list/active) include IP in user list
