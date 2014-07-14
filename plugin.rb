@@ -65,6 +65,9 @@ register_asset "javascripts/discourse/models/category_list.js"
 
 ### Templates ###
 
+# SP customisation: move plugin outlet below title input ara
+register_asset "javascripts/discourse/templates/composer.js.handlebars"
+
 # SP customisation: topic list row. put in tags
 register_asset "javascripts/discourse/templates/list/topic_list_item.js.handlebars"
 
