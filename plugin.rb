@@ -40,15 +40,15 @@ after_initialize do
   SiteCustomization.create({
     name: "SitePoint Crawler links",
     header: '<div class="top-crawler-links">
-  <a href="http://www.sitepoint.com">Articles</a>
-  <a href="https://learnable.com/topics/all/book">Books</a>
-  <a href="https://learnable.com/topics/all/course">Courses</a>
-  </div>',
+      <a href="http://www.sitepoint.com">Articles</a>
+      <a href="https://learnable.com/topics/all/book">Books</a>
+      <a href="https://learnable.com/topics/all/course">Courses</a>
+    </div>',
     mobile_header: '<div class="top-crawler-links">
-  <a href="http://www.sitepoint.com">Articles</a>
-  <a href="https://learnable.com/topics/all/book">Books</a>
-  <a href="https://learnable.com/topics/all/course">Courses</a>
-  </div>',
+      <a href="http://www.sitepoint.com">Articles</a>
+      <a href="https://learnable.com/topics/all/book">Books</a>
+      <a href="https://learnable.com/topics/all/course">Courses</a>
+    </div>',
     enabled: true,
     user_id: User.first.id
   })
