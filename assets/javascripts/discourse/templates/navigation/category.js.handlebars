@@ -1,4 +1,7 @@
-{{bread-crumbs categories=categories category=category noSubcategories=noSubcategories}}
+{{bread-crumbs categories=categories
+               category=category
+               noSubcategories=noSubcategories
+               hideSubcategories=showingSubcategoryList}}
 
 <ul class="nav nav-pills" id='navigation-bar'>
   {{#each navItem in navItems}}
@@ -8,12 +11,15 @@
 </ul>
 
 {{#if canChangeCategoryNotificationLevel}}
-  {{view Discourse.CategoryNotificationsButton category=category}}
+  {{view 'category-notifications-button' category=category}}
 {{/if}}
 
 {{#if canCreateTopic}}
   {{! SP CUSTOMIZATION BEGIN }}
-  <button id="create-topic" class='btn btn-default btn-primary' {{action createTopic}}><i class='fa fa-plus'></i>{{i18n topic.create}}</button>
+  {{! SP - added btn-primary class }}
+    <button id="create-topic" class='btn btn-default btn-primary' {{action createTopic}}>
+      <i class='fa fa-plus'></i>{{i18n topic.create}}
+    </button>
   {{! SP CUSTOMIZATION END }}
 {{/if}}
 
