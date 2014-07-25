@@ -19,6 +19,7 @@
   }
 
   .gutter {
+    width: 19%; // Was removed from Discourse/Discourse
     .reply-new {
       .discourse-no-touch & {
         opacity: 1;
@@ -42,11 +43,7 @@
 nav.post-controls {
   .show-replies { //'2 Replies' button in expanded mode
     color: $gray-sitepoint-header-SP;
-    // background: lighten($secondary_background_color, 76%); // 0527: maybe not needed anymore
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    border-radius: 0;
 
     span.badge-posts {
       color: $gray-sitepoint-header-SP;
@@ -54,15 +51,13 @@ nav.post-controls {
     }
 
     &:hover {
-      // background: lighten($secondary_background_color, 60%); // 0527: maybe not needed anymore
-
       span.badge-posts {
         // color: #fff;
       }
     }
   }
 
-  button.create {
+  button.create { // reply button
     background-color: $red-SP;
     color: #fff;
 
@@ -287,7 +282,7 @@ span.post-count {
 .topic-body {
   box-sizing: border-box;
   margin-left: -55px;
-  padding-left: 55px;
+  padding-left: 55px + 13px; // avatar plus pad
   padding-top: 13px;
   width: 100%;
 
