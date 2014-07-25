@@ -27,6 +27,7 @@
       color: $gray-text-SP;
       font-weight: $font-weight-medium-bold-SP;
     }
+
     &:first-of-type {
       > a {
         border-left: 1px solid $gray-lighter-SP;
@@ -34,6 +35,7 @@
         border-bottom-left-radius: $border-radius-default-SP;
       }
     }
+
     &:last-of-type {
       > a {
         border-right: 1px solid $gray-lighter-SP;
@@ -94,9 +96,6 @@
   }
 
   .fa-chevron-right {
-    // float: right;
-    // margin: 0;
-    // color: $nav-stacked-chevron-color; // 0527: would orig scale-color($primary, $lightness: 60%) work?
     font-size: 24px;
     line-height: 20px;
 
