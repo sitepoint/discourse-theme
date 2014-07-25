@@ -7,11 +7,16 @@
 // SP custom rule
 .user-main {
   .about {
-    // background: linear-gradient(to right, #fff, #fff 537px, $gray-lighter-SP 537px, $gray-lighter-SP 538px, #fff 538px, #fff); // doesn't work, the thinnest line it can render is 2px
     background-color: #fff;
     background-image: none !important; // disallow display of custom user profile backgrounds since the feature is incompatible with our layout https://github.com/discourse/discourse/pull/2299
 
     .details {
+      .primary {
+        .staff-counters {
+          display: none;
+        }
+      }
+
       .secondary {
         background-color: #fff;
 
@@ -19,7 +24,7 @@
           color: inherit; // for desktop
 
           &:after {
-            content: ':\0000a0'; // ":""
+            content: ':\0000a0'; // ":"
           }
         }
 
