@@ -73,6 +73,10 @@ register_asset "javascripts/discourse/templates/list/topic_list_item.js.handleba
 
 # SP customization: category page (http://discourse.vm/category/community): topics table heading - use icons instead of text
 register_asset "javascripts/discourse/templates/discovery/topics.js.handlebars"
+
+# SP customization: categories page table
+register_asset "javascripts/discourse/templates/discovery/categories.js.handlebars"
+
 # DOES NOTHING (attempt 1:1 copy of the default mobile template to re-override the desktop template above for Mobile View)
 # register_asset "javascripts/discourse/templates/mobile/discovery/topics.js.handlebars"
 
