@@ -40,15 +40,15 @@ after_initialize do
   SiteCustomization.create({
     name: "SitePoint Crawler links",
     header: '<div class="top-crawler-links">
-  <a href="http://www.sitepoint.com">Articles</a>
-  <a href="https://learnable.com/topics/all/book">Books</a>
-  <a href="https://learnable.com/topics/all/course">Courses</a>
-  </div>',
+      <a href="http://www.sitepoint.com">Articles</a>
+      <a href="https://learnable.com/topics/all/book">Books</a>
+      <a href="https://learnable.com/topics/all/course">Courses</a>
+    </div>',
     mobile_header: '<div class="top-crawler-links">
-  <a href="http://www.sitepoint.com">Articles</a>
-  <a href="https://learnable.com/topics/all/book">Books</a>
-  <a href="https://learnable.com/topics/all/course">Courses</a>
-  </div>',
+      <a href="http://www.sitepoint.com">Articles</a>
+      <a href="https://learnable.com/topics/all/book">Books</a>
+      <a href="https://learnable.com/topics/all/course">Courses</a>
+    </div>',
     enabled: true,
     user_id: User.first.id
   })
@@ -75,6 +75,12 @@ register_asset "javascripts/discourse/templates/list/topic_list_item.js.handleba
 register_asset "javascripts/discourse/templates/discovery/topics.js.handlebars"
 # DOES NOTHING (attempt 1:1 copy of the default mobile template to re-override the desktop template above for Mobile View)
 # register_asset "javascripts/discourse/templates/mobile/discovery/topics.js.handlebars"
+
+# SP customization: categories page table
+register_asset "javascripts/discourse/templates/discovery/categories.js.handlebars"
+# DOES NOTHING (attempt 1:1 copy of the default mobile template to re-override the desktop template above for Mobile View)
+# register_asset "javascripts/discourse/templates/mobile/discovery/categories.js.handlebars"
+
 
 # SP customization: custom header
 register_asset "javascripts/discourse/templates/header.js.handlebars"

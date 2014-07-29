@@ -18,7 +18,7 @@
   }
 
 
-  // Sitepoint custom style:
+  // SP custom style:
   .logomark {
     float: left; // so that left-floating .extra-info-wrapper can sit on logo's and link's right side
     margin-top: 11px;
@@ -44,6 +44,7 @@
         border: 1px solid transparent; // prevent "flash of rounded bottom corners" as dropdown is opening
         color: #fff;
       }
+
       &:active {
         color: #fff;
       }
@@ -57,6 +58,7 @@
         color: $gray-sitepoint-header-bg-SP;
         background-color: #fff;
       }
+
       &:active {
         color: #000;
       }

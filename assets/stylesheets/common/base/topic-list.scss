@@ -11,10 +11,21 @@
 // List controls
 // --------------------------------------------------
 
+// SP temp mobile view
+$mobile-break-point-SP: 765px;
+.Categories--mobile {
+  @media (max-width: $mobile-break-point-SP) { display:flex; }
+  @media (min-width: $mobile-break-point-SP + 1) { display:none; }
+}
+
 // SP custom rule
 .list-controls {
   .category-dropdown-button {
     border-left: none;
+  }
+
+  .category-dropdown-menu {
+    padding: 8px 8px 0px
   }
 
   a.badge-category {
@@ -28,6 +39,38 @@
   }
 }
 
+.contents #topic-list {
+  @media (max-width: $mobile-break-point-SP + 1) { display:none; }
+
+  border-collapse: collapse;
+
+  th, td {
+    border-color: $gray-lighter-SP;
+    border-style: solid;
+    border-width: 1px 0;
+
+    &:nth-of-type(1) {
+      border-left-color: currentColor;
+      border-left-width: 6px;
+    }
+
+    .pull-left h3 a[href] {
+      color: currentColor;
+    }
+
+    .category-description {
+      color: $gray-light-SP;
+    }
+  }
+
+  th {
+    position: static !important; // Firefox fix for weird border shinanigans
+  }
+
+  table td {
+    border: none; // no borders on nested table children
+  }
+}
 
 // Base list
 // --------------------------------------------------
@@ -40,10 +83,6 @@
 
   a.title:visited:not(.badge-notification) {
     color: $tertiary;
-  }
-
-  td {
-    border-bottom: 1px solid $gray-lighter-SP;
   }
 }
 
