@@ -11,6 +11,13 @@
 // List controls
 // --------------------------------------------------
 
+// SP temp mobile view
+$mobile-break-point-SP: 765px;
+.Categories--mobile {
+  @media (max-width: $mobile-break-point-SP) { display:flex; }
+  @media (min-width: $mobile-break-point-SP + 1) { display:none; }
+}
+
 // SP custom rule
 .list-controls {
   .category-dropdown-button {
@@ -33,6 +40,8 @@
 }
 
 .contents #topic-list {
+  @media (max-width: $mobile-break-point-SP + 1) { display:none; }
+
   border-collapse: collapse;
 
   th, td {
@@ -62,7 +71,6 @@
     border: none; // no borders on nested table children
   }
 }
-
 
 // Base list
 // --------------------------------------------------
