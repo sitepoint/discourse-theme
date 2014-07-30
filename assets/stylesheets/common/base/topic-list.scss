@@ -43,6 +43,7 @@ $mobile-break-point-SP: 765px;
   @media (max-width: $mobile-break-point-SP + 1) { display:none; }
 
   border-collapse: collapse;
+  position: relative;
 
   th, td {
     border-color: $gray-lighter-SP;
