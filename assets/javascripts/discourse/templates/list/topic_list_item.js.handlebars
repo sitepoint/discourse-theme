@@ -1,5 +1,5 @@
 {{! Mobile View }}
-<td class="Latest--mobile">
+<td class="Latest--mobile border--category" style="color: #{{unbound category.color}}">
   <div class='main-link clearfix'>
     {{topic-status topic=this}}
     {{{topic-link this}}}
@@ -63,16 +63,18 @@
 
 {{! Desktop View }}
 {{#if bulkSelectEnabled}}
-  <td class='Latest--desktop star'>{{input type="checkbox" checked=checked}}</td>
+  <td class='Latest--desktop star border--category' style="color: #{{unbound category.color}}">
+    {{input type="checkbox" checked=checked}}
+  </td>
 {{else}}
   {{#if canStar}}
-    <td class='Latest--desktop star'>
+    <td class='Latest--desktop star border--category' style="color: #{{unbound category.color}}">
       <a {{bind-attr class=":star :fa :fa-star starred:starred"}} {{action toggleStar}} href='#' {{bind-attr title="starTooltip"}}></a>
     </td>
   {{/if}}
 {{/if}}
 
-<td class='Latest--desktop main-link clearfix' {{bind-attr colspan="titleColSpan"}}>
+<td class='Latest--desktop main-link clearfix' {{bind-attr colspan="titleColSpan"}} style="color: #{{unbound category.color}}">
   {{topic-status topic=this.model}}
   {{{topic-link this}}}
 

@@ -38,17 +38,21 @@
     border-style: solid;
     border-width: 1px 0;
 
-    &:nth-of-type(1) {
+    &:nth-of-type(1), &.border--category {
       border-left-color: currentColor;
       border-left-width: 6px;
     }
 
-    .pull-left h3 a[href] {
+    .pull-left h3 a[href], &.Latest--desktop a.title[href] {
       color: currentColor;
     }
 
     .category-description {
       color: $gray-light-SP;
+    }
+
+    .star {
+      text-align: right;
     }
   }
 
