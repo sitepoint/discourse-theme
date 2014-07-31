@@ -1,24 +1,14 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-// SHARED TOPIC LISTS OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
-
-
-// --------------------------------------------------
-// Topic lists
-// --------------------------------------------------
-
-// List controls
-// --------------------------------------------------
-
-// SP temp mobile view
-$mobile-break-point-SP: 765px;
 .Categories--mobile {
-  @media (max-width: $mobile-break-point-SP) { display:flex; }
   @media (min-width: $mobile-break-point-SP + 1) { display:none; }
 }
 
-// SP custom rule
+.Categories--desktop {
+  @media (max-width: $mobile-break-point-SP + 1) { display:none; }
+}
+
 .list-controls {
   .category-dropdown-button {
     border-left: none;
@@ -40,8 +30,6 @@ $mobile-break-point-SP: 765px;
 }
 
 .contents #topic-list {
-  @media (max-width: $mobile-break-point-SP + 1) { display:none; }
-
   border-collapse: collapse;
   position: relative;
 
@@ -73,10 +61,6 @@ $mobile-break-point-SP: 765px;
   }
 }
 
-// Base list
-// --------------------------------------------------
-
-// SP custom rule
 #topic-list {
   a.title {
     color: $tertiary;
@@ -87,8 +71,6 @@ $mobile-break-point-SP: 765px;
   }
 }
 
-
-// SP custom rule
 ol.category-breadcrumb {
   li {
     @include border-radius-all($border-radius-default-SP);
