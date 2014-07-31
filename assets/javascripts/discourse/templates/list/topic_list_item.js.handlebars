@@ -1,45 +1,114 @@
+{{! Mobile View }}
+<td class="Latest--mobile">
+  <div class='main-link clearfix'>
+    {{topic-status topic=this}}
+    {{{topic-link this}}}
+
+    {{#if unread}}
+      <a href="{{lastUnreadUrl}}" class='badge unread badge-notification' title='{{i18n topic.unread_posts count="unread"}}'>{{unread}}</a>
+    {{/if}}
+
+    {{#if displayNewPosts}}
+      <a href="{{lastUnreadUrl}}" class='badge new-posts badge-notification' title='{{i18n topic.new_posts count="displayNewPosts"}}'>{{displayNewPosts}}</a>
+    {{/if}}
+
+    {{#if unseen}}
+      <a href="{{lastUnreadUrl}}" class='badge new-posts badge-notification' title='{{i18n topic.new}}'><i class='fa fa-asterisk'></i></a>
+    {{/if}}
+
+    {{#if hasExcerpt}}
+      <div class="topic-excerpt">
+        {{{excerpt}}}
+
+        {{#if excerptTruncated}}
+          {{#unless canClearPin}}<a href="{{url}}">{{i18n read_more}}</a>{{/unless}}
+        {{/if}}
+
+        {{#if canClearPin}}
+          <a href="#" {{action clearPin this}} title="{{i18n topic.clear_pin.help}}">{{i18n topic.clear_pin.title}}</a>
+        {{/if}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="topic-item-stats clearfix">
+    {{#unless controller.hideCategory}}
+      <div class='category'>
+        {{category-link category showParent=true}}
+      </div>
+    {{/unless}}
+
+    <div class="pull-right">
+      <div class='num posts'><a href="{{lastUnreadUrl}}">{{number posts_count numberKey="posts_long"}}</a></div>
+
+      {{#if like_count}}
+        <div class='num likes'><a href='{{url}}' title='{{i18n topic.likes count="like_count"}}'>{{number like_count numberKey="likes_long"}} <i class='fa fa-heart'></i></a></div>
+      {{/if}}
+
+      {{#if bumped}}
+        <div class='num activity last'>
+          <a href="{{lastPostUrl}}" title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>{{last_poster_username}}</a>
+          <a href="{{lastPostUrl}}" class='age' title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>{{age bumped_at}}</a>
+        </div>
+      {{else}}
+        <div class='num activity last'>
+          <a href="{{url}}" title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>{{last_poster_username}}</a>
+          <a href="{{url}}" class='age' title='{{i18n first_post}}: {{{raw-date created_at}}}'>{{age created_at}}</a>
+        </div>
+      {{/if}}
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</td>
+
+{{! Desktop View }}
 {{#if bulkSelectEnabled}}
-  <td class='star'>
-    {{input type="checkbox" checked=checked}}
-  </td>
+  <td class='Latest--desktop star'>{{input type="checkbox" checked=checked}}</td>
 {{else}}
   {{#if canStar}}
-    <td class='star'>
+    <td class='Latest--desktop star'>
       <a {{bind-attr class=":star :fa :fa-star starred:starred"}} {{action toggleStar}} href='#' {{bind-attr title="starTooltip"}}></a>
     </td>
   {{/if}}
 {{/if}}
 
-<td class='main-link clearfix' {{bind-attr colspan="titleColSpan"}}>
+<td class='Latest--desktop main-link clearfix' {{bind-attr colspan="titleColSpan"}}>
   {{topic-status topic=this.model}}
   {{{topic-link this}}}
+
   {{#if unread}}
     <a href="{{lastUnreadUrl}}" class='badge unread badge-notification' title='{{i18n topic.unread_posts count="unread"}}'>{{unread}}</a>
   {{/if}}
+
   {{#if displayNewPosts}}
     <a href="{{lastUnreadUrl}}" class='badge new-posts badge-notification' title='{{i18n topic.new_posts count="displayNewPosts"}}'>{{displayNewPosts}}</a>
   {{/if}}
+
   {{#if unseen}}
     <a href="{{lastUnreadUrl}}" class='badge new-posts badge-notification' title='{{i18n topic.new}}'>{{i18n filters.new.lower_title}}</a>
   {{/if}}
 
-{{! SITEPOINT CUSTOMISATIONS }}
-  {{#if tags}}
-    <div class="tagger-tags-view">
-      <span>Tags:</span>
-      {{#each tags}}
-      <a href="/tag/{{unbound this}}" class="tagger-tag btn">{{this}}</a>
-      {{/each}}
-    </div>
-  {{/if}}
-{{! /SITEPOINT CUSTOMISATIONS }}
+  {{! SP =========================== }}
+
+    {{#if tags}}
+      <div class="tagger-tags-view">
+        <span>Tags:</span>
+        {{#each tags}}
+        <a href="/tag/{{unbound this}}" class="tagger-tag btn">{{this}}</a>
+        {{/each}}
+      </div>
+    {{/if}}
+
+  {{! /SP ========================= }}
 
   {{#if hasExcerpt}}
     <div class="topic-excerpt">
       {{{excerpt}}}
+
       {{#if excerptTruncated}}
         {{#unless canClearPin}}<a href="{{url}}">{{i18n read_more}}</a>{{/unless}}
       {{/if}}
+
       {{#if canClearPin}}
         <a href="#" {{action clearPin this}} title="{{i18n topic.clear_pin.help}}">{{i18n topic.clear_pin.title}}</a>
       {{/if}}
@@ -48,35 +117,38 @@
 </td>
 
 {{#unless hideCategory}}
-<td class='category'>{{bound-category-link category showParent=true}}</td>
+  <td class='Latest--desktop category'>{{bound-category-link category showParent=true}}</td>
 {{/unless}}
 
-<td class='posters'>
+<td class='Latest--desktop posters'>
   {{#each posters}}
     <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
   {{/each}}
 </td>
 
-<td class='num posts'><a href="{{lastUnreadUrl}}" class='badge-posts'>{{number posts_count numberKey="posts_long"}}</a></td>
+<td class='Latest--desktop num posts'>
+  <a href="{{lastUnreadUrl}}" class='badge-posts'>{{number posts_count numberKey="posts_long"}}</a>
+</td>
 
-<td class='num likes'>
+<td class='Latest--desktop num likes'>
   {{#if like_count}}
     <a href='{{url}}{{#if has_summary}}?filter=summary{{/if}}' title='{{i18n topic.likes count="like_count"}}'>{{number like_count numberKey="likes_long"}} <i class='fa fa-heart'></i></a>
   {{/if}}
 </td>
 
-<td {{bind-attr class=":num :views viewsHeat"}}>{{number views numberKey="views_long"}}</td>
+<td {{bind-attr class="Latest--desktop :num :views viewsHeat"}}>{{number views numberKey="views_long"}}</td>
 
 {{#if bumped}}
-  <td class='num activity'>
+  <td class='Latest--desktop num activity'>
     <a href="{{url}}" class="{{cold-age-class created_at}}" title='{{i18n first_post}}: {{{raw-date created_at}}}' >{{age created_at}}</a>
   </td>
-  <td class='num activity last'>
+
+  <td class='Latest--desktop num activity last'>
     <a href="{{lastPostUrl}}" class="{{cold-age-class bumped_at}}" title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>{{age bumped_at}}</a>
   </td>
 {{else}}
-  <td class='num activity'>
+  <td class='Latest--desktop num activity'>
     <a href="{{url}}" class="{{cold-age-class created_at}}" title='{{i18n first_post}}: {{{raw-date created_at}}}'>{{age created_at}}</a>
   </td>
-  <td class='activity'></td>
+  <td class='Latest--desktop activity'></td>
 {{/if}}

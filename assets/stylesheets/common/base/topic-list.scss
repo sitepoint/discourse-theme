@@ -1,11 +1,11 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-.Categories--mobile {
+.Categories--mobile, .Latest--mobile {
   @media (min-width: $mobile-break-point-SP + 1) { display:none; }
 }
 
-.Categories--desktop {
+.Categories--desktop, .Latest--desktop {
   @media (max-width: $mobile-break-point-SP + 1) { display:none; }
 }
 
