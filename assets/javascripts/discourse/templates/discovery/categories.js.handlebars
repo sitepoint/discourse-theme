@@ -107,7 +107,12 @@
             <div>
               <div class="pull-left">
                 {{#if controller.ordering}}<i class="fa fa-bars"></i>{{/if}}
-                {{category-title-link category=this}}
+
+                {{! SP ============================}}
+                  {{!category-title-link category=this}}
+                  {{category-link this}}
+                {{! /SP ===========================}}
+
                 {{#if unreadTopics}}
                   <a href={{unbound unreadUrl}} class='badge new-posts badge-notification' title='{{i18n topic.unread_topics count="unreadTopics"}}'>{{unbound unreadTopics}}</a>
                 {{/if}}

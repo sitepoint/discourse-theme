@@ -42,8 +42,9 @@
     border-width: 0 0 1px;
 
     &:nth-of-type(1), &.border--category {
-      border-left-color: currentColor;
-      border-left-width: 6px;
+      // border-left-color: currentColor;
+      border-left-color: $gray-lighter-SP !important;
+      border-left-width: 1px;
     }
 
     .pull-left h3 a[href], /* &.latest--desktop a.title[href] */ {
