@@ -32,18 +32,21 @@
 .contents #topic-list {
   border-collapse: collapse;
   position: relative;
+  border-color: $gray-lighter-SP;
+  border-style: solid;
+  border-width: 1px;
 
   th, td {
     border-color: $gray-lighter-SP;
     border-style: solid;
-    border-width: 1px 0;
+    border-width: 0 0 1px;
 
     &:nth-of-type(1), &.border--category {
       border-left-color: currentColor;
       border-left-width: 6px;
     }
 
-    .pull-left h3 a[href], &.Latest--desktop a.title[href] {
+    .pull-left h3 a[href], /* &.Latest--desktop a.title[href] */ {
       color: currentColor;
     }
 
@@ -53,6 +56,10 @@
 
     .star {
       text-align: right;
+    }
+
+    .tagger-tags-view {
+      color: $gray-text-SP;
     }
   }
 
