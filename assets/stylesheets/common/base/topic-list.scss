@@ -1,24 +1,14 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-// SHARED TOPIC LISTS OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
-
-
-// --------------------------------------------------
-// Topic lists
-// --------------------------------------------------
-
-// List controls
-// --------------------------------------------------
-
-// SP temp mobile view
-$mobile-break-point-SP: 765px;
-.Categories--mobile {
-  @media (max-width: $mobile-break-point-SP) { display:flex; }
+.categories--mobile, .latest--mobile {
   @media (min-width: $mobile-break-point-SP + 1) { display:none; }
 }
 
-// SP custom rule
+.categories--desktop, .latest--desktop {
+  @media (max-width: $mobile-break-point-SP + 1) { display:none; }
+}
+
 .list-controls {
   .category-dropdown-button {
     border-left: none;
@@ -40,27 +30,36 @@ $mobile-break-point-SP: 765px;
 }
 
 .contents #topic-list {
-  @media (max-width: $mobile-break-point-SP + 1) { display:none; }
-
   border-collapse: collapse;
   position: relative;
+  border-color: $gray-lighter-SP;
+  border-style: solid;
+  border-width: 1px;
 
   th, td {
     border-color: $gray-lighter-SP;
     border-style: solid;
-    border-width: 1px 0;
+    border-width: 0 0 1px;
 
-    &:nth-of-type(1) {
+    &:nth-of-type(1), &.border--category {
       border-left-color: currentColor;
       border-left-width: 6px;
     }
 
-    .pull-left h3 a[href] {
+    .pull-left h3 a[href], /* &.latest--desktop a.title[href] */ {
       color: currentColor;
     }
 
     .category-description {
       color: $gray-light-SP;
+    }
+
+    .star {
+      text-align: right;
+    }
+
+    .tagger-tags-view {
+      color: $gray-text-SP;
     }
   }
 
@@ -73,10 +72,6 @@ $mobile-break-point-SP: 765px;
   }
 }
 
-// Base list
-// --------------------------------------------------
-
-// SP custom rule
 #topic-list {
   a.title {
     color: $tertiary;
@@ -87,8 +82,6 @@ $mobile-break-point-SP: 765px;
   }
 }
 
-
-// SP custom rule
 ol.category-breadcrumb {
   li {
     @include border-radius-all($border-radius-default-SP);
