@@ -1,11 +1,11 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-.Categories--mobile, .Latest--mobile {
+.categories--mobile, .latest--mobile {
   @media (min-width: $mobile-break-point-SP + 1) { display:none; }
 }
 
-.Categories--desktop, .Latest--desktop {
+.categories--desktop, .latest--desktop {
   @media (max-width: $mobile-break-point-SP + 1) { display:none; }
 }
 
@@ -46,7 +46,7 @@
       border-left-width: 6px;
     }
 
-    .pull-left h3 a[href], /* &.Latest--desktop a.title[href] */ {
+    .pull-left h3 a[href], /* &.latest--desktop a.title[href] */ {
       color: currentColor;
     }
 

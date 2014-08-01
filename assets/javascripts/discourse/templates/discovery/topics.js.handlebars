@@ -1,6 +1,6 @@
 {{! Mobile View }}
-<div class='Latest--mobile contents'>
-  {{#if showTable}}
+<div class='latest--mobile contents'>
+  {{#if showtable}}
     {{#if top}}
       {{#if yearly}}<h2><i class="fa fa-calendar-o"></i>&nbsp;{{i18n filters.top.this_year}}</h2>{{/if}}
       {{#if monthly}}<h2><i class="fa fa-calendar-o"></i>&nbsp;{{i18n filters.top.this_month}}</h2>{{/if}}
@@ -25,8 +25,8 @@
   {{/if}}
 </div>
 
-<footer id='topic-list-bottom' class="Latest--mobile">
-  {{#if loadingMore}}
+<footer id='topic-list-bottom' class="latest--mobile">
+  {{#if loadingmore}}
     <div class='topics-loading'>{{i18n topic.loading_more}}</div>
   {{/if}}
   {{#if allLoaded}}
@@ -58,12 +58,12 @@
 
 {{! Desktop View }}
 {{#if selected}}
-  <div id='bulk-select' class="Latest--desktop">
-    <button class='btn no-text' {{action showBulkActions}}><i class="fa fa-wrench"></i></button>
+  <div id='bulk-select' class="latest--desktop">
+    <button class='btn no-text' {{action showbulkactions}}><i class="fa fa-wrench"></i></button>
   </div>
 {{/if}}
 
-<div class='Latest--desktop contents'>
+<div class='latest--desktop contents'>
   {{#if top}}
     {{#if yearly}}<h2><i class="fa fa-calendar-o"></i>&nbsp;{{i18n filters.top.this_year}}</h2>{{/if}}
     {{#if monthly}}<h2><i class="fa fa-calendar-o"></i>&nbsp;{{i18n filters.top.this_month}}</h2>{{/if}}
@@ -134,8 +134,8 @@
   {{/if}}
 </div>
 
-<footer id='topic-list-bottom' class="Latest--desktop">
-  {{#if loadingMore}}
+<footer id='topic-list-bottom' class="latest--desktop">
+  {{#if loadingmore}}
     <div class='topics-loading'>{{i18n topic.loading_more}}</div>
   {{/if}}
   {{#if allLoaded}}

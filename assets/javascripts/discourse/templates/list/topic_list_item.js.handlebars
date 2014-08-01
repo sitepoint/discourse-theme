@@ -1,5 +1,5 @@
 {{! Mobile View }}
-<td class="Latest--mobile border--category" style="color: #{{unbound category.color}}">
+<td class="latest--mobile border--category" style="color: #{{unbound category.color}}">
   <div class='main-link clearfix'>
     {{topic-status topic=this}}
     {{{topic-link this}}}
@@ -63,18 +63,18 @@
 
 {{! Desktop View }}
 {{#if bulkSelectEnabled}}
-  <td class='Latest--desktop star border--category' style="color: #{{unbound category.color}}">
+  <td class='latest--desktop star border--category' style="color: #{{unbound category.color}}">
     {{input type="checkbox" checked=checked}}
   </td>
 {{else}}
   {{#if canStar}}
-    <td class='Latest--desktop star border--category' style="color: #{{unbound category.color}}">
+    <td class='latest--desktop star border--category' style="color: #{{unbound category.color}}">
       <a {{bind-attr class=":star :fa :fa-star starred:starred"}} {{action toggleStar}} href='#' {{bind-attr title="starTooltip"}}></a>
     </td>
   {{/if}}
 {{/if}}
 
-<td class='Latest--desktop main-link clearfix' {{bind-attr colspan="titleColSpan"}} style="color: #{{unbound category.color}}">
+<td class='latest--desktop main-link clearfix' {{bind-attr colspan="titleColSpan"}} style="color: #{{unbound category.color}}">
   {{topic-status topic=this.model}}
   {{{topic-link this}}}
 
@@ -119,38 +119,38 @@
 </td>
 
 {{#unless hideCategory}}
-  <td class='Latest--desktop category'>{{bound-category-link category showParent=true}}</td>
+  <td class='latest--desktop category'>{{bound-category-link category showParent=true}}</td>
 {{/unless}}
 
-<td class='Latest--desktop posters'>
+<td class='latest--desktop posters'>
   {{#each posters}}
     <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
   {{/each}}
 </td>
 
-<td class='Latest--desktop num posts'>
+<td class='latest--desktop num posts'>
   <a href="{{lastUnreadUrl}}" class='badge-posts'>{{number posts_count numberKey="posts_long"}}</a>
 </td>
 
-<td class='Latest--desktop num likes'>
+<td class='latest--desktop num likes'>
   {{#if like_count}}
     <a href='{{url}}{{#if has_summary}}?filter=summary{{/if}}' title='{{i18n topic.likes count="like_count"}}'>{{number like_count numberKey="likes_long"}} <i class='fa fa-heart'></i></a>
   {{/if}}
 </td>
 
-<td {{bind-attr class="Latest--desktop :num :views viewsHeat"}}>{{number views numberKey="views_long"}}</td>
+<td {{bind-attr class="latest--desktop :num :views viewsheat"}}>{{number views numberkey="views_long"}}</td>
 
 {{#if bumped}}
-  <td class='Latest--desktop num activity'>
+  <td class='latest--desktop num activity'>
     <a href="{{url}}" class="{{cold-age-class created_at}}" title='{{i18n first_post}}: {{{raw-date created_at}}}' >{{age created_at}}</a>
   </td>
 
-  <td class='Latest--desktop num activity last'>
-    <a href="{{lastPostUrl}}" class="{{cold-age-class bumped_at}}" title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>{{age bumped_at}}</a>
+  <td class='latest--desktop num activity last'>
+    <a href="{{lastposturl}}" class="{{cold-age-class bumped_at}}" title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>{{age bumped_at}}</a>
   </td>
 {{else}}
-  <td class='Latest--desktop num activity'>
+  <td class='latest--desktop num activity'>
     <a href="{{url}}" class="{{cold-age-class created_at}}" title='{{i18n first_post}}: {{{raw-date created_at}}}'>{{age created_at}}</a>
   </td>
-  <td class='Latest--desktop activity'></td>
+  <td class='latest--desktop activity'></td>
 {{/if}}
