@@ -1,24 +1,10 @@
-// MOBILE TOPIC LISTS OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
-
-
-// --------------------------------------------------
-// Topic lists
-// --------------------------------------------------
-
-// List controls
-// --------------------------------------------------
-
 .list-controls {
   .btn:nth-of-type(1) {
     margin-left: 0;
   }
 }
 
-
-// Base list
-// --------------------------------------------------
-
-#topic-list {
+.topic-list {
   border-top: 1px solid $gray-lighter-SP;
 
   // SP custom rule
@@ -46,10 +32,6 @@
   }
 }
 
-
-// Category list
-// --------------------------------------------------
-
 .category-list-item {
   // SP custom rule
   td {
@@ -60,10 +42,6 @@
     border-bottom: none;
   }
 }
-
-
-// Misc. stuff
-// --------------------------------------------------
 
 .list-controls {
   .badge-category {

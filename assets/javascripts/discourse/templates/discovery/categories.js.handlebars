@@ -2,7 +2,7 @@
   {{! Mobile View }}
   {{#each categories}}
     <div class='categories--mobile category-list-item'>
-      <table id='topic-list'>
+      <table class='topic-list'>
         <tr>
           <th class="main-link">
             {{category-link this allowUncategorized=true}}
@@ -85,7 +85,7 @@
 
   {{! Desktop View }}
   <div class='contents'>
-    <table id='topic-list' class='categories--desktop categories'>
+    <table class='topic-list categories--desktop categories'>
       <thead>
         <tr>
           <th class='category'>{{i18n categories.category}}</th>
@@ -194,5 +194,5 @@
       </tbody>
     </table>
   </div>
-  <footer id='topic-list-bottom'></footer>
+  <footer class='topic-list-bottom'></footer>
 {{/if}}

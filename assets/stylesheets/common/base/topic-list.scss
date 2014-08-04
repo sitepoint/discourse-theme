@@ -29,7 +29,7 @@
   }
 }
 
-.contents #topic-list {
+.contents .topic-list {
   border-collapse: collapse;
   position: relative;
   border-color: $gray-lighter-SP;
@@ -72,7 +72,7 @@
   }
 }
 
-#topic-list {
+.topic-list {
   a.title {
     color: $tertiary;
   }
