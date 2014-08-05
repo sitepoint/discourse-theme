@@ -2,10 +2,6 @@
 @import "common/foundation/mixins";
 @import "common/foundation/helpers";
 
-// DESKTOP TOPIC POST OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
-
-
-
 .post-cloak {
   .reply-to-tab {
     right: 120px;
@@ -26,16 +22,10 @@
       }
     }
   }
+}
 
-  section.post-menu-area,
-  .post-actions {
-    .discourse-no-touch & {
-      opacity: 0.4;
-    }
-  }
-
-  &:hover section.post-menu-area,
-  &:hover .post-actions {
+.discourse-no-touch .post-cloak {
+  .post-actions, div.actions { // ICKY: Qualified Selector :/
     opacity: 1;
   }
 }
