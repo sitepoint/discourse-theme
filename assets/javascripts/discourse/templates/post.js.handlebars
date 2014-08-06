@@ -19,9 +19,8 @@
     {{/if}}
     <div class='topic-avatar'>
       {{#unless userDeleted}}
-        <div {{bind-attr class=":contents byTopicCreator:topic-creator :trigger-expansion"}}>
-          <a class="main-avatar" href='{{unbound usernameUrl}}' {{action showPosterExpansion this}}>{{avatar this imageSize="large"}}</a>
-
+        <div {{bind-attr class=":contents byTopicCreator:topic-creator"}}>
+          {{poster-avatar action="expandPostUser" post=this classNames="main-avatar"}}
         </div>
       {{else}}
         <div class="contents">
@@ -35,11 +34,13 @@
 
     <div class='topic-body'>
       <div class='topic-meta-data'>
-        {{poster-name post=this expandAction="showPosterExpansion"}}
+        {{poster-name post=this expandAction="expandPostUser"}}
         <div class='post-info'>
+
           {{! SP CUSTOMIZATION BEGIN }}
-          <a class='post-date' {{bind-attr href="shareUrl" data-share-url="shareUrl" data-post-number="post_number"}}>{{age-with-tooltip created_at}}&nbsp;&nbsp;#{{post_number}}</a>
+            <a class='post-date' {{bind-attr href="shareUrl" data-share-url="shareUrl" data-post-number="post_number"}}>{{age-with-tooltip created_at}}&nbsp;&nbsp;#{{post_number}}</a>
           {{! SP CUSTOMIZATION END }}
+
         </div>
         {{#if hasHistory}}
           <div class='post-info edits'>
@@ -65,12 +66,17 @@
       </div>
 
       <div {{bind-attr class="showUserReplyTab:avoid-tab view.repliesShown::bottom-round :contents :regular view.extraClass"}}>
-        <div class='cooked'>{{{cooked}}}</div>
+        <div class='cooked'>
+          {{{cooked}}}
+        </div>
+        {{#if cooked_hidden}}
+          <a href {{action expandHidden this}}>{{i18n post.show_hidden}}</a>
+        {{/if}}
         {{#if view.showExpandButton}}
           {{#if controller.loadingExpanded}}
             <button class="btn expand-post" disabled>{{i18n loading}}</button>
           {{else}}
-            <button {{action expandFirstPost this}} class='btn expand-post'>{{i18n post.show_full}}</button>
+            <button {{action expandFirstPost this}} class='btn expand-post'>{{i18n post.show_full}}&hellip;</button>
           {{/if}}
         {{/if}}
         {{view 'post-menu' post=this adminMenu=view.adminMenu}}
@@ -89,3 +95,4 @@
 </article>
 
 {{post-gap post=this postStream=controller.postStream before="false"}}
+

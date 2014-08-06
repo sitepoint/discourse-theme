@@ -55,16 +55,7 @@ nav.post-controls {
       background-color: $red-darker-SP;
     }
   }
-
-  button { // also applies to like, edit, etc. buttons
-    // color: #fff;
-
-    &:hover {
-      // color: #fff;
-    }
-  }
 }
-
 
 .embedded-posts {
   .topic-body {
@@ -72,8 +63,7 @@ nav.post-controls {
     width: 90%;
   }
 
-  // top means "in reply to expansion" above a post
-  &.top {
+  &.top { // top means "in reply to expansion" above a post
     margin-left: 77px;
     max-width: 912px;
 
@@ -92,7 +82,6 @@ nav.post-controls {
     border-left: 3px solid $red-SP;
   }
 }
-
 
 .bottom-round nav.post-controls .show-replies { //'2 Replies' button in default mode
   color: #fff;
@@ -114,7 +103,6 @@ nav.post-controls {
     }
   }
 }
-
 
 .topic-map {
   background-color: $gray-bg-SP;
@@ -147,8 +135,7 @@ nav.post-controls {
       padding: 15px 15px;
     }
 
-    // SP custom rule
-    i {
+    i { // SP custom rule
       color: $gray-sitepoint-header-SP; // since we have icons rather then texts in headings (similar to topic list table)
     }
   }
@@ -186,13 +173,11 @@ nav.post-controls {
   }
 }
 
-
 span.post-count {
   background: $red-SP;
   color: #fff;
   opacity: 1;
 }
-
 
 .extra-info-wrapper {
   max-width: 760px;
@@ -228,11 +213,9 @@ span.post-count {
   }
 }
 
-
 .post-hidden {
   background-color: rgba(0, 0, 0, 0.3);
 }
-
 
 .user-title {
   color: $primary;
@@ -240,29 +223,24 @@ span.post-count {
   line-height: inherit;
 }
 
-
 .quote { /* quotes with attribution */
   .title {
     border-left: 3px solid $red-SP;
   }
 }
 
-.quote-controls {
-  i {
-    &.fa-chevron-up:before {
-      content: '\f0d8'; // change chevron to caret
-    }
+.quote-controls i {
+  &.fa-chevron-up:before {
+    content: '\f0d8'; // change chevron to caret
+  }
 
-    &.fa-chevron-down:before {
-      content: '\f0d7'; // change chevron to caret
-    }
+  &.fa-chevron-down:before {
+    content: '\f0d7'; // change chevron to caret
   }
 }
 
-
-.gutter {
+.gutter { // the gutter holds the 'Reply as new topic' link, and links to posts in other threads
   float: right;
-  // min-height: 30px; // the gutter holds the 'Reply as new topic' link, and links to posts in other threads
 
   @media screen and (max-width: 960px) {
     display: none;
@@ -274,7 +252,9 @@ span.post-count {
   margin-left: -55px;
   padding-left: 55px + 13px; // avatar plus pad
   padding-top: 13px;
+  position: relative;
   width: 100%;
+  z-index: 0;
 
   @media screen and (max-width: 960px) {
     width: 750px;
@@ -286,18 +266,15 @@ span.post-count {
   z-index: 1; // due to our custom topic-body flexible layout with left padding and negative margin, we need to pull the topic-avatar layer back over the topic-body so that avatar is clickable
 }
 
-
 #selected-posts {
   margin-left: 180px;
 }
-
 
 .topic-post {
   article.boxed {
     line-height: 1.4;
   }
 }
-
 
 .read_restricted .gutter:before {
   color: $gray-lighter-SP;
@@ -313,14 +290,10 @@ span.post-count {
                 // from ~1100px down there be lions (mainly due to messy #topic-progress)) and annoyed users should switch to the Mobile View
 }
 
+.topic-meta-data .post-info  {
+  font-size: inherit;
 
-.topic-meta-data {
-
-  .post-info  {
-    font-size: inherit;
-
-    a {
-      color: $primary;
-    }
+  a {
+    color: $primary;
   }
 }
