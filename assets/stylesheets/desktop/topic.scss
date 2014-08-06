@@ -3,8 +3,6 @@
 
 // TOPIC OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
 
-
-
 #topic-title {
   h1 {
     padding-top: 5px;
@@ -29,15 +27,8 @@ a.reply-new {
   margin-bottom: 10px;
 }
 
-
-#topic-progress-expanded {
-  left: 425px;
-  @include box-shadow(0);
-}
-
 #topic-progress {
   color: $primary;
-  left: 425px;
 
   i.fa {
     right: 15px;
