@@ -14,13 +14,8 @@
     }
   }
 
-  .gutter {
-    width: 19%; // Was removed from Discourse/Discourse
-    .reply-new {
-      .discourse-no-touch & {
-        opacity: 1;
-      }
-    }
+  .gutter .reply-new .discourse-no-touch & {
+    opacity: 1;
   }
 }
 

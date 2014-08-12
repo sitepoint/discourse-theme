@@ -15,12 +15,13 @@
 {{/if}}
 
 {{#if canCreateTopic}}
-  {{! SP CUSTOMIZATION BEGIN }}
-  {{! SP - added btn-primary class }}
+  {{! SP ==========================}} {{! SP - added btn-primary class }}
+
     <button id="create-topic" class='btn btn-default btn-primary' {{action createTopic}}>
       <i class='fa fa-plus'></i>{{i18n topic.create}}
     </button>
-  {{! SP CUSTOMIZATION END }}
+
+  {{! /SP =========================}}
 {{/if}}
 
 {{#if currentUser}}
@@ -33,5 +34,7 @@
 {{/if}}
 
 {{#if canEditCategory}}
-  <button class='btn btn-default' {{action editCategory category}}><i class="fa fa-wrench"></i> {{i18n category.edit_long}}</button>
+  <button class='btn btn-default' {{action editCategory category}}>
+    <i class="fa fa-wrench"></i> {{i18n category.edit_long}}
+  </button>
 {{/if}}

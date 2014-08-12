@@ -49,7 +49,9 @@
       {{/if}}
 
       {{#if canClearPin}}
-        <a href="#" {{action clearPin this}} title="{{i18n topic.clear_pin.help}}">{{i18n topic.clear_pin.title}}</a>
+        <a href="#" {{action clearPin this}} title="{{i18n topic.clear_pin.help}}">
+          {{i18n topic.clear_pin.title}}
+        </a>
       {{/if}}
     </div>
   {{/if}}
@@ -61,29 +63,37 @@
 
 <td class='latest--desktop posters'>
   {{#each posters}}
-    <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
+    <a href="{{user.path}}" class="{{extras}}">
+      {{avatar this usernamePath="user.username" imageSize="small"}}
+    </a>
   {{/each}}
 </td>
 
 <td class='latest--desktop num posts'>
-  <a href="{{lastUnreadUrl}}" class='badge-posts'>{{number posts_count numberKey="posts_long"}}</a>
+  <a href="{{lastUnreadUrl}}" class='badge-posts'>
+    {{number posts_count numberKey="posts_long"}}
+  </a>
 </td>
 
 <td class='latest--desktop num likes'>
   {{#if like_count}}
-    <a href='{{url}}{{#if has_summary}}?filter=summary{{/if}}' title='{{i18n topic.likes count="like_count"}}'>{{number like_count numberKey="likes_long"}} <i class='fa fa-heart'></i></a>
+    <a href='{{url}}' title='{{i18n topic.likes count="like_count"}}'>
+      {{number like_count numberKey="likes_long"}}
+      <i class='fa fa-heart'></i>
+    </a>
   {{/if}}
 </td>
 
-<td {{bind-attr class="latest--desktop :num :views viewsheat"}}>{{number views numberkey="views_long"}}</td>
+<td {{bind-attr class="latest--desktop :num :views viewsHeat"}}>
+  {{number views numberKey="views_long"}}
+</td>
 
 {{#if bumped}}
   <td class='latest--desktop num activity'>
     <a href="{{url}}" class="{{cold-age-class created_at}}" title='{{i18n first_post}}: {{{raw-date created_at}}}' >{{age created_at}}</a>
   </td>
-
   <td class='latest--desktop num activity last'>
-    <a href="{{lastposturl}}" class="{{cold-age-class bumped_at}}" title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>{{age bumped_at}}</a>
+    <a href="{{lastPostUrl}}" class="{{cold-age-class bumped_at}}" title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>{{age bumped_at}}</a>
   </td>
 {{else}}
   <td class='latest--desktop num activity'>
@@ -136,18 +146,31 @@
       <div class='num posts'><a href="{{lastUnreadUrl}}">{{number posts_count numberKey="posts_long"}}</a></div>
 
       {{#if like_count}}
-        <div class='num likes'><a href='{{url}}' title='{{i18n topic.likes count="like_count"}}'>{{number like_count numberKey="likes_long"}} <i class='fa fa-heart'></i></a></div>
+        <div class='num likes'>
+          <a href='{{url}}' title='{{i18n topic.likes count="like_count"}}'>
+            {{number like_count numberKey="likes_long"}}
+            <i class='fa fa-heart'></i>
+          </a>
+        </div>
       {{/if}}
 
       {{#if bumped}}
         <div class='num activity last'>
-          <a href="{{lastPostUrl}}" title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>{{last_poster_username}}</a>
-          <a href="{{lastPostUrl}}" class='age' title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>{{age bumped_at}}</a>
+          <a href="{{lastPostUrl}}" title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>
+            {{last_poster_username}}
+          </a>
+          <a href="{{lastPostUrl}}" class='age' title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>
+            {{age bumped_at}}
+          </a>
         </div>
       {{else}}
         <div class='num activity last'>
-          <a href="{{url}}" title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>{{last_poster_username}}</a>
-          <a href="{{url}}" class='age' title='{{i18n first_post}}: {{{raw-date created_at}}}'>{{age created_at}}</a>
+          <a href="{{url}}" title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>
+            {{last_poster_username}}
+          </a>
+          <a href="{{url}}" class='age' title='{{i18n first_post}}: {{{raw-date created_at}}}'>
+            {{age created_at}}
+          </a>
         </div>
       {{/if}}
     </div>
