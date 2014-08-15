@@ -86,10 +86,14 @@
     }
   }
 
-  .category{
+  .category {
     .badge-category.bigger {
       min-width: 100px;
       text-align: center;
+    }
+
+    .badge-notification.new-posts {
+      color: $gray-light-SP !important;
     }
   }
 }
