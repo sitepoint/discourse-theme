@@ -20,7 +20,7 @@
 }
 
 .discourse-no-touch .post-cloak {
-  .post-actions, div.actions { // ICKY: Qualified Selector :/
+  .gutter .reply-new, .post-actions, div.actions { // ICKY: Qualified Selector :/
     opacity: 1;
   }
 }
