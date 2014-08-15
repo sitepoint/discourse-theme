@@ -50,18 +50,12 @@
     &:nth-of-type(1), &.border--category {
       border-left-color: $gray-lighter-SP;
       border-left-width: 1px;
-      // border-left-color: currentColor;
-      // border-left-width: 6px;
     }
 
     .category__title a.badge-category[href] {
       padding: 8px 6px 6px;
       line-height: 1;
     }
-
-    // .category__title h3 a[href], &.main-link a.title[href] {
-    //   color: currentColor;
-    // }
 
     .category-description {
       color: $gray-light-SP;
