@@ -34,12 +34,6 @@ nav.post-controls {
       color: $gray-sitepoint-header-SP;
       font-size: inherit;
     }
-
-    &:hover {
-      span.badge-posts {
-        // color: #fff;
-      }
-    }
   }
 
   button.create { // reply button
@@ -282,7 +276,7 @@ span.post-count {
   bottom: 0px;
   left: auto;
   right: 0px; // pull icon into the post container area so that no horizontal scrollbar appears until <~1130px (admins requested that
-                // from ~1100px down there be lions (mainly due to messy #topic-progress)) and annoyed users should switch to the Mobile View
+              // from ~1100px down there be lions (mainly due to messy #topic-progress)) and annoyed users should switch to the Mobile View
 }
 
 .topic-meta-data .post-info  {

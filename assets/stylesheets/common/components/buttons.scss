@@ -1,24 +1,11 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-// BUTTONS OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
-
-
-// --------------------------------------------------
-// Buttons
-// --------------------------------------------------
-
-// Base
-// --------------------------------------------------
-
 .btn {
   @include border-radius-all($border-radius-default-SP);
 }
 
-// Primary button
-// --------------------------------------------------
-
-.btn-primary {
+.btn-primary { // The red ones :P
   background-color: $red-SP;
   color: #fff;
 
