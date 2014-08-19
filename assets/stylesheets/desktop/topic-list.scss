@@ -15,85 +15,17 @@
   }
 }
 
-.topic-list {
-  // border: none;
-
-  > tbody > tr {
-    &:nth-of-type(odd) {
-      background-color: transparent;
-    }
-
-    &:nth-of-type(even) {
-      background-color: $gray-bg-SP;
-    }
-  }
-
-  th {
-    background-color: $gray-bg-SP;
-    border-top: 1px solid $gray-lighter-SP;
-    border-bottom: 1px solid $gray-lighter-SP;
-
-    i {
-      &.fa-chevron-up:before {
-        content: '\f0d8'; // change chevron to caret
-      }
-
-      &.fa-chevron-down:before {
-        content: '\f0d7'; // change chevron to caret
-      }
-    }
-  }
-
-  td {
-    &.num.likes {
-      i.fa-heart {
-        display: none; // remove heart icon from individual rows (it's already in the <th> row)
-      }
-    }
-  }
-
-  .posters {
-    min-width: 54px;
-  }
-
-  .avatar {
-    &.latest {
-      @include box-shadow(0 0 0 1px $blue-SP); // don't use inset - makes some avatars not receive the border (e.g. ralphm's photo from gravatar)
-    }
-  }
-
-  .topic-list-item {
-    .badge-category {
-      &[href] {
-        display: block;
-        padding: 7px 6px;
-        text-align: center;
-      }
-    }
-  }
+.topic-list .category {
+  width: 110px;
 }
 
-
-.topic-list.categories {
-  // need to set the colors again because of specificity in vendor file
-  > tbody > tr {
-    &:nth-of-type(odd) {
-      background-color: transparent;
-    }
-
-    &:nth-of-type(even) {
-      background-color: $gray-bg-SP;
-    }
+.topic-list.categories .category {
+  .badge-category.bigger {
+    min-width: 100px;
+    text-align: center;
   }
 
-  .category {
-    .badge-category.bigger {
-      min-width: 100px;
-      text-align: center;
-    }
-
-    .badge-notification.new-posts {
-      color: $gray-light-SP !important;
-    }
+  .badge-notification.new-posts {
+    color: $gray-light-SP !important;
   }
 }
