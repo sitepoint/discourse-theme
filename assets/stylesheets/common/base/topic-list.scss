@@ -1,68 +1,53 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-.categories--mobile, .latest--mobile {
-  @media (min-width: $mobile-break-point-SP + 1) { display:none; }
-}
-
-.categories--desktop, .latest--desktop {
-  @media (max-width: $mobile-break-point-SP + 1) { display:none; }
-}
-
 .list-controls {
-  .category-dropdown-button {
+  .category-dropdown-button { // Remove line between caret and words
     border-left: none;
   }
 
-  .category-dropdown-menu {
+  .category-dropdown-menu { // Add padding around things in dropdown
     padding: 8px 8px 0px
   }
 
   a.badge-category {
-    min-width: 0;
+    min-width: 0;  // Fixes caret from being really wide
 
-    &.category-dropdown-button {
-      i:before {
-        content: '\f0d7'; // caret down instead of right
-      }
+    &.category-dropdown-button i:before {
+      content: '\f0d7'; // caret down instead of right
     }
   }
 }
 
 .contents .topic-list {
-  border-collapse: collapse;
-  position: relative;
-  border-color: $gray-lighter-SP;
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid $gray-lighter-SP;
 
   tr.selected td {
     &:nth-of-type(1), &.border--category {
       box-shadow: -5px 0 0;
+      border-left: none;
     }
   }
 
   th, td {
-    border-color: $gray-lighter-SP;
+    border-color: $gray-lighter-SP !important; // Override inline style
     border-style: solid;
     border-width: 0 0 1px;
 
-    &:nth-of-type(1), &.border--category {
-      border-left-color: $gray-lighter-SP;
-      border-left-width: 1px;
+    &:nth-of-type(1) {
+      border-left-width: 0;
     }
 
-    .category__title a.badge-category[href] {
-      padding: 8px 6px 6px;
+    .category__title { // make it look similar to .badge-category
+      border-radius: 3px;
+      min-width: 120px;
+      text-align: center;
+      padding: 6px;
+      font-size: 12px;
+      font-weight: bold;
+      white-space: nowrap;
+      display: inline-block;
       line-height: 1;
-    }
-
-    .category-description {
-      color: $gray-light-SP;
-    }
-
-    .star {
-      text-align: right;
     }
 
     .tagger-tags-view {
@@ -70,33 +55,47 @@
     }
   }
 
-  th {
-    position: static !important; // Firefox fix for weird border shinanigans
-  }
-
   table td {
     border: none; // no borders on nested table children
   }
-}
 
-.topic-list {
-  a.title {
-    color: $tertiary;
-  }
-
-  a.title:visited:not(.badge-notification) {
-    color: $tertiary;
-  }
-}
-
-ol.category-breadcrumb {
-  li {
-    @include border-radius-all($border-radius-default-SP);
-    border: 1px solid $gray-lighter-SP;
-    overflow: hidden; // so that rounded corners are not overflown
-
-    > .badge-category {
-      @include border-radius-all(0);
+  i {
+    &.fa-chevron-up:before {
+      content: '\f0d8'; // change chevron to caret
     }
+
+    &.fa-chevron-down:before {
+      content: '\f0d7'; // change chevron to caret
+    }
+  }
+
+  td.num.likes i.fa-heart {
+    display: none; // remove heart icon from individual rows (it's already in the <th> row)
+  }
+
+  .posters {
+    min-width: 54px;
+  }
+
+  .avatar.latest {
+    @include box-shadow(0 0 0 1px $blue-SP); // don't use inset - makes some avatars not receive the border (e.g. ralphm's photo from gravatar)
+  }
+}
+
+.topic-list a.title {
+  &, &:visited:not(.badge-notification) {
+    color: $tertiary; // color of topic titles on pages like /latest
+  }
+}
+
+ol.category-breadcrumb li {
+  @include border-radius-all($border-radius-default-SP); // Border radius on all categories
+  border: 1px solid $gray-lighter-SP;                    // Border around all categories dropdown
+  overflow: hidden;                                      // so that rounded corners are not overflown
+
+  > .badge-category {
+    @include border-radius-all(0); // With out this when on a page like
+                                   // "Get Started" the get started and the caret
+                                   // have rounded corners and look weird
   }
 }
