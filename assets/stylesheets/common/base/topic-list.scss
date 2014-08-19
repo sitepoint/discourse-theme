@@ -59,14 +59,12 @@
     border: none; // no borders on nested table children
   }
 
-  i {
-    &.fa-chevron-up:before {
-      content: '\f0d8'; // change chevron to caret
-    }
+  i.fa-chevron-up:before {
+    content: '\f0d8'; // change chevron to caret
+  }
 
-    &.fa-chevron-down:before {
-      content: '\f0d7'; // change chevron to caret
-    }
+  i.fa-chevron-down:before {
+    content: '\f0d7'; // change chevron to caret
   }
 
   td.num.likes i.fa-heart {

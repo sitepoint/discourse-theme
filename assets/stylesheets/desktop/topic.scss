@@ -1,21 +1,15 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-// TOPIC OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
+#topic-title h1 {
+  padding-top: 5px;
 
-#topic-title {
-  h1 {
-    padding-top: 5px;
+  a:visited {
+    color: $tertiary;
+  }
 
-    a {
-      &:visited {
-        color: $tertiary;
-      }
-    }
-
-    a.badge-category {
-      margin-top: -3px;
-    }
+  a.badge-category {
+    margin-top: -3px;
   }
 }
 

@@ -1,10 +1,6 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-// DESKTOP USER PROFILE PAGE OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
-
-
-
 .user-main {
   .about {
     border: 1px solid $gray-lighter-SP;
@@ -71,7 +67,7 @@
         max-width: none;
         padding: 20px;
         text-align: left;
-        // width: 268px;
+        // width: 268px; // FIXME: fix collapsing when small screen
         width: 35%;
 
         dl {

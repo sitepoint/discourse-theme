@@ -2,10 +2,6 @@
 @import "common/foundation/mixins";
 @import "common/foundation/helpers";
 
-// DESKTOP GLOBAL OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
-
-
-
 .avatar {
   @include border-radius-all(0);
 }
@@ -13,9 +9,7 @@
 .avatar-wrapper {
   border: none;
 
-  @include border-radius-all(0);
-
-  img {
+  &, img {
     @include border-radius-all(0);
   }
 }

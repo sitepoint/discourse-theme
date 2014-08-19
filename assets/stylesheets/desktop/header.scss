@@ -1,23 +1,12 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-// DESKTOP HEADER OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
-
-
-
-// --------------------------------------------------
-// Discourse header
-// --------------------------------------------------
-
 .d-header {
-
-  // Sitepoint custom style:
   .header-links-wrapper {
     float: right;
     margin-right: 50px;
   }
 
-  // Sitepoint custom style:
   .header-link {
     color: $gray-sitepoint-header-SP;
     display: inline-block;

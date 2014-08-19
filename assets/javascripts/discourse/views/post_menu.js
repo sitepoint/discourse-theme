@@ -1,5 +1,3 @@
-// import PostMenuView from 'discourse/views/post-menu';
-
 // Helper class for rendering a button
 var Button = function(action, label, icon, opts) {
   this.action = action;
@@ -31,24 +29,22 @@ Discourse.PostMenuView.reopen({
     if (!post.get('showRepliesBelow')) return;
 
     var reply_count = post.get('reply_count');
-    // SP CUSTOMIZATION BEGIN
-    buffer.push("<button class='show-replies btn' data-action='replies'>");
-    // SP CUSTOMIZATION END
+
+    /* SP */ buffer.push("<button class='show-replies btn' data-action='replies'>");
+
     buffer.push("<span class='badge-posts'>" + reply_count + "</span>");
     buffer.push(I18n.t("post.has_replies", { count: reply_count }));
 
-    // SP CUSTOMIZATION BEGIN
-    var icon = (this.get('post.replies.length') > 0) ? 'fa-caret-up' : 'fa-caret-down';
-    // SP CUSTOMIZATION END
+    /* SP */ var icon = (this.get('post.replies.length') > 0) ? 'fa-caret-up' : 'fa-caret-down';
+
     return buffer.push("<i class='fa " + icon + "'></i></button>");
   },
 
   // Reply button
   buttonForReply: function() {
     if (!this.get('controller.model.details.can_create_post')) return;
-    // SP CUSTOMIZATION BEGIN
-    var options = {className: 'create btn'};
-    // SP CUSTOMIZATION END
+
+    /* SP */ var options = {className: 'create btn'};
 
     if(!Discourse.Mobile.mobileView) {
       options.textLabel = 'topic.reply.title';

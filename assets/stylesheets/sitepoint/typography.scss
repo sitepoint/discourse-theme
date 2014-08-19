@@ -1,19 +1,9 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-// @function strip-units($num) {
-//   @return $num / ($num * 0 + 1);
-//   // @return $num / 1#{unit($num)};
-// }
-
 @mixin font-size($sizeValue: 16) { // calculates rems from pixels
-  // $intBase: unitless($base-font-size);
-  // $intBase: strip-units(#{$base-font-size});
-  // font-size: ($sizeValue / $intBase) * 1rem;
   font-size: ($sizeValue / 14) * 1rem;
 }
-
-
 
 /* 20 fixed */
 .extra-info h1,
@@ -21,13 +11,11 @@
   @include font-size(20);
 }
 
-
 /* 16 fixed */
 #topic-progress,
 #topic-progress h4 {
   @include font-size(16);
 }
-
 
 /* 16 to 14 */
 .topic-body .contents .cooked {
@@ -38,12 +26,10 @@
   }
 }
 
-
 /* 15 fixed */
 .header-link {
   @include font-size(15);
 }
-
 
 /* 14 fixed */
 .topic-map h4,
@@ -62,8 +48,6 @@
     @include font-size(13);
   }
 }
-
-
 
 h1, h2, h3, h4 {
   letter-spacing: 0.02em;

@@ -1,15 +1,11 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-// GENERAL HEADER OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
-
 .top-crawler-links {
   display: none;
 }
 
 .d-header {
-
-  // SP custom rule
   .container {
     margin-left: 10px;
     margin-right: 10px;
@@ -17,20 +13,15 @@
     width: auto;
   }
 
-
-  // SP custom style:
   .logomark {
     float: left; // so that left-floating .extra-info-wrapper can sit on logo's and link's right side
     margin-top: 11px;
     margin-right: 10px;
   }
 
-
-  .current-username {
-    a {
-      color: #fff;
-      margin-top: 12px;
-    }
+  .current-username a {
+    color: #fff;
+    margin-top: 12px;
   }
 
   .icons {
@@ -66,18 +57,11 @@
   }
 }
 
-
-// Dropdowns
-// --------------------------------------------------
-
 .d-dropdown {
   border-top-color: #fff;
 
-  // SP custom rule
-  .user-dropdown-links {
-    .badge-notification {
-      margin-right: 5px; // ensure horizontal separation between unread messages count and the word Messages
-    }
+  .user-dropdown-links .badge-notification {
+    margin-right: 5px; // ensure horizontal separation between unread messages count and the word Messages
   }
 
 

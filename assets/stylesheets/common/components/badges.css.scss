@@ -36,10 +36,6 @@
   text-align: center;
 }
 
-
-// Notification badge
-// --------------------------------------------------
-
 .badge-notification {
   &.new-posts, &.unread-posts, &.unread, &.unread-private-messages {
     background-color: $red-SP;
