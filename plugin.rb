@@ -55,126 +55,119 @@ after_initialize do
 end
 
 
-#### Styles
-# => Variables
+## Styles
+#  Variables
 register_asset("stylesheets/common/foundation/variables.scss", :variables)
-# => Media-queried rules for fontsizes
-#    NOTE: Helps reduce the line count in module stylesheets
-#          Helps keep number of different sizes in check
+#  Media-queried rules for fontsizes
+#  NOTE: Helps reduce the line count in module stylesheets
+#        Helps keep number of different sizes in check
 register_asset "stylesheets/sitepoint/typography.scss"
-# => Make badges wide by default
-# => Change category dropdown caret style
-# => Don't display parent category
-# => Unread count notification color
+#  Make badges wide by default
+#  Change category dropdown caret style
+#  Don't display parent category
+#  Unread count notification color
 register_asset "stylesheets/common/components/badges.css.scss"
-# => Buttons default radius
-# => Background color of primary button from blue to red
+#  Buttons default radius
+#  Background color of primary button from blue to red
 register_asset "stylesheets/common/components/buttons.scss"
 
 
 #### Navigation
-# => Add "FAQ" to Main Navigation
+#  Add "FAQ" to Main Navigation
 register_custom_html(extraNavItem: "<li id='faq-menu-item'><a href='/faq'>FAQ</a></li>")
-# => pill nav Styles and stacked nav (user/group profile page)
-# => rounded corners
-# => bordered passive state
-# => red bg borderless active state
-# => custom carets etc
+#  pill nav Styles and stacked nav (user/group profile page)
+#  rounded corners
+#  bordered passive state
+#  red bg borderless active state
+#  custom carets etc
 register_asset "stylesheets/common/components/navs.scss"
-# => Mobile version of ^^^
-# => visually ungroup so that pills can wrap to next line in a visually attractive way.
-#    NOTE: AS OF 20140701 THIS FILE HAS NO VENDOR FILE EQUIVALENT
+#  Mobile version of ^^^
+#  visually ungroup so that pills can wrap to next line in a visually attractive way.
+#  NOTE: AS OF 20140701 THIS FILE HAS NO VENDOR FILE EQUIVALENT
 register_asset "stylesheets/mobile/components/navs.scss", :mobile
 
 
 #### Topic Composer
-#    NOTE: [JB] This feels like a completely pointless change...
-# => Move plugin outlet below title input area
+#  NOTE: [JB] This feels like a completely pointless change...
+#  Move plugin outlet below title input area
 register_asset "javascripts/discourse/templates/composer.js.handlebars"
-# => Custom caret symbols
+#  Custom caret symbols
 register_asset "stylesheets/desktop/compose.scss", :desktop
-# => Mobile fix: compose panel overflow on phones running Chrome
-# => Only needed until we pull in a Discourse version with https://github.com/discourse/discourse/pull/2515 already integrated
+#  Mobile fix: compose panel overflow on phones running Chrome
+#  Only needed until we pull in a Discourse version with https://github.com/discourse/discourse/pull/2515 already integrated
 register_asset "stylesheets/mobile/compose.scss", :mobile
 
 
 #### Custom Header
 register_asset "javascripts/discourse/templates/header.js.handlebars"
-# => item colors
-# => reset of badges back to inline display in hamburger menu
+#  item colors
+#  reset of badges back to inline display in hamburger menu
 register_asset "stylesheets/common/base/header.scss"
-# => expand header to full viewport width
-# => styling of custom links and logo
+#  expand header to full viewport width
+#  styling of custom links and logo
 register_asset "stylesheets/desktop/header.scss", :desktop
-# => reduced paddings and icon widths
-# => SP site links hidden
+#  reduced paddings and icon widths
+#  SP site links hidden
 register_asset "stylesheets/mobile/header.scss", :mobile
 
 
 #### Categories Page Table [http://discourse.vim]
-# => Add "btn-primary class to "Create Topic" button
+#  Add "btn-primary class to "Create Topic" button
 register_asset "javascripts/discourse/templates/navigation/categories.js.handlebars"
-# => pill nav style
-# => Table Styles
-# => "All Categories" dropdown
+#  pill nav style
+#  Table Styles
+#  "All Categories" dropdown
 register_asset "stylesheets/common/base/topic-list.scss"
-# => remove leaked THEAD from override template
-# => tweak margins
+#  remove leaked THEAD from override template
+#  tweak margins
 register_asset "stylesheets/mobile/topic-list.scss", :mobile
-# => Add "btn-primary" class to "Create Topic" button
-register_asset "javascripts/discourse/templates/navigation/category.js.handlebars"
 
 
 #### Category Topics Page Table [http://discourse.vm/category/community]
-# => Add tags to rows
-#### register_asset "javascripts/discourse/templates/list/topic_list_item.js.handlebars"
-# => ^^^ but mobile - Doesnt currently work
-# register_asset "javascripts/discourse/templates/mobile/discovery/topics.js.handlebars"
-# => Add "btn-primary" class to "Create Topic" button
+#  Add "btn-primary" class to "Create Topic" button
+register_asset "javascripts/discourse/templates/navigation/category.js.handlebars"
 register_asset "javascripts/discourse/templates/navigation/default.js.handlebars"
-# => navigation style
-# => category badges
-# => row background colors
-# => carets
-# => latest poster avatar highlight style
+#  navigation style
+#  category badges
+#  row background colors
+#  carets
+#  latest poster avatar highlight style
 register_asset "stylesheets/desktop/topic-list.scss", :desktop
 
 
 #### Topic Page [http://discourse.vim/t/feedbacks-on-the-imported-data/192]
-# => Add post number to topic-meta-data
+#  Add post number to topic-meta-data
 register_asset "javascripts/discourse/templates/post.js.handlebars"
-# => Reorder topic-map so that headings are the top like they used to be before 20140530
-register_asset "javascripts/discourse/templates/components/topic-map.js.handlebars"
-# => quoted post - left border color (on mobile, the border next to the name has to be overidden again...)
+#  quoted post - left border color (on mobile, the border next to the name has to be overidden again...)
 register_asset "stylesheets/common/base/discourse.scss"
-# => Hard corners and no default border on avatars
+#  Hard corners and no default border on avatars
 register_asset "stylesheets/desktop/discourse.scss", :desktop
-# => metadata area
-# => increase font size
-# => change color of poster's username to blue
-# => ensure consistent vertical spacing betweet topic header and contents
+#  metadata area
+#  increase font size
+#  change color of poster's username to blue
+#  ensure consistent vertical spacing betweet topic header and contents
 register_asset "stylesheets/common/base/topic-post.scss"
-# => custom styling of a topic page (container sizes, opacities, colors, icon glyphs etc.)
+#  custom styling of a topic page (container sizes, opacities, colors, icon glyphs etc.)
 register_asset "stylesheets/desktop/topic-post.scss", :desktop
-# => quoted post top part of left border color
+#  quoted post top part of left border color
 register_asset "stylesheets/mobile/topic-post.scss", :mobile
-# => title vs badge vert. alignment,
-# => progress indicator styling,
-# => post gutter ("Reply as new topic" etc. buttons) repositioning,
+#  title vs badge vert. alignment,
+#  progress indicator styling,
+#  post gutter ("Reply as new topic" etc. buttons) repositioning,
 register_asset "stylesheets/desktop/topic.scss", :desktop
 
 #### User/Group Profile
-# => font
-# => background colors
+#  font
+#  background colors
 register_asset "stylesheets/common/base/user.scss"
-# => custom user info panel two-column layout
-# => posts-list layout
+#  custom user info panel two-column layout
+#  posts-list layout
 register_asset "stylesheets/desktop/user.scss", :desktop
 
 
 #### Component: PM Button
-#    NOTE: [JB] some serious round robin shit going on here. serious wtf...
-# => Pull in pm button plugin as the plugin overwrites a template we previously have overwritten as well
+#  NOTE: [JB] some serious round robin shit going on here. serious wtf...
+#  Pull in pm button plugin as the plugin overwrites a template we previously have overwritten as well
 register_asset("javascripts/pm_button.js", :client_side)
 
 #### ADMIN
@@ -182,12 +175,10 @@ register_asset("javascripts/pm_button.js", :client_side)
 #### ADMIN
 
 #### Admin/Users
-# => Include IP in user list
+#  Include IP in user list
 register_asset "javascripts/admin/templates/users_list.js.handlebars"
 
 #### Topic Page [http://discourse.vm/t/feedbacks-on-the-imported-data/192]
-# => Add 'btn' class to the show Replies and Reply buttons (rounded corners)
-# => Change "Show Replies" expand/contract icons from chevrons to carets
+#  Add 'btn' class to the show Replies and Reply buttons (rounded corners)
+#  Change "Show Replies" expand/contract icons from chevrons to carets
 register_asset "javascripts/discourse/views/post_menu.js"
-# register_asset "javascripts/discourse/views/post_menu.js.es6"
-# ^^^ ES6-style not working yet (Discourse.PostMenuView = require('discourse/plugins//discourse/views/post_menu').default; in transpiled file says cannot read prop default of undefined)
