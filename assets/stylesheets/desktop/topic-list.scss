@@ -16,7 +16,11 @@
 }
 
 .topic-list .category {
-  width: 110px;
+  width: 140px;
+
+  .badge-category {
+    min-width: 120px;
+  }
 }
 
 .topic-list.categories .category {
