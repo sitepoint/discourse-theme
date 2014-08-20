@@ -16,16 +16,16 @@
 </ul>
 
 {{#if canCreateCategory}}
-  {{! SP (1)=======================}}
+  {{! SP (1) }}
 
     <button class='btn btn-default btn-primary' {{action createCategory}}>
       <i class='fa fa-plus'></i> {{i18n category.create}}
     </button>
 
-  {{! /SP =========================}}
+  {{! /SP }}
 {{/if}}
 
-{{! SP (2)=======================}}
+{{! SP (2) }}
 
   {{#if currentUser}}
     <button class='btn btn-default' {{action composePrivateMessage}}>
@@ -33,4 +33,4 @@
     </button>
   {{/if}}
 
-{{! /SP =========================}}
+{{! /SP }}
