@@ -266,9 +266,9 @@ span.post-count {
 }
 
 .read_restricted .gutter:before {
+  font-family: 'FontAwesome';
   color: $gray-lighter-SP;
-  content: "\f023";
-  // content: $fa-var-lock; // lock icon \f023
+//   content: "\f023";
   content: $fa-var-eye-slash; // eye-slash icon \f070
   font-size: 45px;
   position: absolute;
