@@ -170,6 +170,12 @@ register_asset "stylesheets/desktop/user.scss", :desktop
 #  Pull in pm button plugin as the plugin overwrites a template we previously have overwritten as well
 register_asset("javascripts/pm_button.js", :client_side)
 
+#### Component: Discourse Banner
+#  Banner should not be sticky
+register_asset "javascripts/discourse/templates/components/discourse-banner.js.handlebars"
+register_asset "stylesheets/common/components/banner.css.scss"
+
+
 #### ADMIN
 #### ADMIN
 #### ADMIN
