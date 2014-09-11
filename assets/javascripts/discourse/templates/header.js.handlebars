@@ -132,13 +132,6 @@
     </a>
 
     <div class='panel clearfix'>
-      {{#unless showExtraInfo}}
-        <div class='current-username'>
-          {{#if currentUser}}
-            <span class='username'><a {{bind-attr href="currentUser.path"}}>{{currentUser.displayName}}</a></span>
-          {{/if}}
-        </div>
-      {{/unless}}
       {{#unless currentUser}}
         <button {{action showLogin}} class='btn btn-primary btn-small login-button'>
           {{icon user}} {{i18n log_in}}
