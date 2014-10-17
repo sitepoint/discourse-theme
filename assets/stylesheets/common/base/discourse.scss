@@ -1,5 +1,5 @@
 @import "common/foundation/variables";
 
-blockquote {
+blockquote, aside.quote .title {
   border-left: 3px solid $red-SP;
 }
