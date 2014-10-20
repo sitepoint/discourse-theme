@@ -194,8 +194,10 @@ span.post-count {
 
   .badge-category {
     font-size: 10px;
-    line-height: 18px;
-    padding: 0;
+    line-height: 19px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    min-width: 0;
   }
 }
 
