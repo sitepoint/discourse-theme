@@ -246,9 +246,9 @@
               {{/if}}
             </h1>
             {{#if topic.category.parentCategory}}
-              {{bound-category-link topic.category.parentCategory onlyStripe="true"}}
+              {{! SP }}{{bound-category-link topic.category.parentCategory}}{{! /SP }}
             {{/if}}
-            {{bound-category-link topic.category onlyStripe="true"}}
+            {{! SP }}{{bound-category-link topic.category}}{{! /SP }}
           </div>
         </div>
       </div>

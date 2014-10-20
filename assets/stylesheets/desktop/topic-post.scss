@@ -170,7 +170,6 @@ span.post-count {
 
 .extra-info-wrapper {
   max-width: 760px;
-  margin-top: 4px;
 }
 
 @include medium-width {
@@ -186,19 +185,17 @@ span.post-count {
 }
 
 .extra-info {
-  h1 {
-    margin: 3px 0 0 0;
+  &.has-category h1, h1 {
+    margin: 0 0 1px 0;
     color: $gray-lighter-SP;
-  }
-
-  a.star {
-    margin-top: 2px;
   }
 
   .topic-statuses {margin-top: -2px;}
 
   .badge-category {
-    margin-top: -1px;
+    font-size: 10px;
+    line-height: 18px;
+    padding: 0;
   }
 }
 
