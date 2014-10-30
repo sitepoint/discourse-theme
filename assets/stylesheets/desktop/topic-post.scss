@@ -193,11 +193,33 @@ span.post-count {
   .topic-statuses {margin-top: -2px;}
 
   .badge-category {
+    float: left;
     font-size: 10px;
     line-height: 19px;
     padding: 0 5px;
     box-sizing: border-box;
     min-width: 0;
+  }
+
+  .tagger-tags-view {
+    float: left;
+    max-width: 50%;
+    height: 19px;
+    overflow: hidden;
+    margin-left: 10px;
+    font-size: 10px;
+    color: #fff;
+
+    span {
+      margin-top: 0;
+    }
+
+    a {
+      font-size: 10px;
+      line-height: 15px;
+      margin-top: 0;
+      margin-right: 5px;
+    }
   }
 }
 
