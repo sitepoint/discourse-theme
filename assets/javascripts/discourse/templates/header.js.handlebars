@@ -249,6 +249,16 @@
               {{! SP }}{{bound-category-link topic.category.parentCategory}}{{! /SP }}
             {{/if}}
             {{! SP }}{{bound-category-link topic.category}}{{! /SP }}
+            {{! SP }}
+            {{#if topic.tags}}
+             <div class="tagger-tags-view">
+              <span>Tags:</span>
+                {{#each topic.tags}}
+                  <a href="/tag/{{unbound this}}" class="tagger-tag btn">{{this}}</a>
+                {{/each}}
+            </div>
+            {{/if}}
+            {{!/SP}}
           </div>
         </div>
       </div>
