@@ -39,16 +39,16 @@ after_initialize do
   # SP customisation: add SiteCustomization to add in crawler links
   SiteCustomization.create({
     name: "SitePoint Crawler links",
-    header: '<div class="top-crawler-links">
+    header: '<noscript>
       <a href="http://www.sitepoint.com">Articles</a>
       <a href="https://learnable.com/topics/all/book">Books</a>
       <a href="https://learnable.com/topics/all/course">Courses</a>
-    </div>',
-    mobile_header: '<div class="top-crawler-links">
+    </noscript>',
+    mobile_header: '<noscript>
       <a href="http://www.sitepoint.com">Articles</a>
       <a href="https://learnable.com/topics/all/book">Books</a>
       <a href="https://learnable.com/topics/all/course">Courses</a>
-    </div>',
+    </noscript>',
     enabled: true,
     user_id: User.first.id
   })
