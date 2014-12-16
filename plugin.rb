@@ -37,7 +37,7 @@ after_initialize do
     end
   end
   # SP customisation: add SiteCustomization to add in crawler links
-  SiteCustomization.create({
+  SiteCustomization.find_or_create_by({
     name: "SitePoint Crawler links",
     header: '<noscript>
       <a href="http://www.sitepoint.com">Articles</a>
