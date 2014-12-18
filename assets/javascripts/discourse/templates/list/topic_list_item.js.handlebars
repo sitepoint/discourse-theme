@@ -1,5 +1,3 @@
-{{! Currently Not Being Used - Will be needed when we renable tags in the /latest view }}
-
 {{#if bulkSelectEnabled}}
   <td class='star'>
     {{input type="checkbox" checked=checked}}
@@ -7,25 +5,16 @@
 {{else}}
   {{#if canStar}}
     <td class='star'>
-      <a {{bind-attr class=":star :fa :fa-star starred:starred"}} {{action toggleStar}} href='#' {{bind-attr title="starTooltip"}}></a>
+      <a {{bind-attr class=":star :fa :fa-star starred:starred"}} {{action "toggleStar"}} href='#' {{bind-attr title="starTooltip"}}></a>
     </td>
   {{/if}}
 {{/if}}
 
-<td class='main-link clearfix' {{bind-attr colspan="titleColSpan"}}>
+<td class='main-link clearfix' colspan="{{unbound titleColSpan}}">
   {{topic-status topic=this.model}}
-  {{{topic-link this}}}
-
-  {{#if unread}}
-    <a href="{{lastUnreadUrl}}" class='badge unread badge-notification' title='{{i18n topic.unread_posts count="unread"}}'>{{unread}}</a>
-  {{/if}}
-
-  {{#if displayNewPosts}}
-    <a href="{{lastUnreadUrl}}" class='badge new-posts badge-notification' title='{{i18n topic.new_posts count="displayNewPosts"}}'>{{displayNewPosts}}</a>
-  {{/if}}
-
-  {{#if unseen}}
-    <a href="{{lastUnreadUrl}}" class='badge new-posts badge-notification' title='{{i18n topic.new}}'>{{i18n filters.new.lower_title}}</a>
+  {{topic-link this}}
+  {{#if showTopicPostBadges}}
+    {{topic-post-badges unread=unread newPosts=displayNewPosts unseen=unseen url=lastUnreadUrl}}
   {{/if}}
 
   {{! SP =========================== }}
@@ -41,64 +30,13 @@
 
   {{! /SP ========================= }}
 
-  {{#if hasExcerpt}}
-    <div class="topic-excerpt">
-      {{{excerpt}}}
-
-      {{#if excerptTruncated}}
-        {{#unless canClearPin}}<a href="{{url}}">{{i18n read_more}}</a>{{/unless}}
-      {{/if}}
-
-      {{#if canClearPin}}
-        <a href="#" {{action clearPin this}} title="{{i18n topic.clear_pin.help}}">
-          {{i18n topic.clear_pin.title}}
-        </a>
-      {{/if}}
-    </div>
-  {{/if}}
+  {{raw "list/topic-excerpt" topic=model}}
 </td>
 
-{{#unless hideCategory}}
-  <td class='category'>{{bound-category-link category showParent=true}}</td>
-{{/unless}}
+{{raw "list/category-column" hideCategory=hideCategory category=category}}
+{{raw "list/posters-column" posters=posters}}
 
-<td class='posters'>
-  {{#each posters}}
-    <a href="{{user.path}}" class="{{extras}}">
-      {{avatar this usernamePath="user.username" imageSize="small"}}
-    </a>
-  {{/each}}
-</td>
+{{posts-count-column topic=model class="num" action="showTopicEntrance"}}
+<td class="num views {{unbound viewsHeat}}">{{number views numberKey="views_long"}}</td>
 
-<td class='num posts'>
-  <a href="{{lastUnreadUrl}}" class='badge-posts'>
-    {{number posts_count numberKey="posts_long"}}
-  </a>
-</td>
-
-<td class='num likes'>
-  {{#if like_count}}
-    <a href='{{url}}' title='{{i18n topic.likes count="like_count"}}'>
-      {{number like_count numberKey="likes_long"}}
-      <i class='fa fa-heart'></i>
-    </a>
-  {{/if}}
-</td>
-
-<td {{bind-attr class=":num :views viewsHeat"}}>
-  {{number views numberKey="views_long"}}
-</td>
-
-{{#if bumped}}
-  <td class='num activity'>
-    <a href="{{url}}" class="{{cold-age-class created_at}}" title='{{i18n first_post}}: {{{raw-date created_at}}}' >{{age created_at}}</a>
-  </td>
-  <td class='num activity last'>
-    <a href="{{lastPostUrl}}" class="{{cold-age-class bumped_at}}" title='{{i18n last_post}}: {{{raw-date bumped_at}}}'>{{age bumped_at}}</a>
-  </td>
-{{else}}
-  <td class='num activity'>
-    <a href="{{url}}" class="{{cold-age-class created_at}}" title='{{i18n first_post}}: {{{raw-date created_at}}}'>{{age created_at}}</a>
-  </td>
-  <td class='activity'></td>
-{{/if}}
+{{raw "list/activity-column" topic=model class="num" tagName="td"}}

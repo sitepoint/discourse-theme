@@ -137,7 +137,7 @@ register_asset "stylesheets/desktop/topic-list.scss", :desktop
 
 #### Topic Page [http://discourse.vim/t/feedbacks-on-the-imported-data/192]
 #  Add post number to topic-meta-data
-register_asset "javascripts/discourse/templates/post.js.handlebars"
+register_asset "javascripts/discourse/templates/post.hbs"
 #  quoted post - left border color (on mobile, the border next to the name has to be overidden again...)
 register_asset "stylesheets/common/base/discourse.scss"
 #  Hard corners and no default border on avatars
