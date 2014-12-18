@@ -135,6 +135,11 @@ register_asset "javascripts/discourse/templates/navigation/default.js.handlebars
 register_asset "stylesheets/desktop/topic-list.scss", :desktop
 
 
+#### Search Results
+# Move show more links to the top of each search results section [http://community.sitepoint.com/t/search-menu-read-more-link/96632/7]
+register_asset "javascripts/discourse/templates/search.hbs"
+
+
 #### Topic Page [http://discourse.vim/t/feedbacks-on-the-imported-data/192]
 #  Add post number to topic-meta-data
 register_asset "javascripts/discourse/templates/post.hbs"
