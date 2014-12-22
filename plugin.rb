@@ -162,11 +162,7 @@ register_asset "stylesheets/mobile/topic-post.scss", :mobile
 register_asset "stylesheets/desktop/topic.scss", :desktop
 
 #### User/Group Profile
-#  font
-#  background colors
-register_asset "stylesheets/common/base/user.scss"
-#  custom user info panel two-column layout
-#  posts-list layout
+#  font for staff-counters
 register_asset "stylesheets/desktop/user.scss", :desktop
 
 
