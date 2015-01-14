@@ -47,3 +47,12 @@
     <i class="fa fa-wrench"></i> {{i18n category.edit_long}}
   </button>
 {{/if}}
+
+<section class='category-heading'>
+  {{#if category.logo_url}}
+    <img {{bind-attr src=category.logo_url}} class="category-logo">
+    {{#if category.description}}
+    <p>{{{category.description}}}</p>
+    {{/if}}
+  {{/if}}
+</section>

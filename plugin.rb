@@ -135,9 +135,14 @@ register_asset "javascripts/discourse/templates/navigation/default.js.handlebars
 register_asset "stylesheets/desktop/topic-list.scss", :desktop
 
 
+#### Search Results
+# Move show more links to the top of each search results section [http://community.sitepoint.com/t/search-menu-read-more-link/96632/7]
+register_asset "javascripts/discourse/templates/search.hbs"
+
+
 #### Topic Page [http://discourse.vim/t/feedbacks-on-the-imported-data/192]
 #  Add post number to topic-meta-data
-register_asset "javascripts/discourse/templates/post.js.handlebars"
+register_asset "javascripts/discourse/templates/post.hbs"
 #  quoted post - left border color (on mobile, the border next to the name has to be overidden again...)
 register_asset "stylesheets/common/base/discourse.scss"
 #  Hard corners and no default border on avatars
@@ -157,11 +162,7 @@ register_asset "stylesheets/mobile/topic-post.scss", :mobile
 register_asset "stylesheets/desktop/topic.scss", :desktop
 
 #### User/Group Profile
-#  font
-#  background colors
-register_asset "stylesheets/common/base/user.scss"
-#  custom user info panel two-column layout
-#  posts-list layout
+#  font for staff-counters
 register_asset "stylesheets/desktop/user.scss", :desktop
 
 
