@@ -1,42 +1,66 @@
-{{#if bulkSelectEnabled}}
-  <td class='star'>
-    {{input type="checkbox" checked=checked}}
-  </td>
-{{else}}
-  {{#if canStar}}
-    <td class='star'>
-      <a {{bind-attr class=":star :fa :fa-star starred:starred"}} {{action "toggleStar"}} href='#' {{bind-attr title="starTooltip"}}></a>
-    </td>
-  {{/if}}
+{{#if controller.bulkSelectEnabled}}
+<td class='star'>
+  <input type="checkbox" class="bulk-select">
+</td>
 {{/if}}
-
-<td class='main-link clearfix' colspan="{{unbound titleColSpan}}">
-  {{topic-status topic=this.model}}
-  {{topic-link this}}
-  {{#if showTopicPostBadges}}
-    {{topic-post-badges unread=unread newPosts=displayNewPosts unseen=unseen url=lastUnreadUrl}}
+<td class='main-link clearfix' colspan="{{titleColSpan}}">
+  {{raw "topic-status" topic=topic}}
+  {{topic-link topic}}
+  {{#if controller.showTopicPostBadges}}
+    {{raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl}}
   {{/if}}
-
+  {{#if expandPinned}}
+    {{raw "list/topic-excerpt" topic=topic}}
+  {{/if}}
   {{! SP =========================== }}
 
     {{#if tags}}
       <div class="tagger-tags-view">
         <span>Tags:</span>
-        {{#each tags}}
-        <a href="/tag/{{unbound this}}" class="tagger-tag btn">{{this}}</a>
+        {{#each tag in tags}}
+        <a href="/tag/{{unbound tag}}" class="tagger-tag btn">{{tag}}</a>
         {{/each}}
       </div>
     {{/if}}
 
   {{! /SP ========================= }}
-
-  {{raw "list/topic-excerpt" topic=model}}
+  {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
 </td>
 
-{{raw "list/category-column" hideCategory=hideCategory category=category}}
-{{raw "list/posters-column" posters=posters}}
+{{#unless controller.hideCategory}}
+  {{#unless topic.isPinnedUncategorized}}
+    {{raw "list/category-column" category=topic.category}}
+  {{/unless}}
+{{/unless}}
 
-{{posts-count-column topic=model class="num" action="showTopicEntrance"}}
-<td class="num views {{unbound viewsHeat}}">{{number views numberKey="views_long"}}</td>
+{{#if controller.showPosters}}
+  {{raw "list/posters-column" posters=topic.posters}}
+{{/if}}
 
-{{raw "list/activity-column" topic=model class="num" tagName="td"}}
+{{raw "list/posts-count-column" topic=topic}}
+
+{{#if controller.showParticipants}}
+  {{raw "list/posters-column" posters=topic.participants}}
+{{/if}}
+
+{{#if controller.showLikes}}
+<td class="num likes">
+  {{#if hasLikes}}
+  <a href='{{topic.summaryUrl}}'>
+    {{number topic.like_count}} <i class='fa fa-heart'></i></td>
+  </a>
+  {{/if}}
+{{/if}}
+
+{{#if controller.showOpLikes}}
+<td class="num likes">
+  {{#if hasOpLikes}}
+  <a href='{{topic.summaryUrl}}'>
+    {{number topic.op_like_count}} <i class='fa fa-heart'></i></td>
+  </a>
+  {{/if}}
+{{/if}}
+
+<td class="num views {{topic.viewsHeat}}">{{number topic.views numberKey="views_long"}}</td>
+
+{{raw "list/activity-column" topic=topic class="num" tagName="td"}}

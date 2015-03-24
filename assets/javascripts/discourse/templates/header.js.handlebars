@@ -133,9 +133,7 @@
 
     <div class='panel clearfix'>
       {{#unless currentUser}}
-        <button {{action showLogin}} class='btn btn-primary btn-small login-button'>
-          {{fa-icon "user"}} {{i18n log_in}}
-        </button>
+        {{d-button id="user-login" class="btn-primary btn-small login-button" action="showLogin" icon="user" label="log_in"}}
       {{/unless}}
       <ul class='icons clearfix' role='navigation'>
         {{#if currentUser}}
@@ -152,7 +150,7 @@
           </li>
         {{/if}}
         <li>
-          {{#if Discourse.loginRequired}}
+          {{#if loginRequired}}
             <a id='search-button' class='icon expand' href='#' aria-hidden="true" {{action showLogin}}>
               {{fa-icon "search"}}
             </a>
@@ -167,7 +165,7 @@
           {{/if}}
         </li>
         <li class='categories dropdown'>
-          {{#if Discourse.loginRequired}}
+          {{#if loginRequired}}
             <a class='icon'
                href="#"
                aria-hidden="true"
@@ -252,8 +250,8 @@
             {{#if topic.tags}}
              <div class="tagger-tags-view">
               <span>Tags:</span>
-                {{#each topic.tags}}
-                  <a href="/tag/{{unbound this}}" class="tagger-tag btn">{{this}}</a>
+                {{#each tag in topic.tags}}
+                  <a href="/tag/{{unbound tag}}" class="tagger-tag btn">{{tag}}</a>
                 {{/each}}
             </div>
             {{/if}}
