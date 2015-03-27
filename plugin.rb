@@ -1,3 +1,7 @@
+# name: discourse-theme
+# about: sitepoint.com/forum theme
+# authors: Jude Aakjaer, Jamison Bjorkman, Kelle-Lee Connolly
+
 # Upstream version that this theme is based on (change this with each update):
 # tag v0.9.9.10
 # e66c7f81a36078606a66c45519e96d5f61ee44d6
