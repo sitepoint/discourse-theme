@@ -88,9 +88,6 @@ register_asset "stylesheets/mobile/components/navs.scss", :mobile
 
 
 #### Topic Composer
-#  NOTE: [JB] This feels like a completely pointless change...
-#  Move plugin outlet below title input area
-register_asset "javascripts/discourse/templates/composer.js.handlebars"
 #  Custom caret symbols
 register_asset "stylesheets/desktop/compose.scss", :desktop
 #  Mobile fix: compose panel overflow on phones running Chrome
