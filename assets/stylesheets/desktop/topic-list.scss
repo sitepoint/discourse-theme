@@ -5,14 +5,6 @@
   .nav {
     background-color: $gray-bg-SP;
   }
-
-  a.badge-category {
-    &.home {
-      background-color: $gray-bg-SP !important; // to override inline style
-      color: $gray-text-SP !important; // to override inline style
-      font-weight: $font-weight-medium-bold-SP;
-    }
-  }
 }
 
 .topic-list .category {
