@@ -220,45 +220,7 @@
     {{/unless}}
 
     {{#if showExtraInfo}}
-      <div class="extra-info-wrapper">
-        <div {{bind-attr class=":extra-info hasCategory"}}>
-          <div class="title-wrapper">
-            <h1>
-              {{#if showPrivateMessageGlyph}}
-                <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
-              {{/if}}
-
-              {{#if topic.details.loaded}}
-                {{#if showStarButton}}
-                  <a {{bind-attr class=":star topic.starred:starred"}} {{action "toggleStar"}} href='#' {{bind-attr title="topic.starTooltip"}}></a>
-                {{/if}}
-                {{topic-status topic=topic}}
-                <a class='topic-link' href='{{unbound topic.url}}' {{action "jumpToTopPost"}}>{{{topic.fancy_title}}}</a>
-              {{else}}
-                {{#if topic.errorLoading}}
-                  <span class="error">{{topic.errorTitle}}</span>
-                {{else}}
-                  <span class="loading">{{i18n topic.loading}}</span>
-                {{/if}}
-              {{/if}}
-            </h1>
-            {{#if topic.category.parentCategory}}
-              {{! SP }}{{bound-category-link topic.category.parentCategory}}{{! /SP }}
-            {{/if}}
-            {{! SP }}{{bound-category-link topic.category}}{{! /SP }}
-            {{! SP }}
-            {{#if topic.tags}}
-             <div class="tagger-tags-view">
-              <span>Tags:</span>
-                {{#each tag in topic.tags}}
-                  <a href="/tag/{{unbound tag}}" class="tagger-tag btn">{{tag}}</a>
-                {{/each}}
-            </div>
-            {{/if}}
-            {{!/SP}}
-          </div>
-        </div>
-      </div>
+      {{header-extra-info topic=topic}}
     {{/if}}
 
   </div>
