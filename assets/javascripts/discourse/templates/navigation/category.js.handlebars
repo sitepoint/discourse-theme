@@ -32,13 +32,13 @@
 {{#if currentUser}}
   {{! SP (2) }}
 
-  {{d-button id="create-private-message" class="btn-default" action="composerPrivateMessage" icon="envelope" label="user.private_message"}}
+  {{d-button id="create-private-message" class="btn-default" action="composePrivateMessage" icon="envelope" label="user.private_message"}}
 
   {{! /SP }}
 {{/if}}
 
 {{#if canEditCategory}}
-  {{d-button id="edit-category" class="btn-default" action="editCategory category" icon="wrench" label="category.edit_long"}}
+  {{d-button id="edit-category" class="btn-default" action="editCategory" actionParam=category icon="wrench" label="category.edit_long"}}
 {{/if}}
 
 <section class='category-heading'>
