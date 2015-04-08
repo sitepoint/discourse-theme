@@ -194,7 +194,7 @@ span.post-count {
 
   .badge-category {
     float: left;
-    font-size: 10px;
+    font-size: 0.95em;
     line-height: 19px;
     padding: 0 5px;
     box-sizing: border-box;
@@ -220,6 +220,10 @@ span.post-count {
       margin-top: 0;
       margin-right: 5px;
     }
+  }
+
+  .discourse-tag{
+    font-size: 0.8em;
   }
 }
 
