@@ -192,10 +192,13 @@ span.post-count {
 
   .topic-statuses {margin-top: -2px;}
 
-  .badge-category {
+  .badge-category-bg{
     float: left;
+  }
+
+  .badge-category {
     font-size: 0.95em;
-    line-height: 19px;
+    line-height: 1.4em;
     padding: 0 5px;
     box-sizing: border-box;
     min-width: 0;
@@ -222,8 +225,13 @@ span.post-count {
     }
   }
 
+  .list-tags{
+    vertical-align: top;
+  }
+
   .discourse-tag{
     font-size: 0.8em;
+    vertical-align: initial;
   }
 }
 
