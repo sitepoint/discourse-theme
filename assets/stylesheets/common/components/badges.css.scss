@@ -23,6 +23,21 @@
         content: $fa-var-eye-slash; // restricted categories (eye-slash icon \f070)
       }
     }
+
+    &.fa-lock{
+      // Cheap and nasty until restricted class is added to initial drop down category
+      &:before {
+        content: $fa-var-eye-slash; // restricted categories (eye-slash icon \f070)
+      }
+    }
+  }
+
+  &.restricted{
+    i.fa{
+      &:before {
+        content: $fa-var-eye-slash; // restricted categories (eye-slash icon \f070)
+      }
+    }
   }
 }
 
