@@ -48,12 +48,13 @@
 .badge-category {
   @include border-radius-all($border-radius-default-SP);
   min-width: 80px;
-  // text-align: center;
+  text-align: center;
 }
 
 .badge-category-bg {
   height: 13px;
   width: 12px;
+  @include border-radius-all($border-radius-default-SP);
 }
 
 .badge-notification {
@@ -62,4 +63,8 @@
     border-color: $red-SP;
     color: white !important;
   }
+}
+
+.category-dropdown-menu .badge-wrapper.box {
+  margin-bottom: 6px;
 }
