@@ -159,7 +159,7 @@
                class='icon expand'
                href='#'
                data-dropdown="search-dropdown"
-               title='{{i18n search.title}}'>
+               title='{{i18n "search.title"}}'>
                {{fa-icon "search" label="search.title"}}
             </a>
           {{/if}}
@@ -177,13 +177,13 @@
                data-dropdown="site-map-dropdown"
                data-render="renderSiteMap"
                href="#"
-               title='{{i18n site_map}}'
+               title='{{i18n "site_map"}}'
                id="site-map">
                {{fa-icon "bars" label="site_map"}}
             </a>
           {{/if}}
           {{#if currentUser.site_flagged_posts_count}}
-            <a href='/admin/flags/active' title='{{i18n notifications.total_flagged}}' class='badge-notification flagged-posts'>{{currentUser.site_flagged_posts_count}}</a>
+            <a href='/admin/flags/active' title='{{i18n "notifications.total_flagged"}}' class='badge-notification flagged-posts'>{{currentUser.site_flagged_posts_count}}</a>
           {{/if}}
         </li>
         {{#if currentUser}}
@@ -192,7 +192,7 @@
                data-dropdown="user-dropdown"
                data-render="renderUserDropdown"
                href="#"
-               title='{{i18n user.avatar.title}}'
+               title='{{i18n "user.avatar.title"}}'
                id="current-user">
                  {{bound-avatar currentUser "medium"}}
             </a>
