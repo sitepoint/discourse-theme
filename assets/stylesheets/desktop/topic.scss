@@ -1,18 +1,24 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-#topic-title h1 {
-  padding-top: 5px;
+#topic-title {
 
-  a:visited {
-    color: $tertiary;
-  }
+    .list-tags{
+      vertical-align: super;
+    }
 
-  a.badge-category {
-    margin-top: -3px;
+    h1 {
+    padding-top: 5px;
+
+    a:visited {
+      color: $tertiary;
+    }
+
+    a.badge-category {
+      margin-top: -3px;
+    }
   }
 }
-
 
 a.reply-new {
   display: block;
