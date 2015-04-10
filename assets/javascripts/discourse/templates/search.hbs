@@ -19,8 +19,7 @@
           {{! SP }}
           <div class='no-results'>
             {{#if resultType.more}}
-              <a href='#' class='filter' {{action "moreOfType" resultType.type bubbles=false}}>{{i18n show_more}} <i class="fa fa-chevron-down"></i></a>
-            {{else}}
+              <a href='#' class='filter' {{action "moreOfType" resultType.type bubbles=false}}>{{i18n "show_more"}} {{fa-icon "chevron-down"}}</a>
             {{/if}}
           </div>
           {{! /SP }}
