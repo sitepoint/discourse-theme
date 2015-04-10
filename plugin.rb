@@ -1,3 +1,7 @@
+# name: discourse-theme
+# about: sitepoint.com/forum theme
+# authors: Jude Aakjaer, Jamison Bjorkman, Kelle-Lee Connolly
+
 # Upstream version that this theme is based on (change this with each update):
 # tag v0.9.9.10
 # e66c7f81a36078606a66c45519e96d5f61ee44d6
@@ -88,9 +92,6 @@ register_asset "stylesheets/mobile/components/navs.scss", :mobile
 
 
 #### Topic Composer
-#  NOTE: [JB] This feels like a completely pointless change...
-#  Move plugin outlet below title input area
-register_asset "javascripts/discourse/templates/composer.js.handlebars"
 #  Custom caret symbols
 register_asset "stylesheets/desktop/compose.scss", :desktop
 #  Mobile fix: compose panel overflow on phones running Chrome

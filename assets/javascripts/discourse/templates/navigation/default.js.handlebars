@@ -17,19 +17,14 @@
 
 {{#if canCreateTopic}}
   {{! SP (1) }}
-
-    <button id="create-topic" class='btn btn-default btn-primary' {{action createTopic}}><i class='fa fa-plus'></i>{{i18n topic.create}}</button>
-
+    {{d-button id="create-topic" class="btn-default btn-primary" action="createTopic" icon="plus" label="topic.create"}}
   {{! /SP }}
 {{/if}}
 
 {{#if currentUser}}
   {{! SP (2) }}
 
-    <button class='btn btn-default' {{action composePrivateMessage}}>
-      <i class='fa fa-envelope'></i>
-      {{i18n user.private_message}}
-    </button>
+  {{d-button id="create-private-message" class="btn-default" action="composePrivateMessage" icon="envelope" label="user.private_message"}}
 
   {{! /SP }}
 {{/if}}
