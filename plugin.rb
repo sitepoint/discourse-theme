@@ -54,7 +54,9 @@ after_initialize do
       <a href="https://learnable.com/topics/all/course">Courses</a>
     </noscript>',
     enabled: true,
-    user_id: User.first.id
+    user_id: User.first.id,
+    head_tag: '<style>._fancybar {margin-top: 63px !important; z-index: 900 !important;}</style>
+<script async type="text/javascript" src="//cdn.fancybar.net/ac/fancybar.js?zoneid=1502&serve=C6ADVKE&placement=sitepointforums" id="_fancybar_js"></script>'
   })
 end
 
