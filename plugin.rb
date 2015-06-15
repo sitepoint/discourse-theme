@@ -26,7 +26,6 @@ after_initialize do
     Rails.application.config.assets.paths.unshift File.expand_path('../assets', __FILE__)
   end
 
-
   # app/models/topic_posters_summary.rb
   TopicPostersSummary.class_eval do
     def user_ids_with_descriptions
@@ -40,24 +39,40 @@ after_initialize do
       user_ids.map { |id| avatar_lookup[id] }.compact.uniq.take(2)
     end
   end
+
   # SP customisation: add SiteCustomization to add in crawler links
-  SiteCustomization.find_or_create_by({
+  header = <<-EOS.strip_heredoc.chomp
+    <noscript>
+      <a href="http://www.sitepoint.com">Articles</a>
+      <a href="https://learnable.com/topics/all/book">Books</a>
+      <a href="https://learnable.com/topics/all/course">Courses</a>
+    </noscript>
+    EOS
+
+  head_tag = <<-EOS.strip_heredoc.chomp
+    <style>
+      ._fancybar {
+        margin-top: 63px !important;
+        z-index: 900 !important;
+      }
+    </style>
+    <script async type="text/javascript"
+      src="//cdn.fancybar.net/ac/fancybar.v2.js"
+      id="_fancybar_js"
+      data-bsa-format='[["fancybar","C6ADVKE","200"],["flyout","C67IVK3L","800"]]'
+      data-bsa-placement="sitepointforums"></script>
+    EOS
+
+  sitepoint_site_customization = SiteCustomization.find_or_create_by({
     name: "SitePoint Crawler links",
-    header: '<noscript>
-      <a href="http://www.sitepoint.com">Articles</a>
-      <a href="https://learnable.com/topics/all/book">Books</a>
-      <a href="https://learnable.com/topics/all/course">Courses</a>
-    </noscript>',
-    mobile_header: '<noscript>
-      <a href="http://www.sitepoint.com">Articles</a>
-      <a href="https://learnable.com/topics/all/book">Books</a>
-      <a href="https://learnable.com/topics/all/course">Courses</a>
-    </noscript>',
+    header: header,
+    mobile_header: header,
     enabled: true,
     user_id: User.first.id,
-    head_tag: '<style>._fancybar {margin-top: 63px !important; z-index: 900 !important;}</style>
-<script async type="text/javascript" src="//cdn.fancybar.net/ac/fancybar.js?zoneid=1502&serve=C6ADVKE&placement=sitepointforums" id="_fancybar_js"></script>'
+    head_tag: head_tag
   })
+  # cleanup old customizations
+  SiteCustomization.where.not(id: sitepoint_site_customization.id).delete_all
 end
 
 
