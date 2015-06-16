@@ -63,16 +63,20 @@ after_initialize do
       data-bsa-placement="sitepointforums"></script>
     EOS
 
-  sitepoint_site_customization = SiteCustomization.find_or_create_by({
-    name: "SitePoint Crawler links",
-    header: header,
-    mobile_header: header,
-    enabled: true,
-    user_id: User.first.id,
-    head_tag: head_tag
-  })
-  # cleanup old customizations
-  SiteCustomization.where.not(id: sitepoint_site_customization.id).delete_all
+  if User.exists?
+    sitepoint_site_customization = SiteCustomization.find_or_create_by({
+      name: "SitePoint Crawler links",
+      header: header,
+      mobile_header: header,
+      enabled: true,
+      user_id: User.first.id,
+      head_tag: head_tag
+    })
+    # cleanup old customizations
+    SiteCustomization.where(name: sitepoint_site_customization.name).
+      where.not(id: sitepoint_site_customization.id).
+      delete_all
+  end
 end
 
 
