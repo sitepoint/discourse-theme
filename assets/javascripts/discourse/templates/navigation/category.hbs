@@ -1,5 +1,5 @@
 {{! CHANGE MANIFEST:
-= Root: app/assets/javascripts/discourse/templates/navigation/category.js.handlebars
+= Root: app/assets/javascripts/discourse/templates/navigation/category.hbs
 =
 = (1) Added .btn-primary to create topic button
 = (2) Private Message Customization
@@ -17,8 +17,8 @@
   {{custom-html "extraNavItem"}}
 </ul>
 
-{{#if canChangeCategoryNotificationLevel}}
-  {{view 'category-notifications-button' category=category}}
+{{#if currentUser}}
+  {{category-notifications-button category=category}}
 {{/if}}
 
 {{#if canCreateTopic}}
@@ -38,7 +38,7 @@
 {{/if}}
 
 {{#if canEditCategory}}
-  {{d-button id="edit-category" class="btn-default" action="editCategory" actionParam=category icon="wrench" label="category.edit_long"}}
+  {{d-button class="btn-default edit-category" action="editCategory" actionParam=category icon="wrench" label="category.edit_long"}}
 {{/if}}
 
 <section class='category-heading'>

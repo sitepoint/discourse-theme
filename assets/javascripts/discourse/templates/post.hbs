@@ -1,4 +1,4 @@
-{{post-gap post=this postStream=controller.postStream before="true"}}
+{{post-gap post=this postStream=controller.model.postStream before="true"}}
 
 <div class='row'>
   {{view 'reply-history' content=replyHistory}}
@@ -9,11 +9,11 @@
 
     <div class='topic-avatar'>
       <div class="contents">
-        {{#unboundIf userDeleted}}
+        {{#if userDeleted}}
           <i class="fa fa-trash-o deleted-user-avatar"></i>
         {{else}}
           {{raw "post/poster-avatar" post=this classNames="main-avatar"}}
-        {{/unboundIf}}
+        {{/if}}
         {{plugin-outlet "poster-avatar-bottom"}}
       </div>
     </div>
@@ -31,12 +31,12 @@
             {{#if can_view_edit_history}}
               <a href class="{{unbound view.historyHeat}}" {{action "showHistory" this}} title="{{i18n 'post.last_edited_on'}} {{raw-date updated_at}}">
                 {{editCount}}
-                <i class='fa fa-pencil'></i>
+                {{fa-icon "pencil"}}
               </a>
             {{else}}
               <span class="{{unbound view.historyHeat}}" title="{{i18n 'post.last_edited_on'}} {{raw-date updated_at}}">
                 {{editCount}}
-                <i class='fa fa-pencil'></i>
+                {{fa-icon "pencil"}}
               </span>
             {{/if}}
           </div>
@@ -44,24 +44,24 @@
         {{#if wiki}}
           <div class="post-info wiki" title="{{i18n 'post.wiki.about'}}" {{action "editPost" this}}>{{fa-icon "pencil-square-o"}}</div>
         {{/if}}
-        {{#unboundIf via_email}}
+        {{#if via_email}}
           {{#if canViewRawEmail}}
             <div class="post-info via-email raw-email" title="{{i18n 'post.via_email'}}" {{action "showRawEmail" this}}>{{fa-icon "envelope-o"}}</div>
           {{else}}
             <div class="post-info via-email" title="{{i18n 'post.via_email'}}">{{fa-icon "envelope-o"}}</div>
           {{/if}}
-        {{/unboundIf}}
-        {{#unboundIf showUserReplyTab}}
-        <a href {{action "toggleReplyHistory" this target="view"}} class='reply-to-tab'>
-          {{#if loadingReplyHistory}}
-          {{i18n 'loading'}}
-          {{else}}
-          <i class="fa fa-mail-forward"></i>
-          {{avatar reply_to_user imageSize="tiny"}}
-          <span>{{reply_to_user.username}}</span>
-          {{/if}}
-        </a>
-        {{/unboundIf}}
+        {{/if}}
+        {{#if showUserReplyTab}}
+          <a href {{action "toggleReplyHistory" this target="view"}} class='reply-to-tab'>
+            {{#if loadingReplyHistory}}
+              {{i18n 'loading'}}
+            {{else}}
+              {{fa-icon "mail-forward"}}
+              {{avatar reply_to_user imageSize="tiny"}}
+              <span>{{reply_to_user.username}}</span>
+            {{/if}}
+          </a>
+        {{/if}}
         <div {{bind-attr class=":read-state read"}} title="{{i18n 'post.unread'}}">{{fa-icon "circle"}}</div>
       </div>
 
@@ -71,9 +71,12 @@
       </div>
 
       <!-- keep the classes here in sync with composer.hbs -->
-      <div {{bind-attr class="showUserReplyTab:avoid-tab view.repliesShown::bottom-round :contents :regular view.extraClass"}}>
+      <div {{bind-attr class="showUserReplyTab:avoid-tab view.repliesShown::contents :regular view.extraClass"}}>
         <div class='cooked'>
           {{{cooked}}}
+          {{#if firstPost}}
+            {{plugin-outlet "topic-after-cooked"}}
+          {{/if}}
         </div>
         {{#if cooked_hidden}}
           <a href {{action "expandHidden" this}}>{{i18n 'post.show_hidden'}}</a>
@@ -108,4 +111,4 @@
 
 </article>
 
-{{post-gap post=this postStream=controller.postStream before="false"}}
+{{post-gap post=this postStream=controller.model.postStream before="false"}}
