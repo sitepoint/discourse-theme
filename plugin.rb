@@ -121,7 +121,7 @@ register_asset "stylesheets/mobile/compose.scss", :mobile
 
 
 #### Custom Header
-register_asset "javascripts/discourse/templates/header.js.handlebars"
+register_asset "javascripts/discourse/templates/header.hbs"
 #  item colors
 #  reset of badges back to inline display in hamburger menu
 register_asset "stylesheets/common/base/header.scss"
@@ -135,7 +135,7 @@ register_asset "stylesheets/mobile/header.scss", :mobile
 
 #### Categories Page Table [http://discourse.vim]
 #  Add "btn-primary class to "Create Topic" button
-register_asset "javascripts/discourse/templates/navigation/categories.js.handlebars"
+register_asset "javascripts/discourse/templates/navigation/categories.hbs"
 #  pill nav style
 #  Table Styles
 #  "All Categories" dropdown
@@ -147,8 +147,8 @@ register_asset "stylesheets/mobile/topic-list.scss", :mobile
 
 #### Category Topics Page Table [http://discourse.vm/category/community]
 #  Add "btn-primary" class to "Create Topic" button
-register_asset "javascripts/discourse/templates/navigation/category.js.handlebars"
-register_asset "javascripts/discourse/templates/navigation/default.js.handlebars"
+register_asset "javascripts/discourse/templates/navigation/category.hbs"
+register_asset "javascripts/discourse/templates/navigation/default.hbs"
 #  navigation style
 #  category badges
 #  row background colors
@@ -205,7 +205,7 @@ register_asset "stylesheets/common/components/banner.css.scss"
 
 #### Admin/Users
 #  Include IP in user list
-register_asset "javascripts/admin/templates/users_list.js.handlebars"
+register_asset "javascripts/admin/templates/users-list-show.hbs"
 
 #### Topic Page [http://discourse.vm/t/feedbacks-on-the-imported-data/192]
 #  Add 'btn' class to the show Replies and Reply buttons (rounded corners)

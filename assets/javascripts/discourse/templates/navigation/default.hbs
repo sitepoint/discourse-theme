@@ -1,11 +1,17 @@
 {{! CHANGE MANIFEST:
-= Root: app/assets/javascripts/discourse/templates/navigation/default.js.handlebars
+= Root: app/assets/javascripts/discourse/templates/navigation/default.hbs
 =
 = (1) Added .btn-primary to create topic button
 = (2) Added a private message button
 = (*) Other syntax changes to make it easier to read
 =}}
 
+{{#if isSearch}}
+<div class="search row">
+  {{input type="text" value=searchTerm class="input-xxlarge search" action="search"}}
+  <button {{action "search"}} class="btn btn-primary"><i class='fa fa-search'></i></button>
+</div>
+{{else}}
 {{bread-crumbs categories=categories}}
 
 <ul class="nav nav-pills" id='navigation-bar'>
@@ -17,7 +23,7 @@
 
 {{#if canCreateTopic}}
   {{! SP (1) }}
-    {{d-button id="create-topic" class="btn-default btn-primary" action="createTopic" icon="plus" label="topic.create"}}
+    <button id="create-topic" class='btn btn-default btn-primary' {{action "createTopic"}}><i class='fa fa-plus'></i>{{i18n 'topic.create'}}</button>
   {{! /SP }}
 {{/if}}
 
@@ -27,4 +33,5 @@
   {{d-button id="create-private-message" class="btn-default" action="composePrivateMessage" icon="envelope" label="user.private_message"}}
 
   {{! /SP }}
+{{/if}}
 {{/if}}

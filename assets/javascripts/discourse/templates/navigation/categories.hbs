@@ -1,12 +1,12 @@
 {{! CHANGE MANIFEST:
-= Root: app/assets/javascripts/discourse/templates/navigation/categories.js.handlebars
+= Root: app/assets/javascripts/discourse/templates/navigation/categories.hbs
 =
 = (1) Added .btn-primary to create category button
 = (2) Added a private message button
 = (*) Other syntax changes to make it easier to read
 =}}
 
-{{bread-crumbs categories=categories category=category tag=tag tags=tags}}
+{{bread-crumbs categories=categories}}
 
 <ul class="nav nav-pills" id='navigation-bar'>
   {{#each navItem in navItems}}
