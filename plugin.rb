@@ -205,7 +205,7 @@ register_asset "stylesheets/common/components/banner.css.scss"
 
 #### Admin/Users
 #  Include IP in user list
-register_asset "javascripts/admin/templates/users_list.js.handlebars"
+register_asset "javascripts/admin/templates/users-list-show.hbs"
 
 #### Topic Page [http://discourse.vm/t/feedbacks-on-the-imported-data/192]
 #  Add 'btn' class to the show Replies and Reply buttons (rounded corners)
