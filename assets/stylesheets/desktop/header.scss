@@ -2,20 +2,46 @@
 @import "common/foundation/mixins";
 
 .d-header {
+  padding-top: 0;
+  height: auto;
+
+  .logomark {
+    margin-top: 18px;
+  }
+
+  .contents {
+    margin: 0;
+    line-height: 31px;
+  }
+
+  .panel {
+    margin-top: 7px;
+  }
+
   .header-links-wrapper {
     float: right;
     margin-right: 50px;
   }
 
   .header-link {
-    color: $gray-sitepoint-header-SP;
+    color: $white-sitepoint-header-SP;
     display: inline-block;
-    font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin-right: 20px;
-    margin-top: 11px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    border: 2px solid transparent;
+
+    &.u-premium {
+      border: 1px solid rgba(255,250,250,.25);
+      border-radius: 3px;
+      padding: 0 8px;
+      margin: 10px 4px;
+    }
 
     &:hover {
-      color: #fff;
+      background: $gray-header-bg-SP;
     }
   }
 }
