@@ -49,20 +49,6 @@ after_initialize do
     </noscript>
     EOS
 
-  head_tag = <<-EOS.strip_heredoc.chomp
-    <style>
-      ._fancybar {
-        margin-top: 63px !important;
-        z-index: 900 !important;
-      }
-    </style>
-    <script async type="text/javascript"
-      src="//cdn.fancybar.net/ac/fancybar.v2.js"
-      id="_fancybar_js"
-      data-bsa-format='[["fancybar","C6ADVKE","200"],["flyout","C67IVK3L","800"]]'
-      data-bsa-placement="sitepointforums"></script>
-    EOS
-
   if User.exists?
     sitepoint_site_customization = SiteCustomization.find_or_create_by({
       name: "SitePoint Crawler links",
@@ -70,7 +56,6 @@ after_initialize do
       mobile_header: header,
       enabled: true,
       user_id: User.first.id,
-      head_tag: head_tag
     })
     # cleanup old customizations
     SiteCustomization.where(name: sitepoint_site_customization.name).
