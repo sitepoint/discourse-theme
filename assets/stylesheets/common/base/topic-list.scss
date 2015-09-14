@@ -1,4 +1,4 @@
-@import "common/foundation/variables";
+/*@import "common/foundation/variables";
 @import "common/foundation/mixins";
 
 .list-controls {
@@ -8,14 +8,6 @@
 
   .category-dropdown-menu { // Add padding around things in dropdown
     padding: 8px 8px 0px
-  }
-
-  a.badge-category {
-    min-width: 0;  // Fixes caret from being really wide
-
-    &.category-dropdown-button i:before {
-      content: '\f0d7'; // caret down instead of right
-    }
   }
 }
 
@@ -80,12 +72,6 @@
   }
 }
 
-.topic-list a.title {
-  &, &:visited:not(.badge-notification) {
-    color: $tertiary; // color of topic titles on pages like /latest
-  }
-}
-
 ol.category-breadcrumb li {
   @include border-radius-all($border-radius-default-SP); // Border radius on all categories
   border: 1px solid $gray-lighter-SP;                    // Border around all categories dropdown
@@ -97,3 +83,4 @@ ol.category-breadcrumb li {
                                    // have rounded corners and look weird
   }
 }
+*/
