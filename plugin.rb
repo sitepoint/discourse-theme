@@ -133,7 +133,7 @@ register_asset "stylesheets/mobile/compose.scss", :mobile
 
 
 #### Custom Header
-register_asset "javascripts/discourse/templates/header.hbs"
+# register_asset "javascripts/discourse/templates/header.hbs"
 #  item colors
 #  reset of badges back to inline display in hamburger menu
 register_asset "stylesheets/common/base/header.scss"
@@ -147,36 +147,36 @@ register_asset "stylesheets/mobile/header.scss", :mobile
 
 #### Categories Page Table [http://discourse.vim]
 #  Add "btn-primary class to "Create Topic" button
-register_asset "javascripts/discourse/templates/navigation/categories.hbs"
+# register_asset "javascripts/discourse/templates/navigation/categories.hbs"
 #  pill nav style
 #  Table Styles
 #  "All Categories" dropdown
 register_asset "stylesheets/common/base/topic-list.scss"
 #  remove leaked THEAD from override template
 #  tweak margins
-register_asset "stylesheets/mobile/topic-list.scss", :mobile
+# register_asset "stylesheets/mobile/topic-list.scss", :mobile
 
 
 #### Category Topics Page Table [http://discourse.vm/category/community]
 #  Add "btn-primary" class to "Create Topic" button
-register_asset "javascripts/discourse/templates/navigation/category.hbs"
-register_asset "javascripts/discourse/templates/navigation/default.hbs"
+# register_asset "javascripts/discourse/templates/navigation/category.hbs"
+# register_asset "javascripts/discourse/templates/navigation/default.hbs"
 #  navigation style
 #  category badges
 #  row background colors
 #  carets
 #  latest poster avatar highlight style
-register_asset "stylesheets/desktop/topic-list.scss", :desktop
+# register_asset "stylesheets/desktop/topic-list.scss", :desktop
 
 
 #### Search Results
 # Move show more links to the top of each search results section [http://community.sitepoint.com/t/search-menu-read-more-link/96632/7]
-register_asset "javascripts/discourse/templates/search.hbs"
+# register_asset "javascripts/discourse/templates/components/search-menu.hbs"
 
 
 #### Topic Page [http://discourse.vim/t/feedbacks-on-the-imported-data/192]
 #  Add post number to topic-meta-data
-register_asset "javascripts/discourse/templates/post.hbs"
+# register_asset "javascripts/discourse/templates/post.hbs"
 #  quoted post - left border color (on mobile, the border next to the name has to be overidden again...)
 register_asset "stylesheets/common/base/discourse.scss"
 #  Hard corners and no default border on avatars
@@ -194,6 +194,8 @@ register_asset "stylesheets/mobile/topic-post.scss", :mobile
 #  progress indicator styling,
 #  post gutter ("Reply as new topic" etc. buttons) repositioning,
 register_asset "stylesheets/desktop/topic.scss", :desktop
+# topic actions wrench overlaying on user dropdown
+register_asset "stylesheets/common/base/topic-admin-menu.scss"
 
 #### User/Group Profile
 #  font for staff-counters
@@ -206,7 +208,7 @@ register_asset("javascripts/pm_button.js", :client_side)
 
 #### Component: Discourse Banner
 #  Banner should not be sticky
-register_asset "javascripts/discourse/templates/components/discourse-banner.js.handlebars"
+# register_asset "javascripts/discourse/templates/components/discourse-banner.hbs"
 register_asset "stylesheets/common/components/banner.css.scss"
 
 
@@ -216,9 +218,4 @@ register_asset "stylesheets/common/components/banner.css.scss"
 
 #### Admin/Users
 #  Include IP in user list
-register_asset "javascripts/admin/templates/users-list-show.hbs"
-
-#### Topic Page [http://discourse.vm/t/feedbacks-on-the-imported-data/192]
-#  Add 'btn' class to the show Replies and Reply buttons (rounded corners)
-#  Change "Show Replies" expand/contract icons from chevrons to carets
-register_asset "javascripts/discourse/views/post_menu.js"
+# register_asset "javascripts/admin/templates/users-list-show.hbs"

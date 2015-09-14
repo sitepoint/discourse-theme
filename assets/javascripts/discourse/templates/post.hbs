@@ -1,7 +1,7 @@
 {{post-gap post=this postStream=controller.model.postStream before="true"}}
 
 {{#if hasTimeGap}}
-  {{time-gap gapDays=daysSincePrevious}}
+  {{time-gap daysAgo=daysSincePrevious}}
 {{/if}}
 
 <div class='row'>
@@ -25,6 +25,7 @@
     <div class='topic-body'>
       <div class='topic-meta-data'>
         {{poster-name post=this}}
+        {{plugin-outlet "poster-name-right"}}
         <div class='post-info'>
         {{! SP }}
           <a class='post-date' {{bind-attr href="shareUrl" data-share-url="shareUrl" data-post-number="post_number"}}>{{age-with-tooltip created_at}}&nbsp;&nbsp;#{{post_number}}</a>
@@ -78,6 +79,7 @@
       <div {{bind-attr class="showUserReplyTab:avoid-tab view.repliesShown::contents :regular view.extraClass"}}>
         <div class='cooked'>
           {{{cooked}}}
+          {{plugin-outlet "post-after-cooked"}}
           {{#if firstPost}}
             {{plugin-outlet "topic-after-cooked"}}
           {{/if}}
@@ -92,7 +94,19 @@
             <button {{action "expandFirstPost" this}} class='btn expand-post'>{{i18n 'post.show_full'}}&hellip;</button>
           {{/if}}
         {{/if}}
-        {{view 'post-menu' post=this adminMenu=view.adminMenu}}
+        {{post-menu post=this
+                    canCreatePost=controller.model.details.can_create_post
+                    replyToPost="replyToPost"
+                    recoverPost="recoverPost"
+                    deletePost="deletePost"
+                    toggleLike="toggleLike"
+                    showFlags="showFlags"
+                    editPost="editPost"
+                    toggleBookmark="toggleBookmark"
+                    toggleWiki="toggleWiki"
+                    togglePostType="togglePostType"
+                    rebakePost="rebakePost"
+                    unhidePost="unhidePost"}}
       </div>
 
       {{#if replies}}
@@ -103,7 +117,7 @@
         </section>
       {{/if}}
 
-      {{discourse-action-history post=this}}
+      {{actions-summary post=this}}
       {{view 'topic-map-container' post=this topic=controller.model}}
     </div>
 
@@ -116,3 +130,4 @@
 </article>
 
 {{post-gap post=this postStream=controller.model.postStream before="false"}}
+{{plugin-outlet "post-bottom"}}
