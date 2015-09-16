@@ -64,7 +64,8 @@ after_initialize do
         header: header,
         mobile_header: header,
         enabled: true,
-        user_id: User.first.id
+        user_id: User.first.id,
+        head_tag: ''
       })
       # cleanup old customizations
       SiteCustomization.where(name: sitepoint_site_customization.name).

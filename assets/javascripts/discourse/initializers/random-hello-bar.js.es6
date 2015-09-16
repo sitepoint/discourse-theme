@@ -128,7 +128,7 @@ export default {
           var that = this;
           jQuery.ajax({
             type: 'POST',
-            url: 'http://sitepoint.com/wp-admin/admin-ajax.php',
+            url: 'http://www.sitepoint.com/wp-admin/admin-ajax.php',
             data: {
               action: 'get_forums_random_hello_bar',
               rand: Math.random()
