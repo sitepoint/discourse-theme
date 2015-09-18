@@ -1,4 +1,4 @@
-.awesome-bar {
+.SpHelloBar {
   -webkit-transition: top 800ms;
   -moz-transition: top 800ms;
   -o-transition: top 800ms;
@@ -17,7 +17,7 @@
     color:#fff;
   }
 
-  &.show {
+  &.u-show {
     top: 63px;
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0);
@@ -26,7 +26,7 @@
   }
 }
 
-.awesome-bar_container {
+.SpHelloBar_container {
   margin: 0 50px;
   max-width: 80em;
   display: block;
@@ -35,24 +35,18 @@
   @media (max-width: 680px) {
     text-align: center;
   }
-
-  * {
-    display: inline-block;
-    margin-bottom:0;
-    vertical-align: middle;
-  }
 }
 
-.awesome-bar_container:before, .awesome-bar_container:after {
+.SpHelloBar_container:before, .SpHelloBar_container:after {
   content: " ";
   display: table;
 }
 
-.awesome-bar_container:after {
+.SpHelloBar_container:after {
   clear: both;
 }
 
-.awesome-bar_brand {
+.SpHelloBar_brand {
   float: left;
   margin: 3px 0 0 0;
 
@@ -61,7 +55,7 @@
   }
 }
 
-.awesome-bar_message {
+.SpHelloBar_message {
   font-weight: 700;
   float: left;
   line-height: 1;
@@ -73,26 +67,20 @@
   }
 }
 
-.awesome-bar_action {
+.SpHelloBar_action {
   background:lighten(#1c94c6, 15%);
   float:right;
   margin-bottom:0;
-
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  padding-top: 0.625em;
-  padding-bottom: 0.5625em;
   -webkit-appearance: none;
-  padding-right: 1.125em;
-  padding-left: 1.125em;
+  padding: 0.6em 1.1em;
   font-size: 0.8125em;
   text-transform: capitalize;
-  border-style: solid;
-  border-width: 0;
   font-weight: 700;
   line-height: 1;
   text-decoration: none;
-  border-color: #1779a2;
+  border: solid 0 #1779a2;
   color: #fff;
 
   @media (max-width: 680px) {
@@ -102,18 +90,22 @@
   }
 }
 
-.awesome-bar_close {
+.SpHelloBar_close {
   color: #fff;
   cursor: pointer;
   display: block;
+  position: absolute;
   font-size: 13px;
   height: 20px;
+  width: 20px;
   padding-top: 2px;
-  position: absolute;
+  top: 16px;
   right: 11px;
   text-align: center;
-  top: 16px;
-  width: 20px;
+
+  &:visited {
+    color: #fff;
+  }
 
   &:hover {
     -webkit-border-radius: 50%;
