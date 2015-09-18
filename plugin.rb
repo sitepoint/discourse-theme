@@ -185,9 +185,6 @@ register_asset "stylesheets/desktop/topic.scss", :desktop
 #  font for staff-counters
 register_asset "stylesheets/desktop/user.scss", :desktop
 
-#### Random Hello Bar
-register_asset "stylesheets/random-hello-bar.scss"
-
 #### Component: PM Button
 #  NOTE: [JB] some serious round robin shit going on here. serious wtf...
 #  Pull in pm button plugin as the plugin overwrites a template we previously have overwritten as well
