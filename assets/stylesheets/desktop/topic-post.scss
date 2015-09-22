@@ -102,23 +102,6 @@ nav.post-controls {
     margin-bottom: 10px;
   }
 
-  .avatars {
-    > div {
-      margin-top: 7px;
-
-      .poster {
-        margin-right: 6px;
-        position: relative;
-      }
-    }
-
-    .post-count {
-      @include border-radius-all(50%);
-      right: 7px;
-      top: 1px;
-    }
-  }
-
   .map {
     li {
       padding: 15px 15px;
