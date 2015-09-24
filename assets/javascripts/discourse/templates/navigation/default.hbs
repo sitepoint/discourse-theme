@@ -1,25 +1,13 @@
-{{! CHANGE MANIFEST:
-= Root: app/assets/javascripts/discourse/templates/navigation/default.hbs
-=
-= (1) Added .btn-primary to create topic button
-= (2) Added a private message button
-= (*) Other syntax changes to make it easier to read
-=}}
-
 {{bread-crumbs categories=categories}}
 
 {{navigation-bar navItems=navItems filterMode=filterMode}}
 
 {{#if canCreateTopic}}
-  {{! SP (1) }}
-    <button id="create-topic" class='btn btn-default btn-primary' {{action "createTopic"}}><i class='fa fa-plus'></i>{{i18n 'topic.create'}}</button>
-  {{! /SP }}
+  <button id="create-topic" class='btn btn-default' {{action "createTopic"}}><i class='fa fa-plus'></i>{{i18n 'topic.create'}}</button>
 {{/if}}
 
-{{#if currentUser}}
-  {{! SP (2) }}
-
-  {{d-button id="create-private-message" class="btn-default" action="composePrivateMessage" icon="envelope" label="user.private_message"}}
-
-  {{! /SP }}
-{{/if}}
+{{! SP Add Private Message Button }}
+  {{#if currentUser}}
+    {{d-button id="create-private-message" class="btn-default" action="composePrivateMessage" icon="envelope" label="user.private_message"}}
+  {{/if}}
+{{! /SP }}

@@ -1,11 +1,3 @@
-{{! CHANGE MANIFEST:
-= Root: app/assets/javascripts/discourse/templates/navigation/categories.hbs
-=
-= (1) Added .btn-primary to create category button
-= (2) Added a private message button
-= (*) Other syntax changes to make it easier to read
-=}}
-
 {{bread-crumbs categories=categories}}
 
 {{navigation-bar navItems=navItems filterMode=filterMode}}
@@ -14,14 +6,12 @@
   {{categories-admin-dropdown}}
 {{/if}}
 
-{{! SP (2) }}
-
-  {{#if currentUser}}
-    {{d-button id="create-private-message" class="btn-default" action="composePrivateMessage" icon="envelope" label="user.private_message"}}
-  {{/if}}
-
-{{! /SP }}
-
 {{#if canCreateTopic}}
   <button id="create-topic" class='btn btn-default' {{action "createTopic"}}><i class='fa fa-plus'></i>{{i18n 'topic.create'}}</button>
 {{/if}}
+
+{{! SP Add Private Message Button }}
+  {{#if currentUser}}
+    {{d-button id="create-private-message" class="btn-default" action="composePrivateMessage" icon="envelope" label="user.private_message"}}
+  {{/if}}
+{{! /SP }}
