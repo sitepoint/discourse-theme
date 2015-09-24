@@ -1,86 +1,24 @@
-/*@import "common/foundation/variables";
+@import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-.list-controls {
-  .category-dropdown-button { // Remove line between caret and words
-    border-left: none;
-  }
+.contents .topic-list.categories td {
+  border-left:none;
 
-  .category-dropdown-menu { // Add padding around things in dropdown
-    padding: 8px 8px 0px
+  .category-name {
+    @include border-radius-all($border-radius-default-SP);
+    background: rgba(0,0,0,0.05);
+    color: black;
+    padding: 5px 13px;
+    border-radius: 3px;
+    display: inline-block;
   }
 }
 
 .contents .topic-list {
-  border: 1px solid $gray-lighter-SP;
-
-  tr.selected td {
-    &:nth-of-type(1), &.border--category {
-      box-shadow: -5px 0 0;
-      border-left: none;
+  td, th {
+    &.posters {
+      width: 60px;
+      min-width: 60px;
     }
-  }
-
-  th, td {
-    border-color: $gray-lighter-SP !important; // Override inline style
-    border-style: solid;
-    border-width: 0 0 1px;
-
-    &:nth-of-type(1) {
-      border-left-width: 0;
-    }
-
-    .category__title { // make it look similar to .badge-category
-      border-radius: 3px;
-      min-width: 120px;
-      text-align: center;
-      padding: 6px;
-      font-size: 12px;
-      font-weight: bold;
-      white-space: nowrap;
-      display: inline-block;
-      line-height: 1;
-    }
-
-    .tagger-tags-view {
-      color: $gray-text-SP;
-    }
-  }
-
-  table td {
-    border: none; // no borders on nested table children
-  }
-
-  i.fa-chevron-up:before {
-    content: '\f0d8'; // change chevron to caret
-  }
-
-  i.fa-chevron-down:before {
-    content: '\f0d7'; // change chevron to caret
-  }
-
-  td.num.likes i.fa-heart {
-    display: none; // remove heart icon from individual rows (it's already in the <th> row)
-  }
-
-  .posters {
-    min-width: 54px;
-  }
-
-  .avatar.latest {
-    @include box-shadow(0 0 0 1px $blue-SP); // don't use inset - makes some avatars not receive the border (e.g. ralphm's photo from gravatar)
   }
 }
-
-ol.category-breadcrumb li {
-  @include border-radius-all($border-radius-default-SP); // Border radius on all categories
-  border: 1px solid $gray-lighter-SP;                    // Border around all categories dropdown
-  overflow: hidden;                                      // so that rounded corners are not overflown
-
-  > .badge-category {
-    @include border-radius-all(0); // With out this when on a page like
-                                   // "Get Started" the get started and the caret
-                                   // have rounded corners and look weird
-  }
-}
-*/

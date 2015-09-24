@@ -1,31 +1,4 @@
 @import "common/foundation/variables";
-@import "common/foundation/mixins";
-
-#topic-title {
-
-    .list-tags{
-      vertical-align: super;
-    }
-
-    h1 {
-    padding-top: 5px;
-
-    a:visited {
-      color: $tertiary;
-    }
-
-    a.badge-category {
-      margin-top: -3px;
-    }
-  }
-}
-
-a.reply-new {
-  display: block;
-  position: static;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
 
 #topic-progress {
   color: $primary;

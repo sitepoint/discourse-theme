@@ -2,14 +2,15 @@
 @import "common/foundation/mixins";
 
 .btn {
-  @include border-radius-all($border-radius-default-SP);
+  border-radius: $border-radius-default-SP;
 }
 
-.btn-primary { // The red ones :P
-  background-color: $red-SP;
-  color: #fff;
+#create-topic, #create-category, .btn-primary, .post-controls .actions button.create {
+  border-radius: $border-radius-default-SP;
+  background: $red-SP;
+  color: white;
 
-  &:hover {
+  &:hover, &:focus {
     background-color: $red-darker-SP;
   }
 }

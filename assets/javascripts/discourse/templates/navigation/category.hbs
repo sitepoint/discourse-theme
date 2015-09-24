@@ -1,10 +1,3 @@
-{{! CHANGE MANIFEST:
-= Root: app/assets/javascripts/discourse/templates/navigation/category.hbs
-=
-= (1) Added .btn-primary to create topic button
-= (2) Private Message Customization
-= (*) Other syntax changes to make it easier to read
-=}}
 {{bread-crumbs categories=categories
                category=category
                noSubcategories=noSubcategories
@@ -17,20 +10,14 @@
 {{/if}}
 
 {{#if canCreateTopic}}
-  {{! SP (1) }}
-
-    {{d-button id="create-topic" class="btn-default btn-primary" action="createTopic" icon="plus" label="topic.create"}}
-
-  {{! /SP }}
+  {{d-button id="create-topic" class="btn-default" action="createTopic" icon="plus" label="topic.create"}}
 {{/if}}
 
-{{#if currentUser}}
-  {{! SP (2) }}
-
-  {{d-button id="create-private-message" class="btn-default" action="composePrivateMessage" icon="envelope" label="user.private_message"}}
-
-  {{! /SP }}
-{{/if}}
+{{! SP Add Private Message Button }}
+  {{#if currentUser}}
+    {{d-button id="create-private-message" class="btn-default" action="composePrivateMessage" icon="envelope" label="user.private_message"}}
+  {{/if}}
+{{! /SP }}
 
 {{#if canEditCategory}}
   {{d-button class="btn-default edit-category" action="editCategory" actionParam=category icon="wrench" label="category.edit_long"}}
