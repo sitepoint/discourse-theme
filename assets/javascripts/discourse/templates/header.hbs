@@ -1,5 +1,4 @@
 {{! SP CUSTOMIZATION - ENTIRE FILE }}
-
 <div class='container'>
   <div class='contents clearfix'>
 
@@ -130,98 +129,70 @@
         c0.232-0.262,0.409-0.568,0.524-0.918c0.115-0.352,0.176-0.732,0.176-1.15V5.088h1.564v9.214H124.467z"/>
       </svg>
     </a>
+    {{plugin-outlet "header-after-home-logo"}}
 
     <div class='panel clearfix'>
       {{#unless currentUser}}
-        {{d-button id="user-login" class="btn-primary btn-small login-button" action="showLogin" icon="user" label="log_in"}}
+        {{#if showSignUpButton}}
+          {{d-button action="showCreateAccount" class="btn-primary btn-small sign-up-button" label="sign_up"}}
+        {{/if}}
+        {{d-button action="showLogin" class="btn-primary btn-small login-button" icon="user" label="log_in"}}
       {{/unless}}
       <ul class='icons clearfix' role='navigation'>
         {{#if currentUser}}
-          <li class='notifications'>
-            <a class='icon' href="#" {{action "showNotifications" target="view"}} data-notifications="notifications-dropdown" id='user-notifications' title='{{i18n 'notifications.title'}}'>
-              {{fa-icon "comment" label="notifications.title"}}
-            </a>
+          {{plugin-outlet "header-before-notifications"}}
+        {{/if}}
+
+        {{#header-dropdown iconId="search-button"
+                           icon="search"
+                           action="toggleSearch"
+                           toggleVisible=searchVisible
+                           mobileAction="fullPageSearch"
+                           loginAction="showLogin"
+                           title="search.title"
+                           href="search"}}
+        {{/header-dropdown}}
+
+        {{#header-dropdown iconId="toggle-hamburger-menu"
+                           icon="bars"
+                           toggleVisible=hamburgerVisible
+                           loginAction="showLogin"
+                           title="hamburger_menu"}}
+          {{#if flaggedPostsCount}}
+            <a href='/admin/flags/active' title='{{i18n 'notifications.total_flagged'}}' class='badge-notification flagged-posts'>{{flaggedPostsCount}}</a>
+          {{/if}}
+        {{/header-dropdown}}
+
+        {{#if currentUser}}
+          {{#header-dropdown iconId="current-user"
+                             class="current-user"
+                             showUser="true"
+                             toggleVisible=userMenuVisible
+                             loginAction="showLogin"
+                             title="user.avatar.header_title"}}
             {{#if currentUser.unread_notifications}}
-              <a href='#' class='badge-notification unread-notifications'>{{currentUser.unread_notifications}}</a>
+              <a href {{action "showUserMenu"}} class='badge-notification unread-notifications'>{{currentUser.unread_notifications}}</a>
             {{/if}}
             {{#if currentUser.unread_private_messages}}
-              <a href='#' class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
+              <a href {{action "showUserMenu"}} class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
             {{/if}}
-          </li>
-        {{/if}}
-        <li>
-          {{#if loginRequired}}
-            <a id='search-button' class='icon expand' href='#' aria-hidden="true" {{action showLogin}}>
-              {{fa-icon "search"}}
-            </a>
-          {{else}}
-            <a id='search-button'
-               class='icon expand'
-               href='#'
-               data-dropdown="search-dropdown"
-               title='{{i18n "search.title"}}'>
-               {{fa-icon "search" label="search.title"}}
-            </a>
-          {{/if}}
-        </li>
-        <li class='categories dropdown'>
-          {{#if loginRequired}}
-            <a class='icon'
-               href="#"
-               aria-hidden="true"
-               {{action showLogin}}>
-               {{fa-icon "bars"}}
-            </a>
-          {{else}}
-            <a class='icon'
-               data-dropdown="site-map-dropdown"
-               data-render="renderSiteMap"
-               href="#"
-               title='{{i18n "site_map"}}'
-               id="site-map">
-               {{fa-icon "bars" label="site_map"}}
-            </a>
-          {{/if}}
-          {{#if currentUser.site_flagged_posts_count}}
-            <a href='/admin/flags/active' title='{{i18n "notifications.total_flagged"}}' class='badge-notification flagged-posts'>{{currentUser.site_flagged_posts_count}}</a>
-          {{/if}}
-        </li>
-        {{#if currentUser}}
-          <li class='current-user dropdown'>
-            <a class='icon'
-               data-dropdown="user-dropdown"
-               data-render="renderUserDropdown"
-               href="#"
-               title='{{i18n "user.avatar.title"}}'
-               id="current-user">
-                 {{bound-avatar currentUser "medium"}}
-            </a>
-          </li>
+          {{/header-dropdown}}
         {{/if}}
       </ul>
-
-      {{render "search"}}
-
-      {{render "notifications" notifications}}
-
-      {{#if view.renderSiteMap}}
-        {{render "site-map"}}
-      {{/if}}
-
-      {{render "user-dropdown"}}
-
+        {{plugin-outlet "header-before-dropdowns"}}
+        {{user-menu visible=userMenuVisible logoutAction="logout"}}
+        {{hamburger-menu visible=hamburgerVisible showKeyboardAction="showKeyboardShortcutsHelp"}}
+        {{search-menu visible=searchVisible}}
     </div>
 
-    {{#unless showExtraInfo}}
+    {{#if showExtraInfo}}
+      {{header-extra-info topic=topic}}
+    {{else}}
       <div class="header-links-wrapper clearfix">
         <a class="header-link" href="http://www.sitepoint.com/versioning" tabindex="2">Versioning</a>
         <a class="header-link" href="http://www.sitepoint.com" tabindex="3">Articles</a>
         <a class="header-link" target="_blank" href="https://learnable.com/topics/all?utm_source=sitepoint&utm_medium=link&utm_content=top-nav" tabindex="4">Books &amp; Courses</a>
       </div>
-    {{/unless}}
-
-    {{#if showExtraInfo}}
-      {{header-extra-info topic=topic}}
     {{/if}}
 
   </div>

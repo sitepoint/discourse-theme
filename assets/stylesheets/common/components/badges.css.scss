@@ -1,75 +1,7 @@
-@import "common/foundation/variables";
-@import "common/foundation/mixins";
-
-.badge-category,
-.badge-category-parent {
-  i.fa {
-    line-height: 0; // ensure the icon doesn't increase the height of its inline container element (e.g. in the extra-info in topic page heading, or icons in hamburger header menu causing broken layout)
-
-    // SP custom rule
-    &.fa-caret-right,
-    &.fa-caret-down { // drowdown in expanded state
-      font-size: 18px; // dropdown caret
-      vertical-align: -2px;
-    }
-
-    // SP custom rule
-    &.fa-group {
-      font-size: 14px;
-      vertical-align: -1px;
-
-      &:before {
-        // content: $fa-var-lock; // restricted categories (lock icon \f023)
-        content: $fa-var-eye-slash; // restricted categories (eye-slash icon \f070)
-      }
-    }
-
-    &.fa-lock{
-      // Cheap and nasty until restricted class is added to initial drop down category
-      &:before {
-        content: $fa-var-eye-slash; // restricted categories (eye-slash icon \f070)
-      }
-    }
-  }
-
-  &.restricted{
-    i.fa{
-      &:before {
-        content: $fa-var-eye-slash; // restricted categories (eye-slash icon \f070)
-      }
-    }
-  }
+.list-controls .category-breadcrumb a.badge-category {
+  border-radius: $border-radius-default-SP 0 0 $border-radius-default-SP;
 }
 
-.badge-category-parent {
-  display: none !important; // !important because of .category-links li:not(.heading) a { display: inline-block; } in base/header.scss
-}
-
-.badge-category {
-  @include border-radius-all($border-radius-default-SP);
-  min-width: 80px;
-  text-align: center;
-}
-
-.badge-wrapper.box span.badge-category{
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.badge-category-bg {
-  height: 13px;
-  width: 12px;
-  @include border-radius-all($border-radius-default-SP);
-}
-
-.badge-notification {
-  &.new-posts, &.unread-posts, &.unread, &.unread-private-messages {
-    background-color: $red-SP;
-    border-color: $red-SP;
-    color: white !important;
-  }
-}
-
-.category-dropdown-menu .badge-wrapper.box {
-  margin-bottom: 6px;
+.list-controls .category-breadcrumb a.badge-category.category-dropdown-button {
+  border-radius: 0 $border-radius-default-SP $border-radius-default-SP 0;
 }

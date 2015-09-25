@@ -1,6 +1,4 @@
 @import "common/foundation/variables";
-@import "common/foundation/mixins";
-@import "common/foundation/helpers";
 
 .names span {
   font-size: inherit;
@@ -23,6 +21,12 @@
 
   &.Mentors a {
     color: #ba5401;
+  }
+
+  &.TeamSitePoint + .user-title a:before {
+    content: "[SitePoint]";
+    margin-right: 8px;
+    color: #999;
   }
 }
 

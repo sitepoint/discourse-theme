@@ -2,163 +2,13 @@
 @import "common/foundation/mixins";
 @import "common/foundation/helpers";
 
-.post-cloak {
-  .reply-to-tab {
-    right: 120px;
-
-    @include medium-width {
-      right: 120px;
-    }
-    @include small-width {
-      right: 320px;
-    }
-  }
-
-  .gutter .reply-new .discourse-no-touch & {
-    opacity: 1;
-  }
-}
-
-.discourse-no-touch .post-cloak {
-  .gutter .reply-new, .post-actions, div.actions { // ICKY: Qualified Selector :/
-    opacity: 1;
-  }
+.discourse-no-touch .post-cloak .gutter .reply-new {
+  opacity: 1;
 }
 
 nav.post-controls {
-  .show-replies { //'2 Replies' button in expanded mode
-    color: $gray-sitepoint-header-SP;
-    border-radius: 0;
-
-    span.badge-posts {
-      color: $gray-sitepoint-header-SP;
-      font-size: inherit;
-    }
-  }
-
-  button.create { // reply button
-    background-color: $red-SP;
-    color: #fff;
-
-    &:hover {
-      background-color: $red-darker-SP;
-    }
-  }
-}
-
-.embedded-posts {
-  .topic-body {
-    padding-left: 70px;
-    width: 90%;
-  }
-
-  &.top { // top means "in reply to expansion" above a post
-    margin-left: 77px;
-    max-width: 912px;
-
-    @include medium-width {
-      margin-left: 70px;
-      max-width: 804px;
-    }
-
-    @include small-width {
-      margin-left: 66px;
-      max-width: 760px;
-    }
-  }
-
-  .quote .title, blockquote, .onebox, .onebox-result {
-    border-left: 3px solid $red-SP;
-  }
-}
-
-.bottom-round nav.post-controls .show-replies { //'2 Replies' button in default mode
-  color: #fff;
-  background-color: $gray-sitepoint-header-SP;
-  border-bottom-left-radius: $border-radius-default-SP;
-  border-bottom-right-radius: $border-radius-default-SP;
-  border-top-left-radius: $border-radius-default-SP;
-  border-top-right-radius: $border-radius-default-SP;
-
-  .badge-posts {
-    color: #fff;
-  }
-
-  &:hover {
-    background-color: $gray-text-SP;
-
-    .badge-posts {
-      color: #fff;
-    }
-  }
-}
-
-.topic-map {
-  background-color: $gray-bg-SP;
-
-  h4 {
-    color: $gray-sitepoint-header-SP;
-    font-weight: $font-weight-medium-bold-SP;
-    margin-bottom: 10px;
-  }
-
-  .avatars {
-    > div {
-      margin-top: 7px;
-
-      .poster {
-        margin-right: 6px;
-        position: relative;
-      }
-    }
-
-    .post-count {
-      @include border-radius-all(50%);
-      right: 7px;
-      top: 1px;
-    }
-  }
-
-  .map {
-    li {
-      padding: 15px 15px;
-    }
-
-    i { // SP custom rule
-      color: $gray-sitepoint-header-SP; // since we have icons rather then texts in headings (similar to topic list table)
-    }
-  }
-
-  .links {
-    margin-top: 10px;
-  }
-
-  .buttons {
-    margin-top: 22px;
-    margin-right: 15px;
-
-    .btn {
-      background-color: $gray-sitepoint-header-SP;
-      color: #fff;
-      padding: 0 10px;
-
-      &:hover {
-        background-color: $gray-text-SP;
-        color: #fff;
-      }
-
-      .fa {
-        line-height: 32px;
-
-        &.fa-chevron-up:before {
-          content: '\f0d8'; // change chevron to caret
-        }
-
-        &.fa-chevron-down:before {
-          content: '\f0d7'; // change chevron to caret
-        }
-      }
-    }
+  .show-replies, .actions button {
+    border-radius: $border-radius-default-SP;
   }
 }
 
@@ -168,70 +18,19 @@ span.post-count {
   opacity: 1;
 }
 
-.extra-info-wrapper {
-  max-width: 760px;
-}
-
-@include medium-width {
-  .extra-info-wrapper {
-    max-width: 640px;
-  }
-}
-
-@include small-width {
-  .extra-info-wrapper {
-    max-width: 600px;
-  }
-}
-
 .extra-info {
-  &.has-category h1, h1 {
-    margin: 0 0 1px 0;
-    color: $gray-lighter-SP;
+  padding: 0 8px;
+
+  h1 {
+    color: white;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
   }
 
-  .topic-statuses {margin-top: -2px;}
+  .badge-wrapper {
+    margin-top: 0;
 
-  .badge-category-bg{
-    float: left;
-  }
-
-  .badge-category {
-    font-size: 0.95em;
-    line-height: 1.4em;
-    padding: 0 5px;
-    box-sizing: border-box;
-    min-width: 0;
-  }
-
-  .tagger-tags-view {
-    float: left;
-    max-width: 50%;
-    height: 19px;
-    overflow: hidden;
-    margin-left: 10px;
-    font-size: 10px;
-    color: #fff;
-
-    span {
-      margin-top: 0;
-    }
-
-    a {
-      font-size: 10px;
-      line-height: 15px;
-      margin-top: 0;
-      margin-right: 5px;
-    }
-  }
-
-  .list-tags{
-    vertical-align: top;
-  }
-
-  .discourse-tag{
-    font-size: 0.8em;
-    vertical-align: super;
   }
 }
 
@@ -239,83 +38,6 @@ span.post-count {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.user-title {
-  color: $primary;
-  font-size: 100%;
-  line-height: inherit;
-}
-
-.quote { /* quotes with attribution */
-  .title {
-    border-left: 3px solid $red-SP;
-  }
-}
-
-.quote-controls i {
-  &.fa-chevron-up:before {
-    content: '\f0d8'; // change chevron to caret
-  }
-
-  &.fa-chevron-down:before {
-    content: '\f0d7'; // change chevron to caret
-  }
-}
-
-.gutter { // the gutter holds the 'Reply as new topic' link, and links to posts in other threads
-  float: right;
-
-  @media screen and (max-width: 960px) {
-    display: none;
-  }
-}
-
-.topic-body {
-  box-sizing: border-box;
-  margin-left: -55px;
-  padding-left: 55px + 13px; // avatar plus pad
-  padding-top: 13px;
-  position: relative;
-  width: 100%;
-  z-index: 0;
-
-  @media screen and (max-width: 960px) {
-    width: 750px;
-  }
-}
-
-.topic-avatar {
-  position: relative;
-  z-index: 1; // due to our custom topic-body flexible layout with left padding and negative margin, we need to pull the topic-avatar layer back over the topic-body so that avatar is clickable
-}
-
-#selected-posts {
-  margin-left: 180px;
-}
-
-.topic-post {
-  article.boxed {
-    line-height: 1.4;
-  }
-}
-
-.read_restricted .gutter:before {
-  font-family: 'FontAwesome';
-  color: $gray-lighter-SP;
-//   content: "\f023";
-  content: $fa-var-eye-slash; // eye-slash icon \f070
-  font-size: 45px;
-  position: absolute;
-  top: auto;
-  bottom: 0px;
-  left: auto;
-  right: 0px; // pull icon into the post container area so that no horizontal scrollbar appears until <~1130px (admins requested that
-              // from ~1100px down there be lions (mainly due to messy #topic-progress)) and annoyed users should switch to the Mobile View
-}
-
-.topic-meta-data .post-info  {
-  font-size: inherit;
-
-  a {
-    color: $primary;
-  }
+.topic-post article.boxed {
+  line-height: 1.4;
 }

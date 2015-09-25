@@ -2,21 +2,6 @@
 @import "common/foundation/mixins";
 @import "common/foundation/helpers";
 
-// NAVS OVERRIDES. PLEASE TRY TO KEEP FILE STRUCTURE 1:1 WITH VENDOR FILE
-
-
-
-// --------------------------------------------------
-// Navigation menus
-// --------------------------------------------------
-
-// Base
-// --------------------------------------------------
-
-
-// Pill nav
-// --------------------------------------------------
-
 .nav-pills {
   > li {
     margin-right: 0;
@@ -88,19 +73,6 @@
   .active > a,
   .active .fa-chevron-right {
     color: #fff;
-    background-color: $red-SP; // 0527: would orig $quearternary work?
-  }
-
-  .count {
-    font-size: inherit;
-  }
-
-  .fa-chevron-right {
-    font-size: 24px;
-    line-height: 20px;
-
-    &:before {
-      content: '\f0da'; // change chevron to caret
-    }
+    background-color: $red-SP;
   }
 }
