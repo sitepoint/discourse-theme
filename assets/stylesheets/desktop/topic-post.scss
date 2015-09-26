@@ -42,6 +42,10 @@ span.post-count {
   line-height: 1.4;
 }
 
+a.post-date span {
+  margin-right: 1em;
+}
+
 a.post-date:after {
-  content: " #"attr(data-post-number);
+  content: "#"attr(data-post-number);
 }
