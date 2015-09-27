@@ -41,3 +41,11 @@ span.post-count {
 .topic-post article.boxed {
   line-height: 1.4;
 }
+
+a.post-date span {
+  margin-right: 1em;
+}
+
+a.post-date:after {
+  content: "#"attr(data-post-number);
+}
