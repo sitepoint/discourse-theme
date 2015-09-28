@@ -48,7 +48,7 @@
   font-size: 1em;
 }
 
-.discourse-tags:before, .list-tags:before {
+.discourse-tags:before, .list-tags:not(:empty):before {
   font-family: 'FontAwesome';
   content: "\F02C";
   color: #919191;
