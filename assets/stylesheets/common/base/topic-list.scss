@@ -24,3 +24,33 @@
     }
   }
 }
+
+.badge-wrapper.box span.badge-category-bg, .badge-wrapper.box span.badge-category-parent-bg {
+  @include border-radius-all($border-radius-default-SP);
+}
+
+.badge-wrapper.box {
+  max-width: 130px;
+  padding: 3px 0 0 0;
+  text-align: center;
+  width: 100%;
+}
+
+.menu-panel .badge-wrapper.box, .title-wrapper .badge-wrapper.box, #suggested-topics h3 .badge-wrapper.box {
+  width: auto;
+}
+
+.topic-list th.category {
+  width: 140px;
+}
+
+.extra-info .discourse-tag {
+  font-size: 1em;
+}
+
+.discourse-tags:before, .list-tags:not(:empty):before {
+  font-family: 'FontAwesome';
+  content: "\F02C";
+  color: #919191;
+  vertical-align: top;
+}
