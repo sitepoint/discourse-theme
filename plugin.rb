@@ -94,4 +94,5 @@ register_asset "stylesheets/desktop/topic.scss", :desktop      # Post Progress m
 register_asset "stylesheets/common/base/topic-admin-menu.scss" # yeah i dunno why this is needed but...
 
 ## Mobile Only
+register_asset "stylesheets/mobile/header.scss", :mobile   # Hide Header links on Mobile
 register_asset "stylesheets/mobile/topic-list.scss", :mobile   # Hide Tags from Topic List
