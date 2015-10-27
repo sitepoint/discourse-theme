@@ -53,20 +53,20 @@ after_initialize do
     EOS
 
   begin
-    if User.exists?
-      sitepoint_site_customization = SiteCustomization.find_or_create_by({
-        name: "SitePoint Crawler links",
-        header: header,
-        mobile_header: header,
-        enabled: true,
-        user_id: User.first.id,
-        head_tag: ''
-      })
-      # cleanup old customizations
-      SiteCustomization.where(name: sitepoint_site_customization.name).
-        where.not(id: sitepoint_site_customization.id).
-        delete_all
-    end
+    # if User.exists?
+    #   sitepoint_site_customization = SiteCustomization.find_or_create_by({
+    #     name: "SitePoint Crawler links",
+    #     header: header,
+    #     mobile_header: header,
+    #     enabled: true,
+    #     user_id: User.first.id,
+    #     head_tag: ''
+    #   })
+    #   # cleanup old customizations
+    #   SiteCustomization.where(name: sitepoint_site_customization.name).
+    #     where.not(id: sitepoint_site_customization.id).
+    #     delete_all
+    # end
   rescue ActiveRecord::StatementInvalid
     # This happens when you run db:migrate on a database that doesn't have any tables yet.
   end
