@@ -40,7 +40,7 @@ after_initialize do
     <noscript>
       <a class="header-link" href="http://www.sitepoint.com/versioning" tabindex="2">Versioning</a>
       <a class="header-link" href="http://www.sitepoint.com" tabindex="3">Articles</a>
-      <a class="header-link" target="_blank" href="https://learnable.com/topics/all?utm_source=sitepoint&amp;utm_medium=link&amp;utm_content=top-nav" tabindex="4">Books &amp; Courses</a>
+      <a class="header-link" target="_blank" href="https://www.sitepoint.com/premium/topics/all?utm_source=sitepoint&amp;utm_medium=link&amp;utm_content=top-nav" tabindex="4">Books &amp; Courses</a>
     </noscript>
 
     <!-- Start Alexa Certify Javascript -->
