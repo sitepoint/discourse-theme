@@ -6,16 +6,6 @@
     <a class="logomark" href="/" tabindex="1">
       <!--<img src="http://www.sitepoint.com/wp-content/themes/sitepoint/assets/svg/sitepoint-forums.svg" alt="SitePoint Forums">-->
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="202px" height="24px" viewBox="0 0 202 27" enable-background="new 0 0 202 27" xml:space="preserve">
-        <style>
-          /* let's do the hover in SVG, so that we can still inline it and save HTTP requests */
-          svg > #logo, svg > rect { /* path, rect, ellipse */
-            fill: #AEAEAE;
-          }
-
-          svg:hover > #logo, svg:hover > rect {
-            fill: #fff;
-          }
-        </style>
         <g id="logo">
             <path d="M31.36,16.75 C31.56,17.07 31.82,17.31 32.14,17.50 C32.46,17.68 32.82,17.82 33.23,17.89 C33.63,17.97 34.05,18.01 34.48,18.01 C34.81,18.01 35.16,17.99 35.52,17.94 C35.89,17.89 36.22,17.81 36.53,17.68 C36.83,17.55 37.08,17.36 37.28,17.11 C37.48,16.87 37.58,16.55 37.58,16.17 C37.58,15.64 37.37,15.24 36.96,14.97 C36.55,14.69 36.03,14.47 35.41,14.31 C34.79,14.14 34.12,13.99 33.39,13.85 C32.66,13.71 31.99,13.52 31.37,13.27 C30.75,13.03 30.23,12.68 29.82,12.23 C29.41,11.78 29.20,11.16 29.20,10.36 C29.20,9.73 29.34,9.20 29.63,8.75 C29.92,8.30 30.30,7.94 30.75,7.66 C31.20,7.38 31.72,7.17 32.29,7.03 C32.86,6.90 33.42,6.83 33.99,6.83 C34.71,6.83 35.38,6.89 35.99,7.01 C36.61,7.13 37.15,7.34 37.62,7.63 C38.09,7.93 38.46,8.33 38.75,8.83 C39.03,9.34 39.19,9.96 39.24,10.72 L37.13,10.72 C37.10,10.32 36.99,9.98 36.81,9.72 C36.63,9.46 36.40,9.25 36.12,9.08 C35.84,8.92 35.53,8.81 35.19,8.74 C34.85,8.66 34.51,8.63 34.16,8.63 C33.84,8.63 33.53,8.65 33.20,8.70 C32.88,8.75 32.59,8.83 32.32,8.95 C32.06,9.07 31.84,9.23 31.68,9.43 C31.51,9.63 31.43,9.89 31.43,10.21 C31.43,10.56 31.56,10.86 31.82,11.09 C32.07,11.32 32.40,11.51 32.80,11.66 C33.19,11.82 33.64,11.95 34.13,12.05 C34.63,12.15 35.13,12.26 35.62,12.37 C36.15,12.49 36.67,12.62 37.17,12.78 C37.67,12.94 38.12,13.15 38.51,13.42 C38.90,13.68 39.21,14.01 39.45,14.41 C39.69,14.81 39.81,15.31 39.81,15.90 C39.81,16.66 39.65,17.28 39.33,17.77 C39.01,18.27 38.58,18.67 38.06,18.98 C37.54,19.28 36.96,19.49 36.30,19.61 C35.65,19.73 35.00,19.79 34.36,19.79 C33.65,19.79 32.97,19.72 32.32,19.58 C31.68,19.43 31.11,19.20 30.61,18.87 C30.12,18.54 29.72,18.11 29.42,17.57 C29.13,17.03 28.96,16.38 28.93,15.61 L31.03,15.61 C31.05,16.06 31.16,16.44 31.36,16.75" id="Fill-1"></path>
             <path d="M42.27,7.12 L44.37,7.12 L44.37,19.53 L42.27,19.53 L42.27,7.12 Z" id="Fill-2"></path>
@@ -38,12 +28,14 @@
     {{plugin-outlet "header-after-home-logo"}}
 
     <div class='panel clearfix'>
+      <div class='header-buttons'>
       {{#unless currentUser}}
         {{#if showSignUpButton}}
           {{d-button action="showCreateAccount" class="btn-primary btn-small sign-up-button" label="sign_up"}}
         {{/if}}
         {{d-button action="showLogin" class="btn-primary btn-small login-button" icon="user" label="log_in"}}
       {{/unless}}
+      </div>
       <ul class='icons clearfix' role='navigation'>
         {{#if currentUser}}
           {{plugin-outlet "header-before-notifications"}}
@@ -95,9 +87,12 @@
       {{header-extra-info topic=topic}}
     {{else}}
       <div class="header-links-wrapper clearfix">
-        <a class="header-link" href="http://www.sitepoint.com/versioning" tabindex="2">Versioning</a>
-        <a class="header-link" href="http://www.sitepoint.com" tabindex="3">Articles</a>
-        <a class="header-link" target="_blank" href="https://www.sitepoint.com/premium/topics/all?utm_source=sitepoint&utm_medium=link&utm_content=top-nav" tabindex="4">Books &amp; Courses</a>
+        <a class="header-link" href="http://store.sitepoint.com" tabindex="2">Store</a>
+        <a class="header-link" href="http://www.sitepoint.com/deals" tabindex="3">Deals</a>
+        <a class="header-link" href="http://www.sitepoint.com/versioning" tabindex="4">Versioning</a>
+        <a class="header-link" href="http://www.sitepoint.com/reference" tabindex="5">Reference</a>
+        <a class="header-link" href="http://www.sitepoint.com" tabindex="6">Articles</a>
+        <a class="header-link u-button" target="_blank" href="https://www.sitepoint.com/premium/topics/all?utm_source=sitepoint&utm_medium=link&utm_content=top-nav" tabindex="7">Premium</a>
       </div>
     {{/if}}
 
