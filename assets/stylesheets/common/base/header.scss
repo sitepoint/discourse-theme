@@ -34,6 +34,10 @@
     }
   }
 
+  .extra-info {
+    padding: 5px 8px;
+  }
+
   .current-username a {
     color: #fff;
     margin-top: 12px;
@@ -74,6 +78,10 @@
 
     .badge-notification {
       top: 0px;
+    }
+
+    .unread-private-messages {
+      left: 68px;
     }
   }
 }
