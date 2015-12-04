@@ -38,12 +38,11 @@ after_initialize do
   # SP customisation: add SiteCustomization to add in crawler links
   header = <<-EOS.strip_heredoc.chomp
     <noscript>
-      <a class="header-link" href="http://store.sitepoint.com" tabindex="2">Store</a>
-      <a class="header-link" href="http://www.sitepoint.com/deals" tabindex="3">Deals</a>
-      <a class="header-link" href="http://www.sitepoint.com/versioning" tabindex="4">Versioning</a>
-      <a class="header-link" href="http://www.sitepoint.com/reference" tabindex="5">Reference</a>
-      <a class="header-link" href="http://www.sitepoint.com" tabindex="6">Articles</a>
-      <a class="header-link u-button" target="_blank" href="https://www.sitepoint.com/premium/topics/all?utm_source=sitepoint&utm_medium=link&utm_content=top-nav" tabindex="7">Premium</a>
+      <a class="header-link" href="https://shop.sitepoint.com" tabindex="2">Shop</a>
+      <a class="header-link" href="http://www.sitepoint.com/versioning" tabindex="3">Versioning</a>
+      <a class="header-link" href="http://www.sitepoint.com/reference" tabindex="4">Reference</a>
+      <a class="header-link" href="http://www.sitepoint.com" tabindex="5">Articles</a>
+      <a class="header-link u-button" target="_blank" href="https://www.sitepoint.com/premium/topics/all?utm_source=sitepoint&utm_medium=link&utm_content=top-nav" tabindex="6">Premium</a>
     </noscript>
 
     <!-- Start Alexa Certify Javascript -->
