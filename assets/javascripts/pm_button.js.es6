@@ -1,7 +1,7 @@
-(function() {
+import NavigationDefaultController from 'discourse/controllers/navigation/default';
 // Private Message Button
 
-Discourse.NavigationDefaultController.reopen({
+NavigationDefaultController.reopen({
   actions: {
     composePrivateMessage: function() {
       return this.controllerFor('composer').open({
@@ -14,4 +14,3 @@ Discourse.NavigationDefaultController.reopen({
   }
 });
 
-})();
