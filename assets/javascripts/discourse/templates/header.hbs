@@ -74,6 +74,7 @@
             {{#if currentUser.unread_private_messages}}
               <a href {{action "showUserMenu"}} class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
             {{/if}}
+            {{plugin-outlet "header-notifications"}}
           {{/header-dropdown}}
         {{/if}}
       </ul>
@@ -97,3 +98,4 @@
 
   </div>
 </div>
+{{plugin-outlet "header-under-content"}}
