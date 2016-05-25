@@ -5,7 +5,8 @@
   display: none;
 }
 
-.d-header {
+.d-header,
+.drop-down-visible .d-header {
   padding-top: 0px;
   height: 56px;
 
@@ -50,6 +51,7 @@
 
   .icons {
     .icon {
+      position: relative;
       padding: 11px 0;
       color: white;
       border: 1px solid transparent; // prevent "flash of rounded bottom corners" as dropdown is opening
@@ -74,14 +76,18 @@
       &:active {
         color: #000;
       }
+
+      .badge-notification {
+        top: 0px;
+      }
     }
 
     .badge-notification {
       top: 0px;
     }
 
-    .unread-private-messages {
-      left: 68px;
+    .flagged-posts {
+      right: 24px;
     }
   }
 }
