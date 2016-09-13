@@ -121,6 +121,23 @@ createWidget('header-icons', {
   },
 });
 
+createWidget('sso-sign-up-btn', {
+  tagName: 'button.btn-primary.btn-small.sign-up-button',
+
+  click() {
+    $.cookie("sso_event", "sign_up", {
+      path: "/",
+      expires: 1
+    });
+    this.sendWidgetAction("showLogin")
+  },
+
+  html() {
+    return I18n.t("sign_up")
+  }
+
+});
+
 createWidget('header-buttons', {
   // SP START
   tagName: 'div.header-buttons',
@@ -137,6 +154,9 @@ createWidget('header-buttons', {
                                            action: "showCreateAccount" }));
     }
 
+    if(this.siteSettings.enable_sso) {
+      buttons.push(this.attach('sso-sign-up-btn'));
+    }
 
     buttons.push(this.attach('button', { label: 'log_in',
                                          className: 'btn-primary btn-small login-button',
