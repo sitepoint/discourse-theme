@@ -12,6 +12,12 @@
 
 after_initialize do
 
+  # Track log-out timestamps
+  DiscourseEvent.on(:user_logged_out) do |user|
+    user.custom_fields["last_logged_out_at"] = Time.now
+    user.save
+  end
+
   module SitepointDesign
     class Engine < ::Rails::Engine
       engine_name "sitepoint_design"
