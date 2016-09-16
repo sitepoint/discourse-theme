@@ -1,7 +1,7 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-.contents .topic-list.categories td, .mobile-view .category-list-item.category {
+.contents .category-list td, .mobile-view .category-list-item.category {
   border-left:none;
 
   .category-name {
