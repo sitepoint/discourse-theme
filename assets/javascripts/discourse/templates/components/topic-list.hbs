@@ -1,0 +1,38 @@
+{{#unless skipHeader}}
+  <thead>
+    {{raw "topic-list-header" currentUser=currentUser
+                              canBulkSelect=canBulkSelect
+                              toggleInTitle=toggleInTitle
+                              hideCategory=hideCategory
+                              showPosters=showPosters
+                              showLikes=showLikes
+                              showOpLikes=showOpLikes
+                              showParticipants=showParticipants
+                              order=order
+                              ascending=ascending
+                              sortable=sortable
+                              bulkSelectEnabled=bulkSelectEnabled}}
+  </thead>
+{{/unless}}
+<tbody>
+  {{#each topics as |topic index|}}
+    {{topic-list-item topic=topic
+                      bulkSelectEnabled=bulkSelectEnabled
+                      showTopicPostBadges=showTopicPostBadges
+                      hideCategory=hideCategory
+                      showPosters=showPosters
+                      showParticipants=showParticipants
+                      showLikes=showLikes
+                      showOpLikes=showOpLikes
+                      expandGloballyPinned=expandGloballyPinned
+                      expandAllPinned=expandAllPinned
+                      selected=selected}}
+    {{#if (fifthOrLast index topics.length)}}
+      <tr>
+        <td colspan="6">
+          {{maestro-outlet templateAlias="Forums Home After Fifth Topic"}}
+        </td>
+      </tr>
+    {{/if}}
+  {{/each}}
+</tbody>
