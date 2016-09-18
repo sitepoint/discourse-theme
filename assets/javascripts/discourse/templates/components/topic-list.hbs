@@ -30,7 +30,9 @@
     {{#if (fifthOrLast index topics.length)}}
       <tr>
         <td colspan="6">
-          {{maestro-outlet templateAlias="Forums Home After Fifth Topic"}}
+          <div class="bsa-topic-outlet">
+            {{maestro-outlet templateAlias="Forums Home After Fifth Topic"}}
+          </div>
         </td>
       </tr>
     {{/if}}
