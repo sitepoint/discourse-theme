@@ -181,28 +181,28 @@ createWidget('sitepoint-links', {
 
     links.push(h('a.header-link', {
       target: '_blank',
-      href: 'https://www.sitepoint.com/versioning'
+      href: '/versioning'
     },
     'Versioning'
     ));
 
     links.push(h('a.header-link', {
       target: '_blank',
-      href: 'http://www.sitepoint.com/reference'
+      href: '/reference'
     },
     'Reference'
     ));
 
     links.push(h('a.header-link', {
       target: '_blank',
-      href: 'http://www.sitepoint.com'
+      href: '/'
     },
     'Articles'
     ));
 
     links.push(h('a.header-link.u-button', {
       target: '_blank',
-      href: 'https://www.sitepoint.com/premium/topics/all?utm_source=sitepoint&utm_medium=link&utm_content=top-nav'
+      href: '/premium/topics/all?utm_source=sitepoint&utm_medium=link&utm_content=top-nav'
     },
     'Premium'
     ));
