@@ -58,6 +58,13 @@ after_initialize do
     </script>
     <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=3/2Rk1ao6C526C" style="display:none" height="1" width="1" alt="" /></noscript>
     <!-- End Alexa Certify Javascript -->
+
+    <script>
+    (function(d,b,a,s,e){ var t = b.createElement(a),
+      fs = b.getElementsByTagName(a)[0]; t.async=1; t.id=e; t.src=s;
+      fs.parentNode.insertBefore(t, fs); })
+    (window,document,'script','https://scripts.demandbase.com/IM2QfEma.min.js','demandbase_js_lib');
+    </script>
     EOS
 
   begin
