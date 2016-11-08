@@ -175,23 +175,9 @@ createWidget('sitepoint-links', {
 
     links.push(h('a.header-link', {
       target: '_blank'  ,
-      href: 'https://shop.sitepoint.com'
+      href: '/versioning-show'
     },
-    'Shop' ));
-
-    links.push(h('a.header-link', {
-      target: '_blank',
-      href: '/versioning'
-    },
-    'Versioning'
-    ));
-
-    links.push(h('a.header-link', {
-      target: '_blank',
-      href: '/reference'
-    },
-    'Reference'
-    ));
+    'Podcast' ));
 
     links.push(h('a.header-link', {
       target: '_blank',

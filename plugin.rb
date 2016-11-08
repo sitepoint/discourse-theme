@@ -44,9 +44,7 @@ after_initialize do
   # SP customisation: add SiteCustomization to add in crawler links
   header = <<-EOS.strip_heredoc.chomp
     <noscript>
-      <a class="header-link" href="https://shop.sitepoint.com" tabindex="2">Shop</a>
-      <a class="header-link" href="/versioning" tabindex="3">Versioning</a>
-      <a class="header-link" href="/reference" tabindex="4">Reference</a>
+      <a class="header-link" href="/versioning-show" tabindex="2">Podcast</a>
       <a class="header-link" href="/" tabindex="5">Articles</a>
       <a class="header-link u-button" target="_blank" href="/premium/topics/all?utm_source=sitepoint&utm_medium=link&utm_content=top-nav" tabindex="6">Premium</a>
     </noscript>
