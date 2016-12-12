@@ -173,22 +173,28 @@ createWidget('sitepoint-links', {
   html(attrs) {
     const links = [];
 
+    links.push(h('a.header-link.u-button', {
+      target: '_blank'  ,
+      href: '/basetheme?utm_source=community&utm_medium=top-nav'
+    },
+    'Themes' ));
+
     links.push(h('a.header-link', {
       target: '_blank'  ,
-      href: '/versioning-show'
+      href: '/versioning-show?utm_source=community&utm_medium=top-nav'
     },
     'Podcast' ));
 
     links.push(h('a.header-link', {
       target: '_blank',
-      href: '/'
+      href: '/?utm_source=community&utm_medium=top-nav'
     },
     'Articles'
     ));
 
     links.push(h('a.header-link.u-button', {
       target: '_blank',
-      href: '/premium/topics/all?utm_source=sitepoint&utm_medium=link&utm_content=top-nav'
+      href: '/premium/topics/all?utm_source=community&utm_medium=top-nav'
     },
     'Premium'
     ));
