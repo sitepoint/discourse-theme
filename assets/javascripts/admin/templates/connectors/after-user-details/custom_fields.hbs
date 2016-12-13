@@ -1,0 +1,18 @@
+<section class="details">
+  <h1>Custom Fields</h1>
+  <div class="display-row">
+    <div class="field">{{i18n "admin.user.custom_fields.sp_created_at"}}</div>
+    <div class='value'>{{format-date model.custom_fields.sp_created_at leaveAgo="true"}}</div>
+  </div>
+  <div class="display-row">
+    <div class="field">{{i18n "admin.user.custom_fields.sp_registration_ip"}} </div>
+    <div class="value">
+      {{#if model.custom_fields.sp_registration_ip }}
+        {{model.custom_fields.sp_registration_ip}}
+      {{else}}
+        &mdash;
+      {{/if}}
+    </div>
+  </div>
+</section>
+
