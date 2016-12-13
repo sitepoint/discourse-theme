@@ -41,9 +41,9 @@ after_initialize do
     end
   end
 
-  AdminUserSerializer.class_eval do
-    attributes :custom_fields
-  end
+  #AdminUserSerializer.class_eval do
+  #  attributes :custom_fields
+  #end
 
   # SP customisation: add SiteCustomization to add in crawler links
   header = <<-EOS.strip_heredoc.chomp
