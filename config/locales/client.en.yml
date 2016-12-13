@@ -1,0 +1,7 @@
+en:
+ admin_js:
+   admin:
+     user:
+      custom_fields:
+        sp_registration_ip: "SitePoint Registration IP"
+        sp_created_at: "SitePoint Created"
