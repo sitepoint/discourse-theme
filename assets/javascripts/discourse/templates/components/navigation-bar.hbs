@@ -1,0 +1,6 @@
+{{#each navItems as |navItem|}}
+  {{navigation-item content=navItem filterMode=filterMode}}
+{{/each}}
+{{! FIXME When using the plugin-outlet Ember wraps the li in a span }}
+{{! plugin-outlet name="extra-nav-item" connectorTagName="li"}}
+<li><a href="/faq">FAQ</a></li>
