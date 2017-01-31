@@ -175,7 +175,7 @@ createWidget('sitepoint-links', {
 
     links.push(h('a.header-link.u-button', {
       target: '_blank'  ,
-      href: '/premium/sitepoint-wordpress-themes-bundle?utm_source=community&utm_medium=top-nav'
+      href: '/themes?utm_source=community&utm_medium=top-nav'
     },
     'Themes' ));
 

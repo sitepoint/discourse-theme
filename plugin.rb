@@ -48,7 +48,7 @@ after_initialize do
   # SP customisation: add SiteCustomization to add in crawler links
   header = <<-EOS.strip_heredoc.chomp
     <noscript>
-      <a class="header-link u-button" target="_blank" href="/premium/sitepoint-wordpress-themes-bundle?utm_source=community&utm_medium=top-nav" tabindex="2">Themes</a>
+      <a class="header-link u-button" target="_blank" href="/themes?utm_source=community&utm_medium=top-nav" tabindex="2">Themes</a>
       <a class="header-link" href="/versioning-show?utm_source=community&utm_medium=top-nav" tabindex="3">Podcast</a>
       <a class="header-link" href="/?utm_source=community&utm_medium=top-nav" tabindex="5">Articles</a>
       <a class="header-link u-button" target="_blank" href="/premium/topics/all?utm_source=community&utm_medium=top-nav" tabindex="6">Premium</a>
