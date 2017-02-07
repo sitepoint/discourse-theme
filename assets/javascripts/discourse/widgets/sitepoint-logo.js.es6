@@ -4,7 +4,7 @@ import { h } from 'virtual-dom';
 export default createWidget('sitepoint-logo', {
   html(attrs, state) {
     return h('a.logomark', {
-      href: '/community',
+      href: '/community/',
       tabindex: '1'
     },
     this.svg()
