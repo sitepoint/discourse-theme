@@ -1,4 +1,5 @@
-export function fifthOrLast(index, total, options) {
+export function fifthOrLast(params, options) {
+  const [index, total] = params;
   return index === 4 || (index < 4 && index + 1 === total);
 }
 
