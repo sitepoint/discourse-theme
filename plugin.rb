@@ -72,16 +72,27 @@ after_initialize do
 
   begin
     if User.exists?
-      sitepoint_site_customization = SiteCustomization.find_or_create_by({
+      sitepoint_site_customization = Theme.find_or_create_by({
         name: "SitePoint Crawler links",
-        header: header,
-        mobile_header: header,
-        enabled: true,
         user_id: User.first.id,
-        head_tag: ''
       })
+
+      sitepoint_site_customization.set_field({
+        target: :mobile,
+        name: "header",
+        value: header
+      })
+
+      sitepoint_site_customization.set_field({
+        target: :desktop,
+        name: "header",
+        value: header
+      })
+
+      sitepoint_site_customization.save!
+
       # cleanup old customizations
-      SiteCustomization.where(name: sitepoint_site_customization.name).
+      Theme.where(name: sitepoint_site_customization.name).
         where.not(id: sitepoint_site_customization.id).
         delete_all
     end
