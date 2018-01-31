@@ -29,14 +29,14 @@ createWidget('header-notifications', {
     if (!!unreadNotifications) {
       contents.push(this.attach('link', { action: attrs.action,
                                           className: 'badge-notification unread-notifications',
-                                          rawLabel: unreadNotifications }));
+                                          rawLabel: `${unreadNotifications}` }));
     }
 
     const unreadPMs = currentUser.get('unread_private_messages');
     if (!!unreadPMs) {
       contents.push(this.attach('link', { action: attrs.action,
                                           className: 'badge-notification unread-private-messages',
-                                          rawLabel: unreadPMs }));
+                                          rawLabel: `${unreadPMs}` }));
     }
 
     return contents;
@@ -96,7 +96,7 @@ createWidget('header-icons', {
                           return this.attach('link', {
                             href: '/admin/flags/active',
                             title: 'notifications.total_flagged',
-                            rawLabel: attrs.flagCount,
+                            rawLabel: `${attrs.flagCount}`,
                             className: 'badge-notification flagged-posts'
                           });
                         }
@@ -352,3 +352,4 @@ export default createWidget('header', {
   }
 
 });
+
