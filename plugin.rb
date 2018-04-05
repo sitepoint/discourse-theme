@@ -68,6 +68,8 @@ after_initialize do
       fs.parentNode.insertBefore(t, fs); })
     (window,document,'script','https://scripts.demandbase.com/IM2QfEma.min.js','demandbase_js_lib');
     </script>
+
+    <script src="//cdn-s2s.buysellads.net/pub/sitepoint.js" data-cfasync="false"></script>
     EOS
 
   begin
