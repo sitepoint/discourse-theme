@@ -12,6 +12,8 @@
 
 after_initialize do
 
+add_to_serializer(:admin_user, :custom_fields) { object.custom_fields }
+
   # Track log-out timestamps
   DiscourseEvent.on(:user_logged_out) do |user|
     user.custom_fields["last_logged_out_at"] = Time.now
