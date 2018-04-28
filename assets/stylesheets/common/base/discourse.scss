@@ -3,3 +3,42 @@
 blockquote, aside.quote .title {
   border-left: 3px solid $red-SP;
 }
+
+.d-header .icons {
+    float: right;
+    text-align: center;
+    margin: 0 0 0 5px;
+    list-style: none;
+}
+
+.d-header .icons .icon {
+    display: block;
+    padding: 3px;
+    color: #ececec;
+    text-decoration: none;
+    cursor: pointer;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    transition: all linear .15s;
+}
+
+.d-header .icons [class^="fa fa-"] {
+    width: 32px;
+    height: 32px;
+    font-size: 1.714em;
+    line-height: 32px;
+    display: inline-block;
+}
+
+.d-header .icons>li {
+    float: left;
+}
+
+.d-header .icons .icon, .drop-down-visible .d-header .icons .icon {
+    position: relative;
+    padding: 11px 0;
+    color: white;
+    border: 1px solid transparent;
+    transition: background-color 167ms ease-out;
+}
