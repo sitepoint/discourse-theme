@@ -54,3 +54,16 @@
   color: #919191;
   vertical-align: top;
 }
+
+// =============================================
+
+.autocomplete .badge-wrapper, td.category .badge-wrapper {
+    max-width: 230px;
+}
+
+.badge-wrapper.box {
+    line-height: 1.5;
+    margin-top: 5px;
+    margin-right: 5px;
+    display: inline-block;
+}
