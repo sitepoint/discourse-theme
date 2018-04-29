@@ -137,3 +137,29 @@
     max-width: 100%;
     width: 100%;
 }
+
+// =============================================
+.title-wrapper .badge-wrapper.box{
+    width: 100%;
+    padding: 0 5px;
+}
+
+.d-header .title-wrapper .badge-wrapper.box{
+    width: auto;
+}
+
+#suggested-topics{
+  max-width: 757px;
+
+  .badge-wrapper.box{
+      width: 100%;
+      padding: 0 5px;
+  }
+
+}
+
+@media (min-width:320px)  {
+  #suggested-topics th.category {
+    width: 93px;
+  }
+}
