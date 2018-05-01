@@ -12,7 +12,8 @@
 
 after_initialize do
 
-add_to_serializer(:admin_user, :custom_fields) { object.custom_fields }
+  # Add custom fields to the admin user serializer
+  add_to_serializer(:admin_user, :custom_fields) { object.custom_fields }
 
   # Track log-out timestamps
   DiscourseEvent.on(:user_logged_out) do |user|
@@ -104,7 +105,6 @@ add_to_serializer(:admin_user, :custom_fields) { object.custom_fields }
 end
 
 ## Adding To Discourse
-register_asset "javascripts/pm_button.js.es6", :client_side
 register_asset "stylesheets/common/foundation/variables.scss", :variables # other things need these variables
 
 ## General Changes
