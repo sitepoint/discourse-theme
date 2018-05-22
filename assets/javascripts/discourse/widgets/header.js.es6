@@ -216,11 +216,11 @@ export default createWidget('header', {
   },
 
   html(attrs, state) {
-    const panels = [this.attach('header-buttons', attrs),
-                    this.attach('header-icons', { hamburgerVisible: state.hamburgerVisible,
-                                                  userVisible: state.userVisible,
-                                                  searchVisible: state.searchVisible,
-                                                  flagCount: attrs.flagCount })];
+    const panels = [this.attach('header-buttons', attrs)];
+                    // this.attach('header-icons', { hamburgerVisible: state.hamburgerVisible,
+                    //                               userVisible: state.userVisible,
+                    //                               searchVisible: state.searchVisible,
+                    //                               flagCount: attrs.flagCount })];
 
     if (state.searchVisible) {
       panels.push(this.attach('search-menu', { contextEnabled: state.contextEnabled }));
