@@ -2,6 +2,7 @@ import { createWidget } from 'discourse/widgets/widget';
 import { iconNode } from 'discourse/helpers/fa-icon-node';
 import { avatarImg } from 'discourse/widgets/post';
 import DiscourseURL from 'discourse/lib/url';
+import { addExtraUserClasses } from 'discourse/helpers/user-avatar';
 
 import { h } from 'virtual-dom';
 
@@ -19,31 +20,67 @@ const dropdown = {
 };
 
 createWidget('header-notifications', {
+  settings: {
+    avatarSize: 'medium'
+  },
+
   html(attrs) {
-    const { currentUser } = this;
+    const { user } = attrs;
 
-    const contents = [ avatarImg('medium', { template: currentUser.get('avatar_template'),
-                                             username: currentUser.get('username') }) ];
+    let avatarAttrs = {
+      template: user.get('avatar_template'),
+      username: user.get('username')
+    };
 
-    const unreadNotifications = currentUser.get('unread_notifications');
-    if (!!unreadNotifications) {
-      contents.push(this.attach('link', { action: attrs.action,
-                                          className: 'badge-notification unread-notifications',
-                                          rawLabel: unreadNotifications }));
+    if (this.siteSettings.enable_names) {
+      avatarAttrs.name = user.get('name');
     }
 
-    const unreadPMs = currentUser.get('unread_private_messages');
+    const contents = [
+      avatarImg(this.settings.avatarSize, addExtraUserClasses(user, avatarAttrs))
+    ];
+
+    const unreadNotifications = user.get('unread_notifications');
+    if (!!unreadNotifications) {
+      contents.push(this.attach('link', {
+        action: attrs.action,
+        className: 'badge-notification unread-notifications',
+        rawLabel: unreadNotifications,
+        omitSpan: true,
+        title: "notifications.tooltip.regular",
+        titleOptions: {count: unreadNotifications}
+      }));
+    }
+
+    const unreadPMs = user.get('unread_private_messages');
     if (!!unreadPMs) {
-      contents.push(this.attach('link', { action: attrs.action,
-                                          className: 'badge-notification unread-private-messages',
-                                          rawLabel: unreadPMs }));
+      if (!user.get('read_first_notification')) {
+        contents.push(h('span.ring'));
+        if (!attrs.active && attrs.ringBackdrop) {
+          contents.push(h('span.ring-backdrop-spotlight'));
+          contents.push(h('span.ring-backdrop',
+            {},
+            h('h1.ring-first-notification', {} ,I18n.t('user.first_notification'))
+          ));
+        }
+      };
+
+      contents.push(this.attach('link', {
+        action: attrs.action,
+        className: 'badge-notification unread-private-messages',
+        rawLabel: unreadPMs,
+        omitSpan: true,
+        title: "notifications.tooltip.message",
+        titleOptions: {count: unreadPMs}
+      }));
     }
 
     return contents;
   }
 });
 
-createWidget('user-dropdown', jQuery.extend(dropdown, {
+
+createWidget('user-dropdown', jQuery.extend({
   tagName: 'li.header-dropdown-toggle.current-user',
 
   buildId() {
@@ -51,12 +88,10 @@ createWidget('user-dropdown', jQuery.extend(dropdown, {
   },
 
   html(attrs) {
-    const { currentUser } = this;
-
-    return h('a.icon', { attributes: { href: currentUser.get('path'), 'data-auto-route': true } },
+    return h('a.icon', { attributes: { href: attrs.user.get('path'), 'data-auto-route': true } },
              this.attach('header-notifications', attrs));
   }
-}));
+}, dropdown));
 
 createWidget('header-dropdown', jQuery.extend(dropdown, {
   tagName: 'li.header-dropdown-toggle',
@@ -78,27 +113,27 @@ createWidget('header-dropdown', jQuery.extend(dropdown, {
 }));
 
 createWidget('header-icons', {
-  tagName: 'ul.icons.clearfix',
+  tagName: 'ul.icons.d-header-icons.clearfix',
 
   buildAttributes() {
     return { role: 'navigation' };
   },
 
   html(attrs) {
+    if (this.siteSettings.login_required && !this.currentUser) { return []; }
+
     const hamburger = this.attach('header-dropdown', {
                         title: 'hamburger_menu',
                         icon: 'bars',
                         iconId: 'toggle-hamburger-menu',
                         active: attrs.hamburgerVisible,
                         action: 'toggleHamburger',
+                        href: '',
                         contents() {
                           if (!attrs.flagCount) { return; }
-                          return this.attach('link', {
-                            href: '/admin/flags/active',
-                            title: 'notifications.total_flagged',
-                            rawLabel: attrs.flagCount,
-                            className: 'badge-notification flagged-posts'
-                          });
+                          return h('div.badge-notification.flagged-posts', { attributes: {
+                            title: I18n.t('notifications.total_flagged')
+                          } }, attrs.flagCount);
                         }
                       });
 
@@ -108,13 +143,17 @@ createWidget('header-icons', {
                      iconId: 'search-button',
                      action: 'toggleSearchMenu',
                      active: attrs.searchVisible,
-                     href: '/search'
+                     href: Discourse.getURL('/search')
                    });
 
     const icons = [search, hamburger];
-    if (this.currentUser) {
-      icons.push(this.attach('user-dropdown', { active: attrs.userVisible,
-                                                action: 'toggleUserMenu' }));
+    if (attrs.user) {
+      icons.push(this.attach('user-dropdown', {
+        active: attrs.userVisible,
+        action: 'toggleUserMenu',
+        ringBackdrop: attrs.ringBackdrop,
+        user: attrs.user
+      }));
     }
 
     return icons;
@@ -216,11 +255,16 @@ export default createWidget('header', {
   },
 
   html(attrs, state) {
-    const panels = [this.attach('header-buttons', attrs)];
-                    // this.attach('header-icons', { hamburgerVisible: state.hamburgerVisible,
-                    //                               userVisible: state.userVisible,
-                    //                               searchVisible: state.searchVisible,
-                    //                               flagCount: attrs.flagCount })];
+    const panels = [this.attach('header-buttons', attrs),
+                    this.attach('header-icons', {
+                      hamburgerVisible: state.hamburgerVisible,
+                      userVisible: state.userVisible,
+                      searchVisible: state.searchVisible,
+                      ringBackdrop: state.ringBackdrop,
+                      flagCount: attrs.flagCount,
+                      user: this.currentUser }
+                    )];
+
 
     if (state.searchVisible) {
       panels.push(this.attach('search-menu', { contextEnabled: state.contextEnabled }));
