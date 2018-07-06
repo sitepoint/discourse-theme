@@ -54,3 +54,106 @@
   color: #919191;
   vertical-align: top;
 }
+
+// ==================FIX CATEGORY BADGES===========================
+
+.autocomplete .badge-wrapper, td.category .badge-wrapper {
+    max-width: 230px;
+}
+
+.badge-wrapper.box {
+    line-height: 1.5;
+    margin-top: 5px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+// =================FIX HAMBURGER MENU AND USER IMAGE============================
+
+.navigation-container{
+  .select-kit-body{
+    max-height: 350px;
+    min-width: 131px;
+
+    .select-kit-collection{
+      .select-kit-row{
+        line-height: 1;
+        padding: 3px 0 0 0;
+        .topic-count{
+          display: none;
+        }
+        .category-status{
+          width: 100%;
+
+          .badge-category{
+            max-width: 100px;
+            padding: 5px;
+            margin-top: 2px;
+
+            .category-name{
+              font-size: 1em;
+              font-weight: bold;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.select-kit.combo-box.category-drop .select-kit-row:not(.no-content) {
+    padding: 0px 0px;
+}
+
+.select-kit.combo-box.category-drop .select-kit-body {
+    min-width: 121px;
+}
+
+.badge-wrapper.box {
+    max-width: 130px;
+    padding: 3px 0 0 0;
+    text-align: center;
+    width: 100%;
+}
+
+.list-controls .category-dropdown-menu .badge-wrapper.box {
+    margin-top: 0;
+    width: 100%;
+    line-height: 1;
+    vertical-align: text-top;
+}
+
+.select-kit.combo-box.category-drop .select-kit-collection {
+    padding: 0;
+}
+
+.latest-topic-list-item .main-link .badge-wrapper {
+    max-width: 121px;
+    width: 100%;
+}
+
+.latest-topic-list-item .main-link {
+    max-width: 100%;
+    width: 100%;
+}
+
+// =====================FIX SUGGESTED TOPICS TABLE========================
+.title-wrapper .badge-wrapper.box{
+    width: 100%;
+    padding: 0 5px;
+}
+
+.d-header .title-wrapper .badge-wrapper.box{
+    width: auto;
+}
+
+#suggested-topics{
+  max-width: 757px;
+
+  .badge-wrapper.box{
+      width: 100%;
+      padding: 0 5px;
+  }
+
+}
