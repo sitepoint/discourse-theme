@@ -212,18 +212,6 @@ createWidget('sitepoint-links', {
   html(attrs) {
     const links = [];
 
-    links.push(h('a.header-link.u-button', {
-      target: '_blank'  ,
-      href: '/themes?utm_source=community&utm_medium=top-nav'
-    },
-    'Themes' ));
-
-    links.push(h('a.header-link', {
-      target: '_blank'  ,
-      href: '/versioning-show?utm_source=community&utm_medium=top-nav'
-    },
-    'Podcast' ));
-
     links.push(h('a.header-link', {
       target: '_blank',
       href: '/?utm_source=community&utm_medium=top-nav'
