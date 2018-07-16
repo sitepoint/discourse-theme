@@ -5,7 +5,7 @@
   border-left:none;
 
   .category-name {
-    @include border-radius-all($border-radius-default-SP);
+    border-radius: $border-radius-default-SP;
     background: rgba(0,0,0,0.05);
     color: black;
     padding: 5px 13px;
@@ -26,7 +26,7 @@
 }
 
 .badge-wrapper.box span.badge-category-bg, .badge-wrapper.box span.badge-category-parent-bg {
-  @include border-radius-all($border-radius-default-SP);
+  border-radius: $border-radius-default-SP;
 }
 
 .badge-wrapper.box {
