@@ -34,3 +34,7 @@
   margin-top: 1em; // ensure enough vertical separation between topic header and topic content even if content starts with a blockquote or an UL tag (rather than the usual P)
   margin-bottom: 1em; // mobile: prevent missing vert separation between blockquote and reply button if last thing in topic contents is a blockquote
 }
+
+.small-action .small-action-desc {
+  color: #666;
+}
