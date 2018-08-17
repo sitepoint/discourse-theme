@@ -66,10 +66,16 @@ after_initialize do
     <!-- End Alexa Certify Javascript -->
 
     <script>
-    (function(d,b,a,s,e){ var t = b.createElement(a),
-      fs = b.getElementsByTagName(a)[0]; t.async=1; t.id=e; t.src=s;
-      fs.parentNode.insertBefore(t, fs); })
-    (window,document,'script','https://scripts.demandbase.com/IM2QfEma.min.js','demandbase_js_lib');
+      var propertag = propertag || {};
+      propertag.cmd = propertag.cmd || [];
+      (function() {
+          var pm = document.createElement('script');
+          pm.async = true; pm.type = 'text/javascript';
+          var is_ssl = 'https:' == document.location.protocol;
+          pm.src = (is_ssl ? 'https:' : 'http:') + '//global.proper.io/sitepoint.min.js';
+          var node = document.getElementsByTagName('script')[0];
+          node.parentNode.insertBefore(pm, node);
+      })();
     </script>
     EOS
 
