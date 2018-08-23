@@ -44,70 +44,7 @@ after_initialize do
     end
   end
 
-  #AdminUserSerializer.class_eval do
-  #  attributes :custom_fields
-  #end
-
-  # SP customisation: add SiteCustomization to add in crawler links
-  header = <<-EOS.strip_heredoc.chomp
-    <noscript>
-      <a class="header-link u-button" target="_blank" href="/themes?utm_source=community&utm_medium=top-nav" tabindex="2">Themes</a>
-      <a class="header-link" href="/versioning-show?utm_source=community&utm_medium=top-nav" tabindex="3">Podcast</a>
-      <a class="header-link" href="/?utm_source=community&utm_medium=top-nav" tabindex="5">Articles</a>
-      <a class="header-link u-button" target="_blank" href="/premium/topics/all?utm_source=community&utm_medium=top-nav" tabindex="6">Premium</a>
-    </noscript>
-
-    <!-- Start Alexa Certify Javascript -->
-    <script type="text/javascript">
-    _atrk_opts = { atrk_acct:"3/2Rk1ao6C526C", domain:"sitepoint.com",dynamic: true};
-    (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
-    </script>
-    <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=3/2Rk1ao6C526C" style="display:none" height="1" width="1" alt="" /></noscript>
-    <!-- End Alexa Certify Javascript -->
-
-    <script>
-      var propertag = propertag || {};
-      propertag.cmd = propertag.cmd || [];
-      (function() {
-          var pm = document.createElement('script');
-          pm.async = true; pm.type = 'text/javascript';
-          var is_ssl = 'https:' == document.location.protocol;
-          pm.src = (is_ssl ? 'https:' : 'http:') + '//global.proper.io/sitepoint.min.js';
-          var node = document.getElementsByTagName('script')[0];
-          node.parentNode.insertBefore(pm, node);
-      })();
-    </script>
-    EOS
-
-  begin
-    if User.exists?
-      sitepoint_site_customization = Theme.find_or_create_by({
-        name: "SitePoint Crawler links",
-        user_id: User.first.id,
-      })
-
-      sitepoint_site_customization.set_field({
-        target: :mobile,
-        name: "header",
-        value: header
-      })
-
-      sitepoint_site_customization.set_field({
-        target: :desktop,
-        name: "header",
-        value: header
-      })
-
-      sitepoint_site_customization.save!
-
-      # cleanup old customizations
-      Theme.where(name: sitepoint_site_customization.name).
-        where.not(id: sitepoint_site_customization.id).
-        delete_all
-    end
-  rescue ActiveRecord::StatementInvalid
-    # This happens when you run db:migrate on a database that doesn't have any tables yet.
-  end
+ 
 end
 
 ## Adding To Discourse
