@@ -6,6 +6,10 @@
   border-radius: 0 $border-radius-default-SP $border-radius-default-SP 0;
 }
 
+.list-controls .category-breadcrumb .badge-wrapper.box {
+  display: inline-flex;
+}
+
 .badge-wrapper.box span.badge-category {
   padding: 0 5px;
 }
