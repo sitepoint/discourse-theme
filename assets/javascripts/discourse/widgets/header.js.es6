@@ -1,9 +1,12 @@
 import { createWidget } from 'discourse/widgets/widget';
-import { iconNode } from 'discourse/helpers/fa-icon-node';
+import { iconNode } from "discourse-common/lib/icon-library";
 import { avatarImg } from 'discourse/widgets/post';
 import DiscourseURL from 'discourse/lib/url';
+import { wantsNewWindow } from "discourse/lib/intercept-click";
+import { applySearchAutocomplete } from "discourse/lib/search";
+import { ajax } from "discourse/lib/ajax";
 import { addExtraUserClasses } from 'discourse/helpers/user-avatar';
-
+import { scrollTop } from "discourse/mixins/scroll-top";
 import { h } from 'virtual-dom';
 
 const dropdown = {
@@ -12,6 +15,9 @@ const dropdown = {
   },
 
   click(e) {
+    if (wantsNewWindow(e)) {
+      return;
+    }
     e.preventDefault();
     if (!this.attrs.active) {
       this.sendWidgetAction(this.attrs.action);
@@ -54,7 +60,7 @@ createWidget('header-notifications', {
 
     const unreadPMs = user.get('unread_private_messages');
     if (!!unreadPMs) {
-      if (!user.get('read_first_notification')) {
+      if (!user.get('read_first_notification') && !user.get("enforcedSecondFactor")) {
         contents.push(h('span.ring'));
         if (!attrs.active && attrs.ringBackdrop) {
           contents.push(h('span.ring-backdrop-spotlight'));
@@ -79,7 +85,6 @@ createWidget('header-notifications', {
   }
 });
 
-
 createWidget('user-dropdown', jQuery.extend({
   tagName: 'li.header-dropdown-toggle.current-user',
 
@@ -93,24 +98,28 @@ createWidget('user-dropdown', jQuery.extend({
   }
 }, dropdown));
 
-createWidget('header-dropdown', jQuery.extend(dropdown, {
-  tagName: 'li.header-dropdown-toggle',
+createWidget("header-dropdown", jQuery.extend({
+      tagName: "li.header-dropdown-toggle",
 
-  html(attrs) {
-    const title = I18n.t(attrs.title);
+      html(attrs) {
+        const title = I18n.t(attrs.title);
 
-    const body = [iconNode(attrs.icon)];
-    if (attrs.contents) {
-      body.push(attrs.contents.call(this));
-    }
+        const body = [iconNode(attrs.icon)];
+        if (attrs.contents) {
+          body.push(attrs.contents.call(this));
+        }
 
-    return h('a.icon', { attributes: { href: '',
-                                       'data-auto-route': true,
-                                       title,
-                                       'aria-label': title,
-                                       id: attrs.iconId } }, body);
-  }
-}));
+        return h("a.icon.btn-flat", {
+            attributes: {
+              href: attrs.href,
+              "data-auto-route": true,
+              title,
+              "aria-label": title,
+              id: attrs.iconId
+            }
+          }, body);
+      }
+}, dropdown));
 
 createWidget('header-icons', {
   tagName: 'ul.icons.d-header-icons.clearfix',
@@ -130,10 +139,12 @@ createWidget('header-icons', {
                         action: 'toggleHamburger',
                         href: '',
                         contents() {
-                          if (!attrs.flagCount) { return; }
-                          return h('div.badge-notification.flagged-posts', { attributes: {
-                            title: I18n.t('notifications.total_flagged')
-                          } }, attrs.flagCount);
+                          let { currentUser } = this;
+                          if (currentUser && currentUser.reviewable_count) {
+                            return h("div.badge-notification.reviewables", {
+                                attributes: { title: I18n.t("notifications.reviewable_items") }
+                            }, this.currentUser.reviewable_count);
+                          }
                         }
                       });
 
@@ -160,6 +171,7 @@ createWidget('header-icons', {
   },
 });
 
+// SP START
 createWidget('sso-sign-up-btn', {
   tagName: 'button.btn-primary.btn-small.sign-up-button',
 
@@ -174,8 +186,8 @@ createWidget('sso-sign-up-btn', {
   html() {
     return I18n.t("sign_up")
   }
-
 });
+//SP STOP
 
 createWidget('header-buttons', {
   // SP START
@@ -231,37 +243,97 @@ createWidget('sitepoint-links', {
 });
 // SP END
 
-export default createWidget('header', {
-  tagName: 'header.d-header.clearfix',
+createWidget("header-cloak", {
+  tagName: "div.header-cloak",
+  html() {
+    return "";
+  },
+  click() {},
+  scheduleRerender() {}
+});
+
+const forceContextEnabled = ["category", "user", "private_messages"];
+
+let additionalPanels = [];
+export function attachAdditionalPanel(name, toggle, transformAttrs) {
+  additionalPanels.push({ name, toggle, transformAttrs });
+}
+
+export default createWidget("header", {
+  tagName: "header.d-header.clearfix",
   buildKey: () => `header`,
 
   defaultState() {
-    return { searchVisible: false,
-             hamburgerVisible: false,
-             userVisible: false,
-             contextEnabled: false };
+    let states = {
+      searchVisible: false,
+      hamburgerVisible: false,
+      userVisible: false,
+      ringBackdrop: true
+    };
+
+    if (this.site.mobileView) {
+      states.skipSearchContext = true;
+    }
+
+    return states;
   },
 
   html(attrs, state) {
-    const panels = [this.attach('header-buttons', attrs),
-                    this.attach('header-icons', {
-                      hamburgerVisible: state.hamburgerVisible,
-                      userVisible: state.userVisible,
-                      searchVisible: state.searchVisible,
-                      ringBackdrop: state.ringBackdrop,
-                      flagCount: attrs.flagCount,
-                      user: this.currentUser }
-                    )];
+    let contents = () => {
+      const panels = [
+        this.attach("header-buttons", attrs),
+        this.attach("header-icons", {
+          hamburgerVisible: state.hamburgerVisible,
+          userVisible: state.userVisible,
+          searchVisible: state.searchVisible,
+          ringBackdrop: state.ringBackdrop,
+          flagCount: attrs.flagCount,
+          user: this.currentUser
+        })
+      ];
 
+      if (state.searchVisible) {
+        const contextType = this.searchContextType();
 
-    if (state.searchVisible) {
-      panels.push(this.attach('search-menu', { contextEnabled: state.contextEnabled }));
-    } else if (state.hamburgerVisible) {
-      panels.push(this.attach('hamburger-menu'));
-    } else if (state.userVisible) {
-      panels.push(this.attach('user-menu'));
-    }
+        if (state.searchContextType !== contextType) {
+          state.contextEnabled = undefined;
+          state.searchContextType = contextType;
+        }
 
+        if (state.contextEnabled === undefined) {
+          if (forceContextEnabled.includes(contextType)) {
+            state.contextEnabled = true;
+          }
+        }
+
+        panels.push(
+          this.attach("search-menu", { contextEnabled: state.contextEnabled })
+        );
+      } else if (state.hamburgerVisible) {
+        panels.push(this.attach("hamburger-menu"));
+      } else if (state.userVisible) {
+        panels.push(this.attach("user-menu"));
+      }
+
+      additionalPanels.map(panel => {
+        if (this.state[panel.toggle]) {
+          panels.push(
+            this.attach(
+              panel.name,
+              panel.transformAttrs.call(this, attrs, state)
+            )
+          );
+        }
+      });
+
+      if (this.site.mobileView) {
+        panels.push(this.attach("header-cloak"));
+      }
+
+      return panels;
+    };
+    
+    /* cpradio - Not sure how to implement this.
     const contents = [ this.attach('sitepoint-logo'),
                        h('div.panel.clearfix', panels) ];
 
@@ -272,8 +344,13 @@ export default createWidget('header', {
       contents.push(this.attach('sitepoint-links'));
       //SP END
     }
+    */
 
-    return h('div.container', h('div.contents.clearfix', contents));
+    let contentsAttrs = { contents, minimized: !!attrs.topic };
+    return h(
+      "div.wrap",
+      this.attach("header-contents", $.extend({}, attrs, contentsAttrs))
+    );
   },
 
   updateHighlight() {
@@ -287,10 +364,31 @@ export default createWidget('header', {
     this.state.userVisible = false;
     this.state.hamburgerVisible = false;
     this.state.searchVisible = false;
+    this.toggleBodyScrolling(false);
   },
 
-  linkClickedEvent() {
-    this.closeAll();
+  linkClickedEvent(attrs) {
+    let searchContextEnabled = false;
+    if (attrs) {
+      searchContextEnabled = attrs.searchContextEnabled;
+
+      const { searchLogId, searchResultId, searchResultType } = attrs;
+      if (searchLogId && searchResultId && searchResultType) {
+        ajax("/search/click", {
+          type: "POST",
+          data: {
+            search_log_id: searchLogId,
+            search_result_id: searchResultId,
+            search_result_type: searchResultType
+          }
+        });
+      }
+    }
+
+    if (!searchContextEnabled) {
+      this.closeAll();
+    }
+
     this.updateHighlight();
   },
 
@@ -301,45 +399,111 @@ export default createWidget('header', {
       var params = "";
 
       if (context) {
-        params = `?context=${context.type}&context_id=${context.id}&skip_context=true`;
+        params = `?context=${context.type}&context_id=${context.id}&skip_context=${this.state.skipSearchContext}`;
       }
 
-      return DiscourseURL.routeTo('/search' + params);
+      const currentPath = this.register
+        .lookup("controller:application")
+        .get("currentPath");
+
+      if (currentPath === "full-page-search") {
+        scrollTop();
+        $(".full-page-search")
+          .trigger("touchstart")
+          .focus();
+        return false;
+      } else {
+        return DiscourseURL.routeTo("/search" + params);
+      }
     }
 
     this.state.searchVisible = !this.state.searchVisible;
     this.updateHighlight();
-    Ember.run.next(() => $('#search-term').focus());
+    
+    if (this.state.searchVisible) {
+      Ember.run.schedule("afterRender", () => {
+        const $searchInput = $("#search-term");
+        $searchInput.focus().select();
+
+        applySearchAutocomplete(
+          $searchInput,
+          this.siteSettings,
+          this.appEvents,
+          {
+            appendSelector: ".menu-panel"
+          }
+        );
+      });
+    }
   },
 
   toggleUserMenu() {
+    if (this.currentUser.get("read_first_notification")) {
+      this.state.ringBackdrop = false;
+    }
+
     this.state.userVisible = !this.state.userVisible;
+    this.toggleBodyScrolling(this.state.userVisible);
   },
 
   toggleHamburger() {
     this.state.hamburgerVisible = !this.state.hamburgerVisible;
+    this.toggleBodyScrolling(this.state.hamburgerVisible);
+  },
+  
+  toggleBodyScrolling(bool) {
+    if (!this.site.mobileView) return;
+    if (bool) {
+      document.body.addEventListener("touchmove", this.preventDefault, {
+        passive: false
+      });
+    } else {
+      document.body.removeEventListener("touchmove", this.preventDefault, {
+        passive: false
+      });
+    }
+  },
+
+  preventDefault(e) {
+    // prevent all scrollin on menu panels, except on overflow
+    const height = window.innerHeight ? window.innerHeight : $(window).height();
+    if (
+      !$(e.target).parents(".menu-panel").length ||
+      $(".menu-panel .panel-body-contents").height() <= height
+    ) {
+      e.preventDefault();
+    }
   },
 
   togglePageSearch() {
     const { state } = this;
 
-    if (state.searchVisible) {
-      this.toggleSearchMenu();
-      return false;
-    }
-
     state.contextEnabled = false;
 
-    const currentPath = this.register.lookup('controller:application').get('currentPath');
-    const blacklist = [ /^discovery\.categories/ ];
-    const whitelist = [ /^topic\./ ];
-    const check = function(regex) { return !!currentPath.match(regex); };
+    const currentPath = this.register
+      .lookup("controller:application")
+      .get("currentPath");
+    const blacklist = [/^discovery\.categories/];
+    const whitelist = [/^topic\./];
+    const check = function(regex) {
+      return !!currentPath.match(regex);
+    };
     let showSearch = whitelist.any(check) && !blacklist.any(check);
 
     // If we're viewing a topic, only intercept search if there are cloaked posts
     if (showSearch && currentPath.match(/^topic\./)) {
-      showSearch = ($('.topic-post .cooked, .small-action:not(.time-gap)').length <
-                    this.register.lookup('controller:topic').get('model.postStream.stream.length'));
+      const controller = this.register.lookup("controller:topic");
+      const total = controller.get("model.postStream.stream.length") || 0;
+      const chunkSize = controller.get("model.chunk_size") || 0;
+
+      showSearch =
+        total > chunkSize &&
+        $(".topic-post .cooked, .small-action:not(.time-gap)").length < total;
+    }
+
+    if (state.searchVisible) {
+      this.toggleSearchMenu();
+      return showSearch;
     }
 
     if (showSearch) {
@@ -352,6 +516,9 @@ export default createWidget('header', {
   },
 
   searchMenuContextChanged(value) {
+    this.state.contextType = this.register
+      .lookup("search-service:main")
+      .get("contextType");
     this.state.contextEnabled = value;
   },
 
@@ -364,23 +531,36 @@ export default createWidget('header', {
   },
 
   headerKeyboardTrigger(msg) {
-    switch(msg.type) {
-      case 'search':
+    switch (msg.type) {
+      case "search":
         this.toggleSearchMenu();
         break;
-      case 'user':
+      case "user":
         this.toggleUserMenu();
         break;
-      case 'hamburger':
+      case "hamburger":
         this.toggleHamburger();
         break;
-      case 'page-search':
+      case "page-search":
+        let contextType = this.searchContextType();
+        if (contextType === "topic") {
+          this.state.searchContextType = contextType;
+        }
         if (!this.togglePageSearch()) {
           msg.event.preventDefault();
           msg.event.stopPropagation();
         }
         break;
     }
-  }
+  },
 
+  searchContextType() {
+    const service = this.register.lookup("search-service:main");
+    if (service) {
+      const ctx = service.get("searchContext");
+      if (ctx) {
+        return Ember.get(ctx, "type");
+      }
+    }
+  }
 });
