@@ -1,16 +1,18 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-.contents .topic-list.categories td {
+.contents .category-list td, .mobile-view .category-list-item.category {
   border-left:none;
 
   .category-name {
-    @include border-radius-all($border-radius-default-SP);
+    border-radius: $border-radius-default-SP;
     background: rgba(0,0,0,0.05);
     color: black;
     padding: 5px 13px;
     border-radius: 3px;
     display: inline-block;
+    width: 9em;
+    text-align: center;
   }
 }
 
@@ -21,4 +23,137 @@
       min-width: 60px;
     }
   }
+}
+
+.badge-wrapper.box span.badge-category-bg, .badge-wrapper.box span.badge-category-parent-bg {
+  border-radius: $border-radius-default-SP;
+}
+
+.badge-wrapper.box {
+  max-width: 130px;
+  padding: 3px 0 0 0;
+  text-align: center;
+  width: 100%;
+}
+
+.menu-panel .badge-wrapper.box, .title-wrapper .badge-wrapper.box, #suggested-topics h3 .badge-wrapper.box {
+  width: auto;
+}
+
+.topic-list th.category {
+  width: 140px;
+}
+
+.extra-info .discourse-tag {
+  font-size: 1em;
+}
+
+.discourse-tags:before, .list-tags a.discourse-tag:first-child:before {
+  font-family: 'FontAwesome';
+  content: "\F02C";
+  color: #919191;
+  vertical-align: top;
+}
+
+// ==================FIX CATEGORY BADGES===========================
+
+.autocomplete .badge-wrapper, td.category .badge-wrapper {
+    max-width: 230px;
+}
+
+.badge-wrapper.box {
+    line-height: 1.5;
+    margin-top: 5px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+// =================FIX HAMBURGER MENU AND USER IMAGE============================
+
+.navigation-container{
+  .select-kit-body{
+    max-height: 350px;
+    min-width: 131px;
+
+    .select-kit-collection{
+      .select-kit-row{
+        line-height: 1;
+        padding: 3px 0 0 0;
+        .topic-count{
+          display: none;
+        }
+        .category-status{
+          width: 100%;
+
+          .badge-category{
+            max-width: 100px;
+            padding: 5px;
+            margin-top: 2px;
+
+            .category-name{
+              font-size: 1em;
+              font-weight: bold;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.select-kit.combo-box.category-drop .select-kit-row:not(.no-content) {
+    padding: 0px 0px;
+}
+
+.select-kit.combo-box.category-drop .select-kit-body {
+    min-width: 121px;
+}
+
+.badge-wrapper.box {
+    max-width: 130px;
+    padding: 3px 0 0 0;
+    text-align: center;
+    width: 100%;
+}
+
+.list-controls .category-dropdown-menu .badge-wrapper.box {
+    margin-top: 0;
+    width: 100%;
+    line-height: 1;
+    vertical-align: text-top;
+}
+
+.select-kit.combo-box.category-drop .select-kit-collection {
+    padding: 0;
+}
+
+.latest-topic-list-item .main-link .badge-wrapper {
+    max-width: 121px;
+    width: 100%;
+}
+
+.latest-topic-list-item .main-link {
+    max-width: 100%;
+    width: 100%;
+}
+
+// =====================FIX SUGGESTED TOPICS TABLE========================
+.title-wrapper .badge-wrapper.box{
+    width: 100%;
+    padding: 0 5px;
+}
+
+.d-header .title-wrapper .badge-wrapper.box{
+    width: auto;
+}
+
+#suggested-topics{
+  max-width: 757px;
+
+  .badge-wrapper.box{
+      width: 100%;
+      padding: 0 5px;
+  }
+
 }

@@ -1,0 +1,17 @@
+{{#if shouldRender}}
+<div class="modal-backdrop"></div>
+<div class="modal maestro-modal-once">
+  <div class="modal-outer-container">
+    <div class="modal-middle-container">
+      <div class="modal-inner-container">
+        <div class="modal-header">
+          <a class="close" {{action "closeModal"}}>{{fa-icon "times"}}</a>
+          <h3>{{title}}</h3>
+          <div class="clearfix"></div>
+        </div>
+        <div class="modal-body full-height-modal">{{yield}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}

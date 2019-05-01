@@ -8,14 +8,27 @@
   }
 
   .header-link {
-    color: $gray-sitepoint-header-SP;
+    color: white;
     display: inline-block;
-    font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin-right: 20px;
-    margin-top: 11px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 35px;
+    padding: 10px;
 
     &:hover {
-      color: #fff;
+      background: $gray-dark-bg-SP;
+    }
+
+    &.u-button {
+      border: 1px solid rgba(255,250,250,.25);
+      padding: 0 8px;
+      margin: 10px 4px;
+      border-radius: 3px;
+
+      &:hover {
+        background: white;
+        color: $gray-sitepoint-header-bg-SP;
+      }
     }
   }
 }

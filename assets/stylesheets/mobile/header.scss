@@ -1,0 +1,15 @@
+.d-header {
+  .logomark {
+    padding: 15px 10px 12px;
+
+    svg {
+      width: 140px;
+    }
+  }
+
+  .header-links-wrapper {
+    @media screen and (max-width: 963px){
+      display: none;
+    }
+  }
+}

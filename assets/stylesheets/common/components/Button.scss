@@ -1,0 +1,48 @@
+$c-teal-500: #3ec9cb;
+$c-teal-700: #24b3b5;
+$c-teal-900: #189697;
+
+.Button {
+  display: inline-block;
+  border: 1px solid;
+  border-color: $c-teal-500;
+  text-decoration: none;
+  border-radius: 2px;
+  background: $c-teal-500;
+  color: white;
+  text-transform: capitalize;
+  font-weight: bold;
+  transition: 0.3s ease;
+  transition-property: border-color, background-color, color;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 8px;
+  margin: 0;
+  min-width: 100px;
+  text-align: center;
+
+  i { margin: 0 10px; }
+
+  &:hover {
+    background-color: $c-teal-700;
+    border-color: $c-teal-700;
+    color: white;
+  }
+
+  &:active { transform: translateY(1px); }
+
+  &.u-small {
+    font-size: 14px;
+    padding: 4px;
+  }
+
+  &.u-large {
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  &.u-cta {
+    border-bottom-color: $c-teal-900;
+    border-bottom-width: thick;
+  }
+}

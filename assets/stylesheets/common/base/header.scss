@@ -5,9 +5,17 @@
   display: none;
 }
 
-.d-header {
+.d-header,
+.drop-down-visible .d-header {
+  padding-top: 0px;
+  height: 56px;
+
+  .contents {
+    margin: 0;
+  }
+
   .container {
-    margin-left: 10px;
+    margin-left: 0px;
     margin-right: 10px;
     max-width: none;
     width: auto;
@@ -15,8 +23,20 @@
 
   .logomark {
     float: left; // so that left-floating .extra-info-wrapper can sit on logo's and link's right side
-    margin-top: 11px;
-    margin-right: 10px;
+    padding: 15px 16px 12px 12px;
+
+    &:hover {
+      background: $gray-dark-bg-SP;
+    }
+
+    svg > #logo,
+    svg > rect {
+      fill: #fff;
+    }
+  }
+
+  .extra-info {
+    padding: 5px 8px;
   }
 
   .current-username a {
@@ -24,25 +44,28 @@
     margin-top: 12px;
   }
 
+  .header-buttons {
+    float: left;
+    padding-top: 8px;
+  }
+
   .icons {
     .icon {
-      color: $gray-light-SP;
+      position: relative;
+      padding: 11px 0;
+      color: white;
       border: 1px solid transparent; // prevent "flash of rounded bottom corners" as dropdown is opening
       transition: background-color 167ms ease-out; // align transition with dropdown menu fadein transition
 
       &:hover {
-        background-color: transparent;
+        background-color: $gray-dark-bg-SP;
         border: 1px solid transparent; // prevent "flash of rounded bottom corners" as dropdown is opening
-        color: #fff;
-      }
-
-      &:active {
-        color: #fff;
+        color: white;
       }
     }
 
     .active .icon { // when e.g. hamburger dropdown menu is opened
-      border: 1px solid #fff; // prevent "flash of rounded bottom corners" as dropdown is opening
+      background-color: $gray-dark-bg-SP;
 
       &:hover {
         border: 1px solid #fff; // prevent "flash of rounded bottom corners" as dropdown is opening
@@ -53,6 +76,18 @@
       &:active {
         color: #000;
       }
+
+      .badge-notification {
+        top: 0px;
+      }
+    }
+
+    .badge-notification {
+      top: 0px;
+    }
+
+    .flagged-posts {
+      right: 24px;
     }
   }
 }
@@ -64,7 +99,6 @@
     margin-right: 5px; // ensure horizontal separation between unread messages count and the word Messages
   }
 
-
   .category {
     margin-left: 0;
     margin-right: 0;
@@ -75,4 +109,44 @@
       text-align: left;
     }
   }
+}
+
+
+.d-header .icons {
+    float: right;
+    text-align: center;
+    margin: 0 0 0 5px;
+    list-style: none;
+}
+
+.d-header .icons .icon {
+    display: block;
+    padding: 3px;
+    color: #ececec;
+    text-decoration: none;
+    cursor: pointer;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    transition: all linear .15s;
+}
+
+.d-header .icons [class^="fa fa-"] {
+    width: 32px;
+    height: 32px;
+    font-size: 1.714em;
+    line-height: 32px;
+    display: inline-block;
+}
+
+.d-header .icons>li {
+    float: left;
+}
+
+.d-header .icons .icon, .drop-down-visible .d-header .icons .icon {
+    position: relative;
+    padding: 11px 0;
+    color: white;
+    border: 1px solid transparent;
+    transition: background-color 167ms ease-out;
 }
