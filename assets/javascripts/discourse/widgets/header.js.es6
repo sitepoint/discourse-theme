@@ -332,19 +332,6 @@ export default createWidget("header", {
 
       return panels;
     };
-    
-    /* cpradio - Not sure how to implement this. */
-    contents = [ this.attach('sitepoint-logo'),
-                       h('div.panel.clearfix', contents) ];
-
-    if (attrs.topic) {
-      contents.push(this.attach('header-topic-info', attrs));
-    } else {
-      // SP START
-      contents.push(this.attach('sitepoint-links'));
-      //SP END
-    }
-    /**/
 
     let contentsAttrs = { contents, minimized: !!attrs.topic };
     return h(
