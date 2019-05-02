@@ -3,33 +3,34 @@ import { h } from 'virtual-dom';
 
 export default createWidget('sitepoint-logo', {
   html(attrs, state) {
+    if (this.attrs.minimized) {
+      return h('a.logomark.small-logo', {
+        href: '/community/',
+        tabindex: '1'
+      },
+      this.smallLogo()
+      );
+    }
+    
     return h('a.logomark', {
       href: '/community/',
       tabindex: '1'
     },
-    this.svg()
+    this.logo()
     );
-  },
-
-  svg() {
-    if (this.attrs.minimized) {
-      return this.smallLogo();
-    }
-    
-    return this.logo();
   },
   
   smallLogo() {    
-    return h('svg.logo-small', {
+    return h('svg', {
       namespace: 'http://www.w3.org/2000/svg',
       attributes: {
         version: '1.1',
         x: '0px',
         y: '0px',
-        width: '36px',
+        width: '30px',
         height: '30px',
-        viewBox: '0 0 36 24',
-        'enable-background': 'new 0 0 36 27'
+        viewBox: '0 0 30 24',
+        'enable-background': 'new 0 0 30 27'
       },
     }, [
       h('g#logo', {
