@@ -47,6 +47,10 @@
     svg > rect {
       fill: #fff;
     }
+    
+    .small-logo > svg {
+      width: 30px;
+    }
   }
 
   .extra-info {
