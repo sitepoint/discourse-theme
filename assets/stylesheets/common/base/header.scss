@@ -11,7 +11,11 @@
   height: 56px;
 
   .wrap {
-    max-width: 100%;
+    max-width: none;
+    margin-right: 10px;
+    margin-top: 0;
+    width: 100%;
+    padding: 0;
   }
   
   .header-links-wrapper {
