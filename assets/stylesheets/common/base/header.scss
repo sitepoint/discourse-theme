@@ -67,10 +67,7 @@
     }
   }
   
-  .icons {
-    display: flex;
-    float: right;
-    
+  .icons {    
     .icon {
       position: relative;
       display: flex;
@@ -135,6 +132,7 @@
 
 
 .d-header .icons {
+    display: flex;
     float: right;
     text-align: center;
     margin: 0 0 0 5px;
@@ -167,7 +165,7 @@
 
 .d-header .icons .icon, .drop-down-visible .d-header .icons .icon {
     position: relative;
-    padding: 11px 0;
+    padding: 11px 2px;
     color: white;
     border: 1px solid transparent;
     transition: background-color 167ms ease-out;
