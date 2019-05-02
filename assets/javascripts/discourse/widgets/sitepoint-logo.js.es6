@@ -12,7 +12,50 @@ export default createWidget('sitepoint-logo', {
   },
 
   svg() {
+    if (this.attrs.minimized) {
+      return this.smallLogo();
+    }
+    
+    return this.logo();
+  },
+  
+  smallLogo() {    
     return h('svg', {
+      namespace: 'http://www.w3.org/2000/svg',
+      attributes: {
+        version: '1.1',
+        x: '0px',
+        y: '0px',
+        width: '36px',
+        height: '30px',
+        viewBox: '0 0 36 24',
+        'enable-background': 'new 0 0 36 27'
+      },
+    }, [
+      h('g#logo', {
+        namespace: 'http://www.w3.org/2000/svg'
+      }, [
+        h('path', {
+          namespace: 'http://www.w3.org/2000/svg',
+          attributes: {
+            d: "M0.538756 11.75L2.48876 13.64L8.62876 19.38L11.2788 16.82C11.5188 16.49 11.5088 16.04 11.2288 15.72L8.80876 13.6H8.81876L6.20876 11.07C5.90876 10.72 5.90876 10.2 6.23876 9.87L13.2488 3.09L10.0688 0L0.548756 9.19C-0.181244 9.9 -0.181244 11.05 0.538756 11.75Z",
+            fill: "white"
+          }
+        }),
+        h('path', {
+          namespace: 'http://www.w3.org/2000/svg',
+          attributes: {
+            d: "M12.71 7.62L10.77 5.74L4.62 0L1.97 2.55C1.73 2.89 1.75 3.34 2.02 3.66L4.44 5.78L7.04 8.31C7.35 8.66 7.34 9.17 7.02 9.51L0 16.29L3.19 19.38L10.76 12.07L12.71 10.18C13.44 9.48 13.44 8.33 12.71 7.62Z",
+            transform: "translate(8.75876 7.41)",
+            fill: "white"
+          }
+        }),
+      ]),
+    ]);
+  },
+  
+  logo() {
+   return h('svg', {
       namespace: 'http://www.w3.org/2000/svg',
       attributes: {
         version: '1.1',
@@ -214,7 +257,6 @@ export default createWidget('sitepoint-logo', {
           }
         }),
       ]),
-
-    ]);
+    ]); 
   }
 });
