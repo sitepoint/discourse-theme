@@ -7,6 +7,8 @@ createWidget("header-contents", {
     {{attach widget="sitepoint-logo" attrs=attrs}}
     {{#if attrs.topic}}
       {{attach widget="header-topic-info" attrs=attrs}}
+    {{else}}
+      {{attach widget="sitepoint-links" attrs=attrs}}
     {{/if}}
     <div class="panel clearfix">{{yield}}</div>
   `
