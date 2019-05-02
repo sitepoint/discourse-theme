@@ -14,6 +14,12 @@
     max-width: 100%;
   }
   
+  .header-links-wrapper {
+    margin-right: 50px;
+    width: 100%;
+    text-align: right;
+  }
+  
   .contents {
     margin: 0;
   }
@@ -47,16 +53,28 @@
     color: #fff;
     margin-top: 12px;
   }
+  
+  .panel {
+    order: 5;
 
-  .header-buttons {
-    float: left;
-    padding-top: 8px;
+    .header-buttons {
+      padding-top: 0;
+      display: flex;
+      align-items: center;
+      button.sign-up-button {
+        padding: 8px 10px;
+      }
+    }
   }
-
+  
   .icons {
+    display: flex;
+    float: right;
+    
     .icon {
       position: relative;
-      padding: 11px 0;
+      display: flex;
+      padding: 11px 2px;
       color: white;
       border: 1px solid transparent; // prevent "flash of rounded bottom corners" as dropdown is opening
       transition: background-color 167ms ease-out; // align transition with dropdown menu fadein transition
