@@ -335,7 +335,7 @@ export default createWidget("header", {
     
     /* cpradio - Not sure how to implement this. */
     contents = [ this.attach('sitepoint-logo'),
-                       h('div.panel.clearfix', panels) ];
+                       h('div.panel.clearfix', contents) ];
 
     if (attrs.topic) {
       contents.push(this.attach('header-topic-info', attrs));
