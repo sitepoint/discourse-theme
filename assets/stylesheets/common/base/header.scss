@@ -58,12 +58,9 @@
     order: 5;
 
     .header-buttons {
-      padding-top: 0;
       display: flex;
       align-items: center;
-      button.sign-up-button {
-        padding: 8px 10px;
-      }
+      margin-top: 0;
     }
   }
   
