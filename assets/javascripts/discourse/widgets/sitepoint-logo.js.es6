@@ -19,7 +19,7 @@ export default createWidget('sitepoint-logo', {
         x: '0px',
         y: '0px',
         width: '243px',
-        height: '24px',
+        height: '30px',
         viewBox: '0 0 243 24',
         'enable-background': 'new 0 0 243 27'
       },
