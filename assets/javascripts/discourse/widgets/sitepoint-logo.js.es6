@@ -20,7 +20,7 @@ export default createWidget('sitepoint-logo', {
   },
   
   smallLogo() {    
-    return h('svg', {
+    return h('svg.logo-small', {
       namespace: 'http://www.w3.org/2000/svg',
       attributes: {
         version: '1.1',
