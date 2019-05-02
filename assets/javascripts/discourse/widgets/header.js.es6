@@ -333,7 +333,7 @@ export default createWidget("header", {
       return panels;
     };
     
-    /* cpradio - Not sure how to implement this.
+    /* cpradio - Not sure how to implement this. */
     const contents = [ this.attach('sitepoint-logo'),
                        h('div.panel.clearfix', panels) ];
 
@@ -344,7 +344,7 @@ export default createWidget("header", {
       contents.push(this.attach('sitepoint-links'));
       //SP END
     }
-    */
+    /**/
 
     let contentsAttrs = { contents, minimized: !!attrs.topic };
     return h(
