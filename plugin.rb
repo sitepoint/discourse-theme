@@ -61,6 +61,7 @@ register_asset "stylesheets/common/base/header.scss"           # Custom Header
 register_asset "stylesheets/common/base/topic-list.scss"       # Category Page Table
 register_asset "stylesheets/common/base/discourse.scss"        # Blockquote styles
 register_asset "stylesheets/common/base/topic-post.scss"       # Coloring usernames based on role
+register_asset "stylesheets/common/base/category.scss"         # Category Styling
 
 ## Desktop Only
 register_asset "stylesheets/desktop/header.scss", :desktop     # Links in navbar
