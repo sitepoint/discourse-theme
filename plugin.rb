@@ -63,6 +63,7 @@ register_asset "stylesheets/common/base/topic-list.scss"       # Category Page T
 register_asset "stylesheets/common/base/discourse.scss"        # Blockquote styles
 register_asset "stylesheets/common/base/topic-post.scss"       # Coloring usernames based on role
 register_asset "stylesheets/common/base/category.scss"         # Category Styling
+register_asset "stylesheets/common/base/about-page.scss"       # About Page - Hide Admins
 
 ## Desktop Only
 register_asset "stylesheets/desktop/header.scss", :desktop     # Links in navbar
