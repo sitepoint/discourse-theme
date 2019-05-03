@@ -22,6 +22,12 @@
     margin-right: 50px;
     width: 100%;
     text-align: right;
+    
+    a:focus {
+      outline-color: #0582b6;
+      outline-style: auto;
+      outline-width: 1px;
+    }
   }
   
   .contents {
