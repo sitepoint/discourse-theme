@@ -3,7 +3,7 @@ import { h } from 'virtual-dom';
 
 export default createWidget('sitepoint-logo', {
   html(attrs, state) {
-    if (this.attrs.minimized) {
+    if (this.site.mobileView && this.attrs.minimized) {
       return h('a.logomark.small-logo', {
         href: '/community/',
         tabindex: '1'
