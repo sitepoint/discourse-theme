@@ -39,3 +39,22 @@
 .topic-post.moderator {
     background-color: dark-light-choose($highlight-low, $highlight-medium);
 }
+
+.discourse-no-touch .topic-body .actions .fade-out {
+    opacity: 1;
+}
+
+nav.post-controls button.has-like {color: #ec5645 !important;}
+
+nav.post-controls a, 
+nav.post-controls button,
+nav.post-controls button .d-icon, 
+nav.post-controls .highlight-action,
+nav.post-controls .like-button .like-count,
+nav.post-controls .like-button .like-count .d-icon {
+    color: #8a969d;
+}
+
+nav.post-controls .highlight-action {
+    font-weight: bold !important;
+}
