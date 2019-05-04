@@ -171,24 +171,6 @@ createWidget('header-icons', {
   },
 });
 
-// SP START
-createWidget('sso-sign-up-btn', {
-  tagName: 'button.btn-primary.btn-small.sign-up-button',
-
-  click() {
-    $.cookie("sso_event", "sign_up", {
-      path: "/",
-      expires: 1
-    });
-    this.sendWidgetAction("showLogin")
-  },
-
-  html() {
-    return I18n.t("sign_up")
-  }
-});
-//SP STOP
-
 createWidget('header-buttons', {
   // SP START
   tagName: 'div.header-buttons',
@@ -218,32 +200,6 @@ createWidget('header-buttons', {
     return buttons;
   }
 });
-
-// SP START
-createWidget('sitepoint-links', {
-  tagName: 'div.header-links-wrapper.clearfix',
-
-  html(attrs) {
-    const links = [];
-
-    links.push(h('a.header-link', {
-      target: '_blank',
-      href: '/?utm_source=community&utm_medium=top-nav'
-    },
-    'Articles'
-    ));
-
-    links.push(h('a.header-link.u-button', {
-      target: '_blank',
-      href: '/premium/topics/all?utm_source=community&utm_medium=top-nav'
-    },
-    'Premium'
-    ));
-
-    return links;
-  }
-});
-// SP END
 
 createWidget("header-cloak", {
   tagName: "div.header-cloak",
