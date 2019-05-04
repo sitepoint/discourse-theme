@@ -172,9 +172,7 @@ createWidget('header-icons', {
 });
 
 createWidget('header-buttons', {
-  // SP START
-  tagName: 'div.header-buttons',
-  // SP END
+  tagName: 'span.header-buttons',
 
   html(attrs) {
     if (this.currentUser) { return; }
