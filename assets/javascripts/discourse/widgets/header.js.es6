@@ -205,9 +205,11 @@ createWidget('header-buttons', {
                                            action: "showCreateAccount" }));
     }
 
+    // SP START
     if(this.siteSettings.enable_sso) {
       buttons.push(this.attach('sso-sign-up-btn'));
     }
+    // SP STOP
 
     buttons.push(this.attach('button', { label: 'log_in',
                                          className: 'btn-primary btn-small login-button',
