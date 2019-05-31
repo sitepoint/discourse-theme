@@ -56,11 +56,14 @@ register_asset "stylesheets/common/components/badges.css.scss" # category dropdo
 register_asset "stylesheets/common/components/navs.scss"       # Navigation at top of list pages and to the side of profile pages
 register_asset "stylesheets/common/components/buttons.scss"    # Button Colors and radius
 register_asset "stylesheets/common/components/Button.scss"     # standard SitePoint style Buttons
+register_asset "stylesheets/common/components/tags.scss"       # Tag Styling
 register_asset "stylesheets/common/base/bsa.scss"              # BSA outlets
 register_asset "stylesheets/common/base/header.scss"           # Custom Header
 register_asset "stylesheets/common/base/topic-list.scss"       # Category Page Table
 register_asset "stylesheets/common/base/discourse.scss"        # Blockquote styles
 register_asset "stylesheets/common/base/topic-post.scss"       # Coloring usernames based on role
+register_asset "stylesheets/common/base/category.scss"         # Category Styling
+register_asset "stylesheets/common/base/about-page.scss"       # About Page - Hide Admins
 
 ## Desktop Only
 register_asset "stylesheets/desktop/header.scss", :desktop     # Links in navbar
