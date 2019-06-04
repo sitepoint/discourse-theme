@@ -1,6 +1,7 @@
 # name: discourse-theme
 # about: sitepoint.com/forum theme
 # authors: Jude Aakjaer, James Hunter, Kelle-Lee Connolly
+# version: 0.1.0
 
 # When styles are not working or are not updating, try:
 # - stopping server
