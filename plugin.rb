@@ -1,6 +1,7 @@
 # name: discourse-theme
 # about: sitepoint.com/forum theme
 # authors: Jude Aakjaer, James Hunter, Kelle-Lee Connolly
+# version: 0.1.0
 
 # When styles are not working or are not updating, try:
 # - stopping server
@@ -13,7 +14,7 @@
 after_initialize do
 
   # Add custom fields to the admin user serializer
-  add_to_serializer(:admin_user, :custom_fields) { object.custom_fields }
+  add_to_serializer(:admin_detailed_user, :custom_fields) { object.custom_fields }
 
   # Track log-out timestamps
   DiscourseEvent.on(:user_logged_out) do |user|

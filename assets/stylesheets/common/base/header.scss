@@ -8,7 +8,6 @@
 .d-header,
 .drop-down-visible .d-header {
   padding-top: 0px;
-  height: 56px;
 
   .wrap {
     max-width: none;
@@ -43,7 +42,7 @@
 
   .logomark {
     float: left; // so that left-floating .extra-info-wrapper can sit on logo's and link's right side
-    padding: 15px 16px 12px 12px;
+    padding: 14px 16px 11px 12px;
 
     &:hover {
       background: $gray-dark-bg-SP;
