@@ -5,20 +5,24 @@
   border-radius: $border-radius-default-SP;
 }
 
-#create-topic, #create-category, .btn-primary, .post-controls .actions button.create {
+#create-topic,
+#create-category,
+.btn-primary,
+.post-controls .actions button.create {
   border-radius: $border-radius-default-SP;
   background: $red-SP;
   color: white;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: $red-darker-SP;
   }
-    
+
   .d-icon {
-      color: white !important;
+    color: white !important;
   }
 }
 
 .discourse-no-touch .gutter .reply-new {
-    opacity: 1 !important;
+  opacity: 1 !important;
 }

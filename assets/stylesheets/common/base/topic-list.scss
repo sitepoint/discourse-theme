@@ -1,12 +1,13 @@
 @import "common/foundation/variables";
 @import "common/foundation/mixins";
 
-.contents .category-list td, .mobile-view .category-list-item.category {
-  border-left:none;
+.contents .category-list td,
+.mobile-view .category-list-item.category {
+  border-left: none;
 
   .category-name {
     border-radius: $border-radius-default-SP;
-    background: rgba(0,0,0,0.05);
+    background: rgba(0, 0, 0, 0.05);
     color: black;
     padding: 5px 13px;
     border-radius: 3px;
@@ -17,7 +18,8 @@
 }
 
 .contents .topic-list {
-  td, th {
+  td,
+  th {
     &.posters {
       width: 60px;
       min-width: 60px;
@@ -25,7 +27,8 @@
   }
 }
 
-.badge-wrapper.box span.badge-category-bg, .badge-wrapper.box span.badge-category-parent-bg {
+.badge-wrapper.box span.badge-category-bg,
+.badge-wrapper.box span.badge-category-parent-bg {
   border-radius: $border-radius-default-SP;
 }
 
@@ -36,7 +39,9 @@
   width: 100%;
 }
 
-.menu-panel .badge-wrapper.box, .title-wrapper .badge-wrapper.box, #suggested-topics h3 .badge-wrapper.box {
+.menu-panel .badge-wrapper.box,
+.title-wrapper .badge-wrapper.box,
+#suggested-topics h3 .badge-wrapper.box {
   width: auto;
 }
 
@@ -48,47 +53,51 @@
   font-size: 1em;
 }
 
-.discourse-tags:before, .list-tags a.discourse-tag:first-child:before {
-  content: svg-uri('<svg fill="#919191" aria-hidden="true" data-prefix="fas" data-icon="tag" class="svg-inline--fa fa-tag fa-w-16" role="img" height=".7em" width=".7em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></svg>');
+.discourse-tags:before,
+.list-tags a.discourse-tag:first-child:before {
+  content: svg-uri(
+    '<svg fill="#919191" aria-hidden="true" data-prefix="fas" data-icon="tag" class="svg-inline--fa fa-tag fa-w-16" role="img" height=".7em" width=".7em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></svg>'
+  );
   vertical-align: middle;
 }
 
 // ==================FIX CATEGORY BADGES===========================
 
-.autocomplete .badge-wrapper, td.category .badge-wrapper {
-    max-width: 230px;
+.autocomplete .badge-wrapper,
+td.category .badge-wrapper {
+  max-width: 230px;
 }
 
 .badge-wrapper.box {
-    line-height: 1.5;
-    margin-top: 5px;
-    margin-right: 5px;
-    display: inline-block;
+  line-height: 1.5;
+  margin-top: 5px;
+  margin-right: 5px;
+  display: inline-block;
 }
 
 // =================FIX HAMBURGER MENU AND USER IMAGE============================
 
-.navigation-container{
-  .select-kit-body{
+.navigation-container {
+  .select-kit-body {
     max-height: 350px;
     min-width: 131px;
 
-    .select-kit-collection{
-      .select-kit-row{
+    .select-kit-collection {
+      .select-kit-row {
         line-height: 1;
         padding: 3px 0 0 0;
-        .topic-count{
+        .topic-count {
           display: none;
         }
-        .category-status{
+        .category-status {
           width: 100%;
 
-          .badge-category{
+          .badge-category {
             max-width: 100px;
             padding: 5px;
             margin-top: 2px;
 
-            .category-name{
+            .category-name {
               font-size: 1em;
               font-weight: bold;
               white-space: nowrap;
@@ -101,57 +110,56 @@
 }
 
 .select-kit.combo-box.category-drop .select-kit-row:not(.no-content) {
-    padding: 0px 0px;
+  padding: 0px 0px;
 }
 
 .select-kit.combo-box.category-drop .select-kit-body {
-    min-width: 121px;
+  min-width: 121px;
 }
 
 .badge-wrapper.box {
-    max-width: 130px;
-    padding: 3px 0 0 0;
-    text-align: center;
-    width: 100%;
+  max-width: 130px;
+  padding: 3px 0 0 0;
+  text-align: center;
+  width: 100%;
 }
 
 .list-controls .category-dropdown-menu .badge-wrapper.box {
-    margin-top: 0;
-    width: 100%;
-    line-height: 1;
-    vertical-align: text-top;
+  margin-top: 0;
+  width: 100%;
+  line-height: 1;
+  vertical-align: text-top;
 }
 
 .select-kit.combo-box.category-drop .select-kit-collection {
-    padding: 0;
+  padding: 0;
 }
 
 .latest-topic-list-item .main-link .badge-wrapper {
-    max-width: 121px;
-    width: 100%;
+  max-width: 121px;
+  width: 100%;
 }
 
 .latest-topic-list-item .main-link {
-    max-width: 100%;
-    width: 100%;
+  max-width: 100%;
+  width: 100%;
 }
 
 // =====================FIX SUGGESTED TOPICS TABLE========================
-.title-wrapper .badge-wrapper.box{
-    width: 100%;
-    padding: 0 5px;
+.title-wrapper .badge-wrapper.box {
+  width: 100%;
+  padding: 0 5px;
 }
 
-.d-header .title-wrapper .badge-wrapper.box{
-    width: auto;
+.d-header .title-wrapper .badge-wrapper.box {
+  width: auto;
 }
 
-#suggested-topics{
+#suggested-topics {
   max-width: 757px;
 
-  .badge-wrapper.box{
-      width: 100%;
-      padding: 0 5px;
+  .badge-wrapper.box {
+    width: 100%;
+    padding: 0 5px;
   }
-
 }

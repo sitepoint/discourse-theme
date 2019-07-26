@@ -1,17 +1,16 @@
 .discourse-tags:before {
-    padding-right: 3px;
+  padding-right: 3px;
 }
 
 .list-tags a.discourse-tag:first-child:before {
-    content: "" !important;
+  content: "" !important;
 }
-
 
 .list-tags:before {
-    content: "" !important;
+  content: "" !important;
 }
 
-.box+.list-tags {
-    display: table;
-    padding-top: 8px;
+.box + .list-tags {
+  display: table;
+  padding-top: 8px;
 }

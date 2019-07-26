@@ -21,7 +21,9 @@ $c-teal-900: #189697;
   min-width: 100px;
   text-align: center;
 
-  i { margin: 0 10px; }
+  i {
+    margin: 0 10px;
+  }
 
   &:hover {
     background-color: $c-teal-700;
@@ -29,7 +31,9 @@ $c-teal-900: #189697;
     color: white;
   }
 
-  &:active { transform: translateY(1px); }
+  &:active {
+    transform: translateY(1px);
+  }
 
   &.u-small {
     font-size: 14px;

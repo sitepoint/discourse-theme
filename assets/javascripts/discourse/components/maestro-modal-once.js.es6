@@ -1,4 +1,5 @@
-import ls from 'discourse/plugins/discourse-theme/lib/local_storage';
+import { on } from "ember-addons/ember-computed-decorators";
+import ls from "discourse/plugins/discourse-theme/lib/local_storage";
 
 const THIRTY_DAYS = 1000 * 60 * 60 * 24 * 30;
 
@@ -8,27 +9,28 @@ export default Ember.Component.extend({
   trackingLabel: "default",
 
   actions: {
-    closeModal: function(event="Close") {
+    closeModal(event = "Close") {
       this.track(event);
       this.set("shouldRender", false);
     }
   },
 
-  track (event) {
-    if (typeof(ga) == 'undefined') return;
+  track(event) {
+    if (typeof ga == "undefined") return;
     ga("send", "event", "MaestroModalOnce", event, this.trackingLabel);
   },
 
-  click (e) {
-    const $target = $(e.target);
-    if ($target.hasClass("modal-middle-container") ||
-        $target.hasClass("modal-outer-container")) {
+  click(event) {
+    if (
+      event.target.classList.contains("modal-middle-container") ||
+      event.target.classList.contains("modal-outer-container")
+    ) {
       this.track("Background");
       this.set("shouldRender", false);
     }
   },
 
-  hasUserSeen () {
+  hasUserSeen() {
     const { trackingLabel } = this;
     const lastSeen = ls.get(`MaestroModalOnce_shown_${trackingLabel}`);
     if (!lastSeen) return false;
@@ -39,17 +41,21 @@ export default Ember.Component.extend({
     return false;
   },
 
-  _initMaestroModalOnce: function() {
+  @on("didInsertElement")
+  _initMaestroModalOnce() {
     if (this.hasRendered) return;
     if (this.hasUserSeen()) return;
 
     if (this.activateDelay) {
-      setTimeout(() => {
-        this.set("hasRendered", true);
-        this.set("shouldRender", true);
+      Ember.run.later(() => {
+        this.setProperties({
+          hasRendered: true,
+          shouldRender: true
+        });
+
         this.track("Shown");
         ls.set(`MaestroModalOnce_shown_${this.trackingLabel}`, Date.now());
       }, this.activateDelay * 1000);
     }
-  }.on("didInsertElement")
+  }
 });

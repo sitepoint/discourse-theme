@@ -1,7 +1,11 @@
 {{#if hasSelection}}
   <div id='selected-controls'>
-    <button {{action "approveUsers"}} class='btn'>{{count-i18n key="admin.users.approved_selected" count=selectedCount}}</button>
-    <button {{action "rejectUsers"}}  class='btn btn-danger'>{{count-i18n key="admin.users.reject_selected" count=selectedCount}}</button>
+    {{#d-button action=(action "approveUsers")}}
+      {{count-i18n key="admin.users.approved_selected" count=selectedCount}}
+    {{/d-button}}
+    {{#d-button action=(action "rejectUsers") class="btn-danger"}}
+      {{count-i18n key="admin.users.reject_selected" count=selectedCount}}
+    {{/d-button}}
   </div>
 {{/if}}
 
@@ -14,7 +18,7 @@
   {{text-field value=listFilter placeholder=searchHint}}
   {{#unless showEmails}}
     <div class="pull-right">
-      <button {{action "showEmails"}} class="btn">{{i18n 'admin.users.show_emails'}}</button>
+      {{d-button action=(action "showEmails") label="admin.users.show_emails"}}
     </div>
   {{/unless}}
 </div>
