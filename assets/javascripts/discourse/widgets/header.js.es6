@@ -2,6 +2,7 @@ import { createWidget } from 'discourse/widgets/widget';
 import { iconNode } from "discourse-common/lib/icon-library";
 import { avatarImg } from 'discourse/widgets/post';
 import DiscourseURL from 'discourse/lib/url';
+import getURL from "discourse-common/lib/get-url";
 import { wantsNewWindow } from "discourse/lib/intercept-click";
 import { applySearchAutocomplete } from "discourse/lib/search";
 import { ajax } from "discourse/lib/ajax";
@@ -154,7 +155,7 @@ createWidget('header-icons', {
                      iconId: 'search-button',
                      action: 'toggleSearchMenu',
                      active: attrs.searchVisible,
-                     href: Discourse.getURL('/search')
+                     href: getURL('/search')
                    });
 
     const icons = [search, hamburger];
