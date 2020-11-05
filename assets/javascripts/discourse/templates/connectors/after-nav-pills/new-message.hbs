@@ -1,5 +1,12 @@
 {{! SP Add Private Message Button }}
   {{#if currentUser}}
-    {{d-button id="create-private-message" class="btn-default" action="btn_action" user=model icon="envelope" label="user.private_message"}}
+    {{d-button
+      id="create-private-message"
+      class="btn-default"
+      action=(action "btn_action")
+      user=model
+      icon="envelope"
+      label="user.private_message"
+    }}
   {{/if}}
 {{! /SP }}

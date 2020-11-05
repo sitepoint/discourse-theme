@@ -1,6 +1,4 @@
 export default {
-  name: 'discourse-theme',
-  initialize() {
-    
-  }
+  name: "discourse-theme",
+  initialize() {}
 };

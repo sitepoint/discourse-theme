@@ -4,5 +4,3 @@ export function firstItem(params, options) {
 }
 
 export default Ember.Helper.helper(firstItem);
-
-

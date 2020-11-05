@@ -16,19 +16,19 @@
     width: 100%;
     padding: 0;
   }
-  
+
   .header-links-wrapper {
     margin-right: 50px;
     width: 100%;
     text-align: right;
-    
+
     a:focus {
       outline-color: #0582b6;
       outline-style: auto;
       outline-width: 1px;
     }
   }
-  
+
   .contents {
     margin: 0;
   }
@@ -52,7 +52,7 @@
     svg > rect {
       fill: #fff;
     }
-    
+
     &.small-logo svg {
       width: 30px;
     }
@@ -66,7 +66,7 @@
     color: #fff;
     margin-top: 12px;
   }
-  
+
   .panel {
     order: 5;
 
@@ -76,8 +76,8 @@
       margin-top: 0;
     }
   }
-  
-  .icons {    
+
+  .icons {
     .icon {
       position: relative;
       display: flex;
@@ -93,7 +93,8 @@
       }
     }
 
-    .active .icon { // when e.g. hamburger dropdown menu is opened
+    .active .icon {
+      // when e.g. hamburger dropdown menu is opened
       background-color: $gray-dark-bg-SP;
 
       &:hover {
@@ -140,43 +141,43 @@
   }
 }
 
-
 .d-header .icons {
-    display: flex;
-    float: right;
-    text-align: center;
-    margin: 0 0 0 5px;
-    list-style: none;
+  display: flex;
+  float: right;
+  text-align: center;
+  margin: 0 0 0 5px;
+  list-style: none;
 }
 
 .d-header .icons .icon {
-    display: flex;
-    padding: 3px;
-    color: #ececec;
-    text-decoration: none;
-    cursor: pointer;
-    border-top: 1px solid transparent;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    transition: all linear .15s;
+  display: flex;
+  padding: 3px;
+  color: #ececec;
+  text-decoration: none;
+  cursor: pointer;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  transition: all linear 0.15s;
 }
 
 .d-header .icons [class^="fa fa-"] {
-    width: 32px;
-    height: 32px;
-    font-size: 1.714em;
-    line-height: 32px;
-    display: inline-block;
+  width: 32px;
+  height: 32px;
+  font-size: 1.714em;
+  line-height: 32px;
+  display: inline-block;
 }
 
-.d-header .icons>li {
-    float: left;
+.d-header .icons > li {
+  float: left;
 }
 
-.d-header .icons .icon, .drop-down-visible .d-header .icons .icon {
-    position: relative;
-    padding: 11px 2px;
-    color: white;
-    border: 1px solid transparent;
-    transition: background-color 167ms ease-out;
+.d-header .icons .icon,
+.drop-down-visible .d-header .icons .icon {
+  position: relative;
+  padding: 11px 2px;
+  color: white;
+  border: 1px solid transparent;
+  transition: background-color 167ms ease-out;
 }
