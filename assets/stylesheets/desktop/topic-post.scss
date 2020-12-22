@@ -1,13 +1,10 @@
-@import "common/foundation/variables";
-@import "common/foundation/mixins";
-@import "common/foundation/helpers";
-
 .discourse-no-touch .post-cloak .gutter .reply-new {
   opacity: 1;
 }
 
 nav.post-controls {
-  .show-replies, .actions button {
+  .show-replies,
+  .actions button {
     border-radius: $border-radius-default-SP;
   }
 }
@@ -30,7 +27,6 @@ span.post-count {
 
   .badge-wrapper {
     margin-top: 0;
-
   }
 }
 
@@ -47,5 +43,5 @@ a.post-date span {
 }
 
 a.post-date:after {
-  content: "#"attr(data-post-number);
+  content: "#" attr(data-post-number);
 }

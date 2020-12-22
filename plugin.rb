@@ -46,5 +46,6 @@ after_initialize do
   end
 end
 
+register_asset "stylesheets/sitepoint-common.scss"
 register_asset "stylesheets/sitepoint-mobile.scss", :mobile
 register_asset "stylesheets/sitepoint-desktop.scss", :desktop

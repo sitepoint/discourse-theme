@@ -1,9 +1,9 @@
-@import "common/foundation/variables";
-
-blockquote, aside.quote .title {
+blockquote,
+aside.quote .title {
   border-left: 3px solid $red-SP;
 }
 
-.modal-footer span.hint, .flag-modal .custom-message-length {
-    color: red !important;
+.modal-footer span.hint,
+.flag-modal .custom-message-length {
+  color: red !important;
 }
